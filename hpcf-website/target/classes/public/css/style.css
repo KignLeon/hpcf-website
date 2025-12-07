@@ -1,0 +1,434 @@
+
+/* =========================================================
+   Higher Praise Christian Fellowship (HPCF) – Global Styles
+   ========================================================= */
+
+/* ------------------------------
+   0) Font Imports
+   ------------------------------ */
+/* You can remove families you won't use. */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Crimson+Pro:ital,wght@0,400;0,600;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+/* ------------------------------
+   1) Theme Tokens
+   ------------------------------ */
+:root {
+  /* Brand Palette */
+  --hpcf-burgundy: #7C2639;      /* Primary background */
+  --hpcf-maroon:   #561722;      /* Deep maroon / footer / hover */
+  --hpcf-rose:     #A63F4E;      /* Gradient midtone / CTA highlights */
+  --hpcf-gold:     #E9D8A6;      /* Light gold text / accents */
+  --hpcf-beige:    #EED9B7;      /* Warm beige secondary text / hover */
+  --hpcf-pink:     #B85A6A;      /* Soft pink overlay */
+  --hpcf-white:    #FFFFFF;      /* Contrast */
+
+  /* Semantic */
+  --bg-main: var(--hpcf-burgundy);
+  --bg-alt:  #f7f5f2;
+  --text-main: #1b1b1b;
+  --text-on-dark: var(--hpcf-white);
+  --muted: #6b6b6b;
+
+  /* Effects */
+  --shadow-soft: 0 10px 25px rgba(0,0,0,0.15);
+  --shadow-hover: 0 12px 28px rgba(0,0,0,0.22);
+  --ring: 0 0 0 3px rgba(233, 216, 166, 0.45);
+
+  /* Layout */
+  --container: 1200px;
+  --radius: 14px;
+  --radius-lg: 22px;
+  --space-1: .25rem;
+  --space-2: .5rem;
+  --space-3: .75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+}
+
+/* ------------------------------
+   2) CSS Reset (lightweight)
+   ------------------------------ */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  color: var(--text-main);
+  font-family: 'Inter', 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  background: var(--hpcf-white);
+}
+
+/* Typography scales */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0 0 var(--space-4);
+  line-height: 1.2;
+  color: var(--text-main);
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+}
+h1 { font-size: clamp(2.2rem, 4vw, 3.2rem); }
+h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); }
+h3 { font-size: clamp(1.4rem, 2.2vw, 1.8rem); }
+p  { margin: 0 0 var(--space-5); }
+
+/* Scripted / special headings (logo-like) */
+.script { font-family: 'Great Vibes', 'Playfair Display', cursive; font-weight: 400; }
+.callout { font-family: 'Crimson Pro', 'Cormorant Garamond', Georgia, serif; font-style: italic; }
+
+/* Links */
+a { color: var(--hpcf-rose); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Focus ring for accessibility */
+:focus-visible { outline: none; box-shadow: var(--ring); border-radius: 6px; }
+
+/* Containers & Sections */
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--space-4);
+}
+.section {
+  padding: var(--space-12) 0;
+}
+.section--dark {
+  background: var(--hpcf-burgundy);
+  color: var(--text-on-dark);
+}
+.section--alt {
+  background: var(--bg-alt);
+}
+
+/* ------------------------------
+   3) Hero & Backgrounds
+   ------------------------------ */
+.bg-hero {
+  background: linear-gradient(90deg, var(--hpcf-maroon) 0%, var(--hpcf-rose) 100%);
+  color: var(--text-on-dark);
+}
+.bg-diagonal {
+  background: linear-gradient(135deg, var(--hpcf-burgundy) 0%, var(--hpcf-pink) 50%, var(--hpcf-rose) 100%);
+}
+.bg-radial {
+  background: radial-gradient(1200px circle at 20% 20%, rgba(184,90,106,.35), transparent 60%),
+              radial-gradient(900px circle at 80% 10%, rgba(166,63,78,.3), transparent 60%),
+              var(--hpcf-burgundy);
+  color: var(--text-on-dark);
+}
+
+/* Hero banner example block */
+.hero {
+  padding: clamp(3rem, 8vw, 7rem) 0;
+  display: grid;
+  gap: var(--space-6);
+  align-items: center;
+}
+.hero__title {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 700;
+}
+.hero__subtitle {
+  color: var(--hpcf-beige);
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+}
+
+/* ------------------------------
+   4) Navigation
+   ------------------------------ */
+.navbar {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--hpcf-burgundy);
+  color: var(--text-on-dark);
+  box-shadow: var(--shadow-soft);
+}
+.navbar__inner {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px; gap: var(--space-6);
+}
+.navbar .brand { display: flex; align-items: center; gap: var(--space-3); }
+.navbar .brand__logo { width: 38px; height: 38px; border-radius: 50%; background: var(--hpcf-maroon); display: grid; place-items: center; }
+.navbar .brand__text { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.1rem; color: var(--hpcf-gold); }
+.navbar .nav {
+  display: flex; align-items: center; gap: clamp(.5rem, 2vw, 1.25rem);
+}
+.navbar .nav a {
+  color: var(--hpcf-white);
+  font-weight: 500;
+  padding: .4rem .6rem;
+  border-radius: 8px;
+}
+.navbar .nav a:hover { background: color-mix(in oklab, var(--hpcf-white) 10%, var(--hpcf-burgundy)); }
+.navbar .cta { margin-left: auto; }
+
+/* Mobile nav toggles (optional) */
+.nav-toggle { display: none; }
+@media (max-width: 920px) {
+  .nav-toggle { display: inline-flex; align-items: center; gap: .5rem; color: var(--hpcf-gold); }
+  .navbar .nav { display: none; }
+  .navbar.open .nav {
+    display: flex; flex-direction: column; position: absolute; left: 0; right: 0; top: 64px;
+    background: var(--hpcf-maroon); padding: var(--space-6);
+  }
+}
+
+/* ------------------------------
+   5) Buttons
+   ------------------------------ */
+.btn {
+  --btn-bg: var(--hpcf-rose);
+  --btn-fg: var(--hpcf-white);
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: .5rem;
+  padding: .75rem 1.1rem;
+  font-weight: 600;
+  border-radius: var(--radius);
+  border: none;
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  cursor: pointer;
+  box-shadow: var(--shadow-soft);
+  transition: transform .12s ease, box-shadow .12s ease, background .2s ease;
+}
+.btn:hover { transform: translateY(-1px); box-shadow: var(--shadow-hover); }
+.btn:active { transform: translateY(0); }
+
+.btn--gold {
+  --btn-bg: var(--hpcf-gold);
+  --btn-fg: #2b2b2b;
+}
+.btn--outline-gold {
+  background: transparent;
+  color: var(--hpcf-gold);
+  border: 2px solid var(--hpcf-gold);
+  box-shadow: none;
+}
+.btn--outline-gold:hover { background: rgba(233,216,166,.1); }
+.btn--maroon { --btn-bg: var(--hpcf-maroon); }
+.btn--burgundy { --btn-bg: var(--hpcf-burgundy); }
+
+/* Subscribe button variant with glow */
+.btn--subscribe {
+  --btn-bg: var(--hpcf-gold);
+  --btn-fg: #221a15;
+  box-shadow: 0 0 0 2px rgba(255,255,255,.25), 0 6px 18px rgba(233,216,166,.35);
+}
+.btn--subscribe:hover {
+  box-shadow: 0 0 0 3px rgba(233,216,166,.55), 0 8px 22px rgba(233,216,166,.5);
+}
+
+/* Icon sizing helper */
+.btn .icon { width: 1.1em; height: 1.1em; display: inline-block; }
+
+/* ------------------------------
+   6) Cards & Surfaces
+   ------------------------------ */
+.card {
+  background: var(--hpcf-white);
+  border-radius: var(--radius-lg);
+  padding: clamp(1rem, 3vw, 1.5rem);
+  box-shadow: var(--shadow-soft);
+  border: 1px solid rgba(0,0,0,0.06);
+}
+.card--dark {
+  background: linear-gradient(160deg, var(--hpcf-maroon), var(--hpcf-burgundy));
+  color: var(--text-on-dark);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.card__title { margin-bottom: .5rem; font-weight: 700; }
+.card__meta { color: var(--muted); font-size: .95rem; }
+
+/* ------------------------------
+   7) Lists, Badges, Alerts
+   ------------------------------ */
+.badge {
+  display: inline-block;
+  padding: .25rem .6rem;
+  border-radius: 999px;
+  background: rgba(233,216,166,.18);
+  color: var(--hpcf-maroon);
+  border: 1px solid rgba(233,216,166,.45);
+  font-weight: 600;
+  font-size: .85rem;
+}
+.alert {
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(0,0,0,.08);
+  background: #fff7e0;
+  color: #5a3d00;
+}
+.alert--dark {
+  background: rgba(86,23,34,.15);
+  color: var(--hpcf-white);
+  border-color: rgba(255,255,255,.18);
+}
+
+/* ------------------------------
+   8) Forms
+   ------------------------------ */
+.input, input[type="text"], input[type="email"], input[type="tel"], input[type="password"], textarea, select {
+  width: 100%;
+  padding: .85rem 1rem;
+  border-radius: 10px;
+  border: 1.5px solid rgba(0,0,0,.12);
+  background: #fff;
+  color: var(--text-main);
+  transition: border-color .15s ease, box-shadow .15s ease, background .15s ease;
+}
+textarea { min-height: 140px; resize: vertical; }
+.input--dark, .form--dark .input, .form--dark textarea, .form--dark select {
+  background: color-mix(in oklab, var(--hpcf-maroon) 12%, #0000);
+  border-color: rgba(255,255,255,.18);
+  color: var(--hpcf-white);
+}
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--hpcf-rose);
+  box-shadow: var(--ring);
+}
+label { font-weight: 600; display: inline-block; margin-bottom: .45rem; }
+
+/* ------------------------------
+   9) Footer
+   ------------------------------ */
+.footer {
+  background: var(--hpcf-maroon);
+  color: var(--hpcf-gold);
+  padding: var(--space-12) 0;
+}
+.footer a { color: var(--hpcf-beige); }
+.footer a:hover { color: var(--hpcf-gold); text-decoration: underline; }
+.footer__brand { font-family: 'Playfair Display', serif; font-weight: 700; }
+.footer__sub { color: color-mix(in oklab, var(--hpcf-gold) 65%, #000); opacity: .9; }
+
+/* ------------------------------
+   10) Icon Colors (SVG friendly)
+   ------------------------------ */
+.icon { display: inline-block; vertical-align: middle; }
+.icon--beige { color: var(--hpcf-beige); fill: currentColor; }
+.icon--gold  { color: var(--hpcf-gold);  fill: currentColor; }
+.icon--light { color: var(--hpcf-white); fill: currentColor; }
+
+/* ------------------------------
+   11) Utility Classes
+   ------------------------------ */
+/* Text colors */
+.text-gold  { color: var(--hpcf-gold) !important; }
+.text-beige { color: var(--hpcf-beige) !important; }
+.text-light { color: var(--hpcf-white) !important; }
+.text-muted { color: var(--muted) !important; }
+/* Backgrounds */
+.bg-burgundy { background: var(--hpcf-burgundy) !important; color: var(--text-on-dark); }
+.bg-maroon   { background: var(--hpcf-maroon) !important; color: var(--text-on-dark); }
+.bg-rose     { background: var(--hpcf-rose) !important; color: var(--text-on-dark); }
+/* Borders */
+.border-gold  { border-color: var(--hpcf-gold) !important; }
+.border-beige { border-color: var(--hpcf-beige) !important; }
+/* Spacing helpers */
+.mt-0{margin-top:0}.mt-2{margin-top:.5rem}.mt-4{margin-top:1rem}.mt-8{margin-top:2rem}
+.mb-0{margin-bottom:0}.mb-2{margin-bottom:.5rem}.mb-4{margin-bottom:1rem}.mb-8{margin-bottom:2rem}
+.pt-0{padding-top:0}.pt-4{padding-top:1rem}.pt-8{padding-top:2rem}
+.pb-0{padding-bottom:0}.pb-4{padding-bottom:1rem}.pb-8{padding-bottom:2rem}
+.p-2{padding:.5rem}.p-4{padding:1rem}.p-6{padding:1.5rem}.p-8{padding:2rem}
+/* Layout helpers */
+.grid { display: grid; gap: var(--space-6); }
+.grid-2 { grid-template-columns: repeat(2, 1fr); }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 880px) {
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+}
+
+/* ------------------------------
+   12) Scripture Banner & Verse
+   ------------------------------ */
+.banner-verse {
+  background: linear-gradient(90deg, var(--hpcf-maroon), var(--hpcf-rose));
+  color: var(--text-on-dark);
+  border-radius: var(--radius-lg);
+  padding: clamp(1rem, 3vw, 1.5rem);
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  box-shadow: var(--shadow-soft);
+}
+.banner-verse__ref { font-weight: 700; color: var(--hpcf-gold); }
+.banner-verse__text { font-family: 'Crimson Pro', serif; font-size: clamp(1rem, 1.8vw, 1.25rem); }
+
+/* ------------------------------
+   13) Event Card / Calendar Teaser
+   ------------------------------ */
+.event {
+  display: grid; grid-template-columns: 80px 1fr; gap: 1rem; align-items: center;
+  padding: 1rem; border-radius: var(--radius); border: 1px solid rgba(0,0,0,.08);
+  background: #fff;
+}
+.event__date {
+  background: var(--hpcf-burgundy);
+  color: var(--hpcf-gold);
+  border-radius: 10px;
+  display: grid; place-items: center;
+  padding: .6rem;
+  text-align: center;
+  font-weight: 700;
+}
+.event__title { font-weight: 700; margin-bottom: .25rem; }
+.event__meta { color: var(--muted); font-size: .95rem; }
+.event--dark { background: color-mix(in oklab, var(--hpcf-burgundy) 7%, #fff); }
+
+/* ------------------------------
+   14) Sermon Grid / Media
+   ------------------------------ */
+.sermons {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+.sermon {
+  background: #fff; border: 1px solid rgba(0,0,0,.08);
+  border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-soft);
+}
+.sermon__thumb { aspect-ratio: 16/9; background: var(--hpcf-burgundy); }
+.sermon__content { padding: 1rem; }
+.sermon__title { font-weight: 700; margin-bottom: .35rem; }
+.sermon__meta { color: var(--muted); font-size: .95rem; }
+@media (max-width: 980px){ .sermons { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px){ .sermons { grid-template-columns: 1fr; } }
+
+/* ------------------------------
+   15) Tables (for history timeline if needed)
+   ------------------------------ */
+.table {
+  width: 100%; border-collapse: collapse; font-size: 0.98rem;
+}
+.table th, .table td {
+  padding: .75rem 1rem; border-bottom: 1px solid rgba(0,0,0,.08);
+}
+.table thead th {
+  text-align: left; color: var(--hpcf-maroon);
+  border-bottom: 2px solid color-mix(in oklab, var(--hpcf-maroon) 40%, #0000);
+}
+.table-striped tbody tr:nth-child(odd) {
+  background: rgba(233,216,166,.08);
+}
+
+/* ------------------------------
+   16) Toast / Snack (optional)
+   ------------------------------ */
+.toast {
+  position: fixed; right: 1rem; bottom: 1rem; z-index: 1000;
+  background: var(--hpcf-burgundy); color: var(--hpcf-white);
+  padding: .85rem 1rem; border-radius: 10px; box-shadow: var(--shadow-hover);
+}
+
+/* ------------------------------
+   17) Print helpers
+   ------------------------------ */
+@media print {
+  .navbar, .footer { display: none !important; }
+  a { text-decoration: underline; }
+}
