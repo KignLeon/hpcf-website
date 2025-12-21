@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- =========================================
+         SEO & Metadata
+    ========================================== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Primary Meta Tags -->
+    <title>Events | Higher Praise Christian Fellowship</title>
+    <meta name="title" content="Events | Higher Praise Christian Fellowship">
+    <meta name="description"
+        content="Stay up to date with upcoming events at HPCF. Sunday Worship, Bible Studies, Youth Nights, and Community Outreach opportunities.">
+    <meta name="keywords"
+        content="Church Events La Mesa, Christian Events San Diego, Worship Service, Youth Events, Bible Study Schedule">
+    <meta name="author" content="Higher Praise Christian Fellowship">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://higherpraisecf.org/events.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://higherpraisecf.org/events.html">
+    <meta property="og:title" content="Events | Higher Praise Christian Fellowship">
+    <meta property="og:description"
+        content="Join us for fellowship, worship, and community service. See what's happening at Higher Praise.">
+    <meta property="og:image"
+        content="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1763924716/HPCF_logo_gold_dkwnzi.png">
+    <meta property="og:site_name" content="Higher Praise Christian Fellowship">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://higherpraisecf.org/events.html">
+    <meta property="twitter:title" content="Events | Higher Praise Christian Fellowship">
+    <meta property="twitter:description"
+        content="Join us for fellowship, worship, and community service. See what's happening at Higher Praise.">
+    <meta property="twitter:image"
+        content="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1763924716/HPCF_logo_gold_dkwnzi.png">
+
+    <!-- JSON-LD Schema (Event) -->
+    <script type="application/ld+json">
+    [
+      {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "Sunday Worship Service",
+        "startDate": "2023-11-12T10:30",
+        "endDate": "2023-11-12T12:00",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "location": {
+          "@type": "Place",
+          "name": "Higher Praise Christian Fellowship",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "7309 El Cajon Blvd",
+            "addressLocality": "La Mesa",
+            "postalCode": "91942",
+            "addressRegion": "CA",
+            "addressCountry": "US"
+          }
+        },
+        "description": "Join us for a powerful time of worship, prayer, and an inspiring message."
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Event",
+        "name": "Midweek Bible Study",
+        "startDate": "2023-11-15T19:00",
+        "location": {
+          "@type": "Place",
+          "name": "Higher Praise Christian Fellowship"
+        },
+        "description": "Deepen your understanding of the scriptures."
+      }
+    ]
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="icon" href="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1763924716/HPCF_logo_gold_dkwnzi.png"
+        type="image/png">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+
+        #mobile-menu {
+            transition: max-height 0.3s ease-in-out;
+            overflow: hidden;
+            max-height: 0;
+        }
+
+        #mobile-menu.open {
+            max-height: 400px;
+        }
+    </style>
+</head>
+
+<body class="bg-white text-[#561722] min-h-screen flex flex-col font-sans">
+
+    <div id="root" class="flex-grow flex flex-col">
+        <!-- Navbar -->
+        <header class="sticky top-0 z-50 bg-[#7C2639] border-b border-white/10 shadow-md">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center justify-between h-20">
+                    <a href="index.html" class="flex items-center gap-3 group">
+                        <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1763924716/HPCF_logo_gold_dkwnzi.png"
+                            alt="HPCF Logo" class="h-12 md:h-16 w-auto transition-transform group-hover:scale-105">
+                        <div class="text-lg md:text-xl font-playfair italic text-white leading-tight">
+                            Higher Praise <span class="block md:inline text-[#E9D8A6]">Christian Fellowship</span>
+                        </div>
+                    </a>
+
+                    <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium text-white">
+                        <a href="about.html" class="hover:text-[#E9D8A6] transition relative">About</a>
+                        <a href="ministries.html" class="hover:text-[#E9D8A6] transition relative">Ministries</a>
+                        <a href="connect.html" class="hover:text-[#E9D8A6] transition relative">Connect</a>
+                        <a href="events.html" class="text-[#E9D8A6] font-bold border-b-2 border-[#E9D8A6]">Events</a>
+                        <a href="give.html" class="hover:text-[#E9D8A6] transition relative">Give</a>
+                        <a href="connect.html"
+                            class="bg-[#E9D8A6] text-[#561722] hover:bg-[#EED9B7] rounded-full px-5 py-2 text-sm font-bold shadow-lg transition-transform hover:-translate-y-0.5 ml-4">Join
+                            Us</a>
+                    </nav>
+
+                    <button id="mobile-menu-btn" class="md:hidden text-[#E9D8A6] focus:outline-none"
+                        aria-label="Toggle Menu">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="md:hidden bg-[#561722] border-t border-white/10">
+                <nav class="flex flex-col p-4 space-y-4 text-center">
+                    <a href="about.html" class="text-white hover:text-[#E9D8A6] font-medium py-2">About</a>
+                    <a href="ministries.html" class="text-white hover:text-[#E9D8A6] font-medium py-2">Ministries</a>
+                    <a href="connect.html" class="text-white hover:text-[#E9D8A6] font-medium py-2">Connect</a>
+                    <a href="events.html" class="text-[#E9D8A6] font-bold py-2">Events</a>
+                    <a href="give.html" class="text-white hover:text-[#E9D8A6] font-medium py-2">Give</a>
+                    <a href="connect.html"
+                        class="bg-[#E9D8A6] text-[#561722] rounded-full px-5 py-2 font-bold inline-block mx-auto w-32">Join
+                        Us</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Page Header -->
+        <section class="text-center py-20 px-4 bg-gradient-to-r from-[#561722] via-[#7C2639] to-[#A63F4E] text-white">
+            <h1 class="text-4xl md:text-6xl font-playfair italic mb-4 animate-fade-in">Upcoming Events</h1>
+            <p class="max-w-2xl mx-auto text-[#EED9B7] text-lg md:text-xl">See what's happening at Higher Praise and
+                join us for fellowship.</p>
+        </section>
+
+        <!-- Events List -->
+        <section id="events-list" class="bg-white py-20 md:py-24 px-6">
+            <div class="max-w-4xl mx-auto space-y-10">
+
+                <!-- Event Item 1 -->
+                <div
+                    class="flex flex-col md:flex-row gap-6 bg-[#E9D8A6]/20 p-6 md:p-8 rounded-2xl shadow-lg items-center border border-[#E9D8A6] hover:shadow-2xl transition-all duration-300">
+                    <div
+                        class="flex-shrink-0 text-center bg-[#561722] text-white rounded-xl p-4 w-full md:w-32 shadow-md">
+                        <span class="block text-4xl font-bold text-[#E9D8A6]">12</span>
+                        <span class="block text-lg font-bold uppercase tracking-wider">Nov</span>
+                        <span class="block text-xs text-[#EED9B7] uppercase mt-1">Sunday</span>
+                    </div>
+                    <div class="flex-grow text-center md:text-left">
+                        <h3 class="text-2xl font-playfair font-bold mb-2 text-[#7C2639]">Sunday Worship Service</h3>
+                        <p
+                            class="text-gray-600 mb-3 font-medium flex items-center justify-center md:justify-start gap-2">
+                            <i class="fa-regular fa-clock text-[#7C2639]"></i> 10:30 AM - 12:00 PM
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">Join us for a powerful time of worship, prayer, and an
+                            inspiring message from Apostle Jones. All are welcome!</p>
+                    </div>
+                </div>
+
+                <!-- Event Item 2 -->
+                <div
+                    class="flex flex-col md:flex-row gap-6 bg-white p-6 md:p-8 rounded-2xl shadow-lg items-center border border-gray-100 hover:shadow-2xl transition-all duration-300 group">
+                    <div
+                        class="flex-shrink-0 text-center bg-gray-100 text-[#561722] rounded-xl p-4 w-full md:w-32 group-hover:bg-[#561722] group-hover:text-white transition-colors duration-300">
+                        <span class="block text-4xl font-bold group-hover:text-[#E9D8A6] transition-colors">15</span>
+                        <span class="block text-lg font-bold uppercase tracking-wider">Nov</span>
+                        <span class="block text-xs uppercase mt-1 opacity-75">Wednesday</span>
+                    </div>
+                    <div class="flex-grow text-center md:text-left">
+                        <h3 class="text-2xl font-playfair font-bold mb-2 text-[#7C2639]">Midweek Bible Study</h3>
+                        <p
+                            class="text-gray-600 mb-3 font-medium flex items-center justify-center md:justify-start gap-2">
+                            <i class="fa-regular fa-clock text-[#7C2639]"></i> 7:00 PM - 8:30 PM
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">Deepen your understanding of the scriptures. We are
+                            currently studying the Book of Romans. Childcare provided.</p>
+                    </div>
+                </div>
+
+                <!-- Event Item 3 -->
+                <div
+                    class="flex flex-col md:flex-row gap-6 bg-[#E9D8A6]/20 p-6 md:p-8 rounded-2xl shadow-lg items-center border border-[#E9D8A6] hover:shadow-2xl transition-all duration-300">
+                    <div
+                        class="flex-shrink-0 text-center bg-[#561722] text-white rounded-xl p-4 w-full md:w-32 shadow-md">
+                        <span class="block text-4xl font-bold text-[#E9D8A6]">17</span>
+                        <span class="block text-lg font-bold uppercase tracking-wider">Nov</span>
+                        <span class="block text-xs text-[#EED9B7] uppercase mt-1">Friday</span>
+                    </div>
+                    <div class="flex-grow text-center md:text-left">
+                        <h3 class="text-2xl font-playfair font-bold mb-2 text-[#7C2639]">Youth Night (HYPE)</h3>
+                        <p
+                            class="text-gray-600 mb-3 font-medium flex items-center justify-center md:justify-start gap-2">
+                            <i class="fa-regular fa-clock text-[#7C2639]"></i> 6:30 PM - 9:00 PM
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">A fun, safe, and engaging night for teens (ages 13-18).
+                            Games, worship, and a relevant message.</p>
+                    </div>
+                </div>
+
+                <!-- Event Item 4 -->
+                <div
+                    class="flex flex-col md:flex-row gap-6 bg-white p-6 md:p-8 rounded-2xl shadow-lg items-center border border-gray-100 hover:shadow-2xl transition-all duration-300 group">
+                    <div
+                        class="flex-shrink-0 text-center bg-gray-100 text-[#561722] rounded-xl p-4 w-full md:w-32 group-hover:bg-[#561722] group-hover:text-white transition-colors duration-300">
+                        <span class="block text-4xl font-bold group-hover:text-[#E9D8A6] transition-colors">25</span>
+                        <span class="block text-lg font-bold uppercase tracking-wider">Nov</span>
+                        <span class="block text-xs uppercase mt-1 opacity-75">Saturday</span>
+                    </div>
+                    <div class="flex-grow text-center md:text-left">
+                        <h3 class="text-2xl font-playfair font-bold mb-2 text-[#7C2639]">Community Food Drive</h3>
+                        <p
+                            class="text-gray-600 mb-3 font-medium flex items-center justify-center md:justify-start gap-2">
+                            <i class="fa-regular fa-clock text-[#7C2639]"></i> 9:00 AM - 12:00 PM
+                        </p>
+                        <p class="text-gray-700 leading-relaxed">Join us as we partner with the La Mesa Food Bank to
+                            serve our community. Volunteers and donations are welcome.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- Footer -->
+        <footer class="bg-[#561722] border-t border-[#E9D8A6]/20 text-[#E9D8A6]">
+            <div class="max-w-7xl mx-auto px-8 py-16 grid md:grid-cols-3 gap-12 text-center md:text-left">
+                <!-- About -->
+                <div class="flex flex-col items-center md:items-start">
+                    <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1763924716/HPCF_logo_gold_dkwnzi.png"
+                        alt="HPCF Logo" class="h-24 w-auto mb-6">
+                    <h3 class="text-2xl font-playfair font-bold mb-4">Higher Praise Christian Fellowship</h3>
+                    <p class="text-sm text-[#EED9B7]/90 leading-relaxed max-w-sm">
+                        “You will never walk alone at Higher Praise Christian Fellowship.” No one gets left behind. Our
+                        mission is to reconcile the lost to Christ.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="flex flex-col items-center md:items-start">
+                    <h3 class="text-lg font-bold mb-4 uppercase tracking-wider">Quick Links</h3>
+                    <ul class="space-y-3 text-sm text-[#EED9B7]/80">
+                        <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="ministries.html" class="hover:text-white transition-colors">Ministries</a></li>
+                        <li><a href="events.html" class="hover:text-white transition-colors">Events</a></li>
+                        <li><a href="give.html" class="hover:text-white transition-colors">Give</a></li>
+                        <li><a href="connect.html" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Connect -->
+                <div>
+                    <h3 class="text-lg font-semibold mb-3 text-[#E9D8A6]">Connect</h3>
+                    <p class="text-sm text-[#EED9B7]/80">7309 El Cajon Blvd, La Mesa, CA 91942</p>
+                    <p class="text-sm text-[#EED9B7]/80">Email: info@higherpraisecf.org</p>
+                    <p class="text-sm text-[#EED9B7]/80 mb-4">Phone: (619) 555-1200</p>
+                    <div class="flex space-x-5 text-xl text-[#EED9B7]/80 mb-6">
+                        <a href="mailto:info@higherpraisecf.org" class="hover:text-[#E9D8A6] transition">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                        <a href="https://www.facebook.com/profile.php?id=100071166876525" target="_blank"
+                            class="hover:text-[#E9D8A6] transition">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@higherpraise_hpcf" target="_blank"
+                            class="hover:text-[#E9D8A6] transition">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://www.instagram.com/higherpraise_cf?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                            target="_blank" class="hover:text-[#E9D8A6] transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.tiktok.com/@higherpraise_cf" target="_blank"
+                            class="hover:text-[#E9D8A6] transition">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    </div>
+
+                    <!-- Map -->
+                    <div class="w-full rounded-lg overflow-hidden border border-[#E9D8A6]/20 shadow-lg h-40">
+                        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0"
+                            marginwidth="0"
+                            src="https://maps.google.com/maps?q=7309+El+Cajon+Blvd,+La+Mesa,+CA+91942&t=&z=14&ie=UTF8&iwloc=B&output=embed"
+                            title="Church Location"></iframe>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center text-[#EED9B7]/60 text-xs py-6 border-t border-[#E9D8A6]/20">
+                © <span id="footer-year"></span> Higher Praise Christian Fellowship. All Rights Reserved.
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('footer-year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+            mobileMenu.style.maxHeight = mobileMenu.classList.contains('open') ? mobileMenu.scrollHeight + "px" : "0";
+        });
+    </script>
+</body>
+
+</html>
