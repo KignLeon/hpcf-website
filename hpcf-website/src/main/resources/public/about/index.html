@@ -11,13 +11,13 @@
     <meta name="description"
         content="Learn about the history, vision, and leadership of Higher Praise Christian Fellowship. Meet Apostle Donald Jones Jr. and Pastor Francis Jones.">
     <meta name="keywords"
-        content="About HPCF, Apostle Donald Jones Jr, Pastor Fancis Jones, Church History La Mesa, Higher Praise Leadership">
+        content="About HPCF, Apostle Donald Jones Jr, Pastor Francis Jones, Church History La Mesa, Higher Praise Leadership">
     <meta name="author" content="Higher Praise Christian Fellowship">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://higherpraisecf.org/about.html">
+    <link rel="canonical" href="https://higherpraisecf.org/about">
 
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://higherpraisecf.org/about.html">
+    <meta property="og:url" content="https://higherpraisecf.org/about">
     <meta property="og:title" content="About Us | Higher Praise Christian Fellowship">
     <meta property="og:description"
         content="Discover our story, meet our pastors, and learn about our vision for the Kingdom.">
@@ -26,7 +26,7 @@
     <meta property="og:site_name" content="Higher Praise Christian Fellowship">
 
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://higherpraisecf.org/about.html">
+    <meta property="twitter:url" content="https://higherpraisecf.org/about">
     <meta property="twitter:title" content="About Us | Higher Praise Christian Fellowship">
     <meta property="twitter:description"
         content="Discover our story, meet our pastors, and learn about our vision for the Kingdom.">
@@ -91,7 +91,7 @@
             max-height: 400px;
         }
 
-        /* Image Carousel Styles */
+        /* Image Carousel Styles - FIXED for consistent behavior */
         .carousel-container {
             position: relative;
             overflow: hidden;
@@ -102,6 +102,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: opacity 0.3s ease;
         }
 
         .carousel-image.active {
@@ -115,14 +116,14 @@
             background: rgba(255, 255, 255, 0.9);
             color: #561722;
             border: none;
-            padding: 12px 16px;
+            padding: 0;
             cursor: pointer;
-            font-size: 18px;
+            font-size: 16px;
             z-index: 10;
             transition: all 0.3s ease;
             border-radius: 50%;
-            width: 45px;
-            height: 45px;
+            width: 44px;
+            height: 44px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -135,16 +136,16 @@
         }
 
         .carousel-btn.prev {
-            left: 10px;
+            left: 12px;
         }
 
         .carousel-btn.next {
-            right: 10px;
+            right: 12px;
         }
 
         .carousel-dots {
             position: absolute;
-            bottom: 15px;
+            bottom: 16px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
@@ -167,12 +168,37 @@
             border-color: #E9D8A6;
             transform: scale(1.2);
         }
+
+        /* Pastor Card - Consistent hover behavior for ALL cards */
+        .pastor-card {
+            position: relative;
+        }
+
+        .pastor-card__bg {
+            position: absolute;
+            inset: 0;
+            border-radius: 1rem;
+            opacity: 0.2;
+            transition: transform 0.3s ease;
+        }
+
+        .pastor-card:hover .pastor-card__bg {
+            transform: rotate(6deg);
+        }
+
+        .pastor-card--alt:hover .pastor-card__bg {
+            transform: rotate(-6deg);
+        }
     </style>
 </head>
 
 <body class="bg-white text-[#561722] min-h-screen flex flex-col font-sans">
 
     <div id="root" class="flex-grow flex flex-col">
+
+        <!-- =========================================
+             HEADER - Consistent across all pages
+        ========================================== -->
         <header class="sticky top-0 z-50 bg-[#7C2639] border-b border-white/10 shadow-md">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex items-center justify-between h-20">
@@ -186,77 +212,77 @@
 
                     <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium text-white">
                         <a href="/about" class="text-[#E9D8A6] font-bold border-b-2 border-[#E9D8A6]">About</a>
-                        <a href="/ministries" class="hover:text-[#E9D8A6] transition relative">Ministries</a>
-                        <a href="/connect" class="hover:text-[#E9D8A6] transition relative">Connect</a>
-                        <a href="/events" class="hover:text-[#E9D8A6] transition relative">Events</a>
-                        <a href="/give" class="hover:text-[#E9D8A6] transition relative">Give</a>
+                        <a href="/ministries" class="hover:text-[#E9D8A6] transition">Ministries</a>
+                        <a href="/connect" class="hover:text-[#E9D8A6] transition">Connect</a>
+                        <a href="/events" class="hover:text-[#E9D8A6] transition">Events</a>
+                        <a href="/give" class="hover:text-[#E9D8A6] transition">Give</a>
                         <a href="/connect"
-                            class="bg-[#E9D8A6] text-[#561722] hover:bg-[#EED9B7] rounded-full px-5 py-2 text-sm font-bold shadow-lg transition-transform hover:-translate-y-0.5 ml-4">Join
+                            class="bg-[#E9D8A6] text-[#561722] hover:bg-[#EED9B7] rounded-full px-5 py-2 text-sm font-bold shadow-lg transition-all hover:-translate-y-0.5 ml-2">Join
                             Us</a>
                     </nav>
 
-                    <button id="mobile-menu-btn" class="md:hidden text-[#E9D8A6] focus:outline-none"
-                        aria-label="Toggle Menu">
+                    <button id="mobile-menu-btn" class="md:hidden text-[#E9D8A6] focus:outline-none p-2"
+                        aria-label="Toggle Menu" aria-expanded="false">
                         <i class="fa-solid fa-bars text-2xl"></i>
                     </button>
                 </div>
             </div>
 
             <div id="mobile-menu" class="md:hidden bg-[#561722] border-t border-white/10">
-                <nav class="flex flex-col p-4 space-y-4 text-center">
+                <nav class="flex flex-col p-4 space-y-3 text-center">
                     <a href="/about" class="text-[#E9D8A6] font-bold py-2">About</a>
                     <a href="/ministries" class="text-white hover:text-[#E9D8A6] font-medium py-2">Ministries</a>
                     <a href="/connect" class="text-white hover:text-[#E9D8A6] font-medium py-2">Connect</a>
                     <a href="/events" class="text-white hover:text-[#E9D8A6] font-medium py-2">Events</a>
                     <a href="/give" class="text-white hover:text-[#E9D8A6] font-medium py-2">Give</a>
                     <a href="/connect"
-                        class="bg-[#E9D8A6] text-[#561722] rounded-full px-5 py-2 font-bold inline-block mx-auto w-32">Join
+                        class="bg-[#E9D8A6] text-[#561722] rounded-full px-5 py-2 font-bold inline-block mx-auto mt-2">Join
                         Us</a>
                 </nav>
             </div>
         </header>
+        <!-- END HEADER -->
 
+        <!-- Page Header -->
         <section class="text-center py-20 px-4 bg-gradient-to-r from-[#561722] via-[#7C2639] to-[#A63F4E] text-white">
-            <h1 class="text-4xl md:text-6xl font-playfair italic mb-4 animate-fade-in">About Higher Praise</h1>
+            <h1 class="text-4xl md:text-6xl font-playfair italic mb-4">About Higher Praise</h1>
             <p class="max-w-2xl mx-auto text-[#EED9B7] text-lg md:text-xl">Get to know our story, our leaders, and what
                 we believe.</p>
         </section>
 
+        <!-- =========================================
+             PASTORS SECTION - Fixed carousel behavior
+        ========================================== -->
         <section id="pastors" class="bg-white text-[#561722] py-20 md:py-24 px-6">
             <div class="max-w-5xl mx-auto space-y-20">
                 <h2 class="text-3xl md:text-5xl font-playfair text-center mb-12 font-bold">Meet Our Pastors</h2>
 
                 <!-- Apostle Donald Jones Jr. -->
                 <div class="grid md:grid-cols-2 gap-10 items-center">
-                    <div class="text-center md:text-left relative group">
-                        <div
-                            class="absolute inset-0 bg-[#7C2639] rounded-2xl rotate-3 opacity-20 group-hover:rotate-6 transition-transform">
-                        </div>
-                        <div class="relative rounded-2xl shadow-xl overflow-hidden aspect-square carousel-container">
+                    <div class="pastor-card text-center md:text-left">
+                        <div class="pastor-card__bg bg-[#7C2639] rotate-3"></div>
+                        <div class="relative rounded-2xl shadow-xl overflow-hidden aspect-square carousel-container"
+                            id="carousel-apostle">
                             <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1766343331/apostle_2_vt1snd.jpg"
-                                alt="Apostle Donald Jones Jr."
-                                class="carousel-image active"
-                                data-carousel="apostle">
+                                alt="Apostle Donald Jones Jr." class="carousel-image active" data-carousel="apostle">
                             <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1766343331/apostle_3_aekovk.jpg"
-                                alt="Apostle Donald Jones Jr."
-                                class="carousel-image"
-                                data-carousel="apostle">
+                                alt="Apostle Donald Jones Jr." class="carousel-image" data-carousel="apostle">
                             <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1766343331/apostle4_pvwgfh.jpg"
-                                alt="Apostle Donald Jones Jr."
-                                class="carousel-image"
-                                data-carousel="apostle">
-                            
-                            <button class="carousel-btn prev" onclick="changeImage('apostle', -1)" aria-label="Previous image">
+                                alt="Apostle Donald Jones Jr." class="carousel-image" data-carousel="apostle">
+
+                            <button class="carousel-btn prev" data-carousel-id="apostle" data-direction="-1"
+                                aria-label="Previous image">
                                 <i class="fas fa-chevron-left"></i>
                             </button>
-                            <button class="carousel-btn next" onclick="changeImage('apostle', 1)" aria-label="Next image">
+                            <button class="carousel-btn next" data-carousel-id="apostle" data-direction="1"
+                                aria-label="Next image">
                                 <i class="fas fa-chevron-right"></i>
                             </button>
-                            
+
                             <div class="carousel-dots">
-                                <span class="carousel-dot active" onclick="setImage('apostle', 0)"></span>
-                                <span class="carousel-dot" onclick="setImage('apostle', 1)"></span>
-                                <span class="carousel-dot" onclick="setImage('apostle', 2)"></span>
+                                <span class="carousel-dot active" data-carousel-id="apostle" data-index="0"></span>
+                                <span class="carousel-dot" data-carousel-id="apostle" data-index="1"></span>
+                                <span class="carousel-dot" data-carousel-id="apostle" data-index="2"></span>
                             </div>
                         </div>
                     </div>
@@ -273,30 +299,28 @@
 
                 <!-- Pastor Francis Jones -->
                 <div class="grid md:grid-cols-2 gap-10 items-center">
-                    <div class="text-center md:text-left md:order-2 relative group">
-                        <div
-                            class="absolute inset-0 bg-[#E9D8A6] rounded-2xl -rotate-3 opacity-30 group-hover:-rotate-6 transition-transform">
-                        </div>
-                        <div class="relative rounded-2xl shadow-xl overflow-hidden aspect-square carousel-container">
+                    <div class="pastor-card pastor-card--alt text-center md:text-left md:order-2">
+                        <div class="pastor-card__bg bg-[#E9D8A6] -rotate-3"></div>
+                        <div class="relative rounded-2xl shadow-xl overflow-hidden aspect-square carousel-container"
+                            id="carousel-francis">
                             <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1766343332/francis_rbfmsu.jpg"
-                                alt="Pastor Francis Jones"
-                                class="carousel-image active"
-                                data-carousel="francis">
+                                alt="Pastor Francis Jones" class="carousel-image active" data-carousel="francis">
                             <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1766343331/together_main_noxge7.jpg"
-                                alt="Pastor Francis Jones with Apostle Donald Jones Jr."
-                                class="carousel-image"
+                                alt="Pastor Francis Jones with Apostle Donald Jones Jr." class="carousel-image"
                                 data-carousel="francis">
-                            
-                            <button class="carousel-btn prev" onclick="changeImage('francis', -1)" aria-label="Previous image">
+
+                            <button class="carousel-btn prev" data-carousel-id="francis" data-direction="-1"
+                                aria-label="Previous image">
                                 <i class="fas fa-chevron-left"></i>
                             </button>
-                            <button class="carousel-btn next" onclick="changeImage('francis', 1)" aria-label="Next image">
+                            <button class="carousel-btn next" data-carousel-id="francis" data-direction="1"
+                                aria-label="Next image">
                                 <i class="fas fa-chevron-right"></i>
                             </button>
-                            
+
                             <div class="carousel-dots">
-                                <span class="carousel-dot active" onclick="setImage('francis', 0)"></span>
-                                <span class="carousel-dot" onclick="setImage('francis', 1)"></span>
+                                <span class="carousel-dot active" data-carousel-id="francis" data-index="0"></span>
+                                <span class="carousel-dot" data-carousel-id="francis" data-index="1"></span>
                             </div>
                         </div>
                     </div>
@@ -311,37 +335,32 @@
                     </div>
                 </div>
 
-                <!-- Assistant Pastors -->
+                <!-- Assistant Pastors - FIXED: Now has identical structure to other cards -->
                 <div class="grid md:grid-cols-2 gap-10 items-center">
-                    <div class="text-center md:text-left relative group">
-                        <div
-                            class="absolute inset-0 bg-[#A63F4E] rounded-2xl rotate-3 opacity-20 group-hover:rotate-6 transition-transform">
-                        </div>
-                        <div class="relative rounded-2xl shadow-xl overflow-hidden aspect-square carousel-container">
+                    <div class="pastor-card text-center md:text-left">
+                        <div class="pastor-card__bg bg-[#A63F4E] rotate-3"></div>
+                        <div class="relative rounded-2xl shadow-xl overflow-hidden aspect-square carousel-container"
+                            id="carousel-assistant">
                             <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1765133403/assistantpastors_gwblqc.jpg"
-                                alt="Assistant Pastors"
-                                class="carousel-image active"
-                                data-carousel="assistant">
+                                alt="Assistant Pastors" class="carousel-image active" data-carousel="assistant">
                             <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1765133404/assistant2_hjvykw.jpg"
-                                alt="Assistant Pastors"
-                                class="carousel-image"
-                                data-carousel="assistant">
+                                alt="Assistant Pastors" class="carousel-image" data-carousel="assistant">
                             <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1765133400/assistant1_sq1qjc.jpg"
-                                alt="Assistant Pastors"
-                                class="carousel-image"
-                                data-carousel="assistant">
-                            
-                            <button class="carousel-btn prev" onclick="changeImage('assistant', -1)" aria-label="Previous image">
+                                alt="Assistant Pastors" class="carousel-image" data-carousel="assistant">
+
+                            <button class="carousel-btn prev" data-carousel-id="assistant" data-direction="-1"
+                                aria-label="Previous image">
                                 <i class="fas fa-chevron-left"></i>
                             </button>
-                            <button class="carousel-btn next" onclick="changeImage('assistant', 1)" aria-label="Next image">
+                            <button class="carousel-btn next" data-carousel-id="assistant" data-direction="1"
+                                aria-label="Next image">
                                 <i class="fas fa-chevron-right"></i>
                             </button>
-                            
+
                             <div class="carousel-dots">
-                                <span class="carousel-dot active" onclick="setImage('assistant', 0)"></span>
-                                <span class="carousel-dot" onclick="setImage('assistant', 1)"></span>
-                                <span class="carousel-dot" onclick="setImage('assistant', 2)"></span>
+                                <span class="carousel-dot active" data-carousel-id="assistant" data-index="0"></span>
+                                <span class="carousel-dot" data-carousel-id="assistant" data-index="1"></span>
+                                <span class="carousel-dot" data-carousel-id="assistant" data-index="2"></span>
                             </div>
                         </div>
                     </div>
@@ -359,6 +378,9 @@
             </div>
         </section>
 
+        <!-- =========================================
+             HISTORY SECTION
+        ========================================== -->
         <section id="history" class="bg-[#E9D8A6]/10 text-[#561722] py-20 md:py-24 px-6 border-t border-[#E9D8A6]/30">
             <div class="max-w-3xl mx-auto">
                 <h2 class="text-3xl md:text-5xl font-playfair text-center mb-10 font-bold">Our History</h2>
@@ -393,12 +415,16 @@
             </div>
         </section>
 
+        <!-- =========================================
+             FOOTER - Consistent across all pages
+        ========================================== -->
         <footer class="bg-[#561722] border-t border-[#E9D8A6]/20 text-[#E9D8A6]">
-            <div class="max-w-7xl mx-auto px-8 py-16 grid md:grid-cols-3 gap-12 text-center md:text-left">
+            <div
+                class="max-w-7xl mx-auto px-6 md:px-8 py-12 md:py-16 grid md:grid-cols-3 gap-10 md:gap-12 text-center md:text-left">
                 <div class="flex flex-col items-center md:items-start">
                     <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1763924716/HPCF_logo_gold_dkwnzi.png"
-                        alt="HPCF Logo" class="h-24 w-auto mb-6">
-                    <h3 class="text-2xl font-playfair font-bold mb-4">Higher Praise Christian Fellowship</h3>
+                        alt="HPCF Logo" class="h-20 md:h-24 w-auto mb-6">
+                    <h3 class="text-xl md:text-2xl font-playfair font-bold mb-4">Higher Praise Christian Fellowship</h3>
                     <p class="text-sm text-[#EED9B7]/90 leading-relaxed max-w-sm">
                         "You will never walk alone at Higher Praise Christian Fellowship." No one gets left behind. Our
                         mission is to reconcile the lost to Christ.
@@ -408,46 +434,44 @@
                 <div class="flex flex-col items-center md:items-start">
                     <h3 class="text-lg font-bold mb-4 uppercase tracking-wider">Quick Links</h3>
                     <ul class="space-y-3 text-sm text-[#EED9B7]/80">
-                        <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="ministries.html" class="hover:text-white transition-colors">Ministries</a></li>
-                        <li><a href="events.html" class="hover:text-white transition-colors">Events</a></li>
-                        <li><a href="give.html" class="hover:text-white transition-colors">Give</a></li>
-                        <li><a href="connect.html" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="/about" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="/ministries" class="hover:text-white transition-colors">Ministries</a></li>
+                        <li><a href="/events" class="hover:text-white transition-colors">Events</a></li>
+                        <li><a href="/give" class="hover:text-white transition-colors">Give</a></li>
+                        <li><a href="/connect" class="hover:text-white transition-colors">Contact</a></li>
                     </ul>
                 </div>
 
-                <div>
-                    <h3 class="text-lg font-semibold mb-3 text-[#E9D8A6]">Connect</h3>
-                    <p class="text-sm text-[#EED9B7]/80">7309 El Cajon Blvd, La Mesa, CA 91942</p>
-                    <p class="text-sm text-[#EED9B7]/80">Email: <a href="/cdn-cgi/l/email-protection#0c65626a634c64656b64697e7c7e6d657f696f6a22637e6b"><span class="__cf_email__" data-cfemail="4c25222a230c24252b24293e3c3e2d253f292f2a62233e2b">[email&#160;protected]</span></a></p>
-                    <p class="text-sm text-[#EED9B7]/80 mb-4">Phone: (619) 555-1200</p>
-                    <div class="flex space-x-5 text-xl text-[#EED9B7]/80 mb-6">
-                        <a href="/cdn-cgi/l/email-protection#1f767179705f777678777a6d6f6d7e766c7a7c7931706d78" class="hover:text-[#E9D8A6] transition">
-                            <i class="fa-solid fa-envelope"></i>
-                        </a>
+                <div class="flex flex-col items-center md:items-start">
+                    <h3 class="text-lg font-bold mb-4 uppercase tracking-wider">Connect</h3>
+                    <address class="not-italic text-sm text-[#EED9B7]/80 space-y-1 mb-4">
+                        <p>7309 El Cajon Blvd, La Mesa, CA 91942</p>
+                        <p>Email: <a href="mailto:hpcfmedia@gmail.com"
+                                class="hover:text-white transition">hpcfmedia@gmail.com</a></p>
+                        <p>Phone: <a href="tel:+16195551200" class="hover:text-white transition">(619) 555-1200</a></p>
+                    </address>
+                    <div class="flex gap-4 text-2xl text-[#EED9B7] mb-6">
+                        <a href="mailto:hpcfmedia@gmail.com" aria-label="Email"
+                            class="hover:text-white transition hover:-translate-y-1"><i
+                                class="fa-solid fa-envelope"></i></a>
                         <a href="https://www.facebook.com/profile.php?id=100071166876525" target="_blank"
-                            class="hover:text-[#E9D8A6] transition">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="https://www.youtube.com/@higherpraise_hpcf" target="_blank"
-                            class="hover:text-[#E9D8A6] transition">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                        <a href="https://www.instagram.com/higherpraise_cf?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                            target="_blank" class="hover:text-[#E9D8A6] transition">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://www.tiktok.com/@higherpraise_cf" target="_blank"
-                            class="hover:text-[#E9D8A6] transition">
-                            <i class="fab fa-tiktok"></i>
-                        </a>
+                            rel="noopener noreferrer" aria-label="Facebook"
+                            class="hover:text-white transition hover:-translate-y-1"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.youtube.com/@higherpraise_hpcf" target="_blank" rel="noopener noreferrer"
+                            aria-label="YouTube" class="hover:text-white transition hover:-translate-y-1"><i
+                                class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/higherpraise_cf" target="_blank" rel="noopener noreferrer"
+                            aria-label="Instagram" class="hover:text-white transition hover:-translate-y-1"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@higherpraise_cf" target="_blank" rel="noopener noreferrer"
+                            aria-label="TikTok" class="hover:text-white transition hover:-translate-y-1"><i
+                                class="fab fa-tiktok"></i></a>
                     </div>
-
-                    <div class="w-full rounded-lg overflow-hidden border border-[#E9D8A6]/20 shadow-lg h-40">
+                    <div class="w-full rounded-lg overflow-hidden border border-[#E9D8A6]/20 shadow-lg h-36">
                         <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0"
                             marginwidth="0"
                             src="https://maps.google.com/maps?q=7309+El+Cajon+Blvd,+La+Mesa,+CA+91942&t=&z=14&ie=UTF8&iwloc=B&output=embed"
-                            title="Church Location"></iframe>
+                            title="Church Location" loading="lazy"></iframe>
                     </div>
                 </div>
             </div>
@@ -456,9 +480,10 @@
                 © <span id="footer-year"></span> Higher Praise Christian Fellowship. All Rights Reserved.
             </div>
         </footer>
+        <!-- END FOOTER -->
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         document.getElementById('footer-year').textContent = new Date().getFullYear();
 
         // Mobile Menu Toggle
@@ -466,53 +491,91 @@
         const mobileMenu = document.getElementById('mobile-menu');
 
         menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('open');
+            const isOpen = mobileMenu.classList.toggle('open');
+            mobileMenu.style.maxHeight = isOpen ? mobileMenu.scrollHeight + 'px' : '0';
+            menuBtn.setAttribute('aria-expanded', isOpen);
+            const icon = menuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars', !isOpen);
+            icon.classList.toggle('fa-xmark', isOpen);
         });
 
-        // Image Carousel Functionality
+        // =========================================
+        // FIXED CAROUSEL SYSTEM - Works for ALL cards
+        // =========================================
         const carouselState = {
             apostle: 0,
             francis: 0,
             assistant: 0
         };
 
+        // Initialize carousel button click handlers
+        document.querySelectorAll('.carousel-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const carouselId = btn.dataset.carouselId;
+                const direction = parseInt(btn.dataset.direction);
+                changeImage(carouselId, direction);
+            });
+        });
+
+        // Initialize carousel dot click handlers
+        document.querySelectorAll('.carousel-dot').forEach(dot => {
+            dot.addEventListener('click', () => {
+                const carouselId = dot.dataset.carouselId;
+                const index = parseInt(dot.dataset.index);
+                setImage(carouselId, index);
+            });
+        });
+
         function changeImage(carouselId, direction) {
             const images = document.querySelectorAll(`[data-carousel="${carouselId}"]`);
-            const dots = images[0].closest('.carousel-container').querySelectorAll('.carousel-dot');
-            
+            if (images.length === 0) return;
+
+            const container = images[0].closest('.carousel-container');
+            if (!container) return;
+
+            const dots = container.querySelectorAll('.carousel-dot');
+            const currentIndex = carouselState[carouselId];
+
             // Remove active class from current image and dot
-            images[carouselState[carouselId]].classList.remove('active');
-            dots[carouselState[carouselId]].classList.remove('active');
-            
-            // Calculate new index
-            carouselState[carouselId] = (carouselState[carouselId] + direction + images.length) % images.length;
-            
+            images[currentIndex].classList.remove('active');
+            if (dots[currentIndex]) dots[currentIndex].classList.remove('active');
+
+            // Calculate new index with wraparound
+            carouselState[carouselId] = (currentIndex + direction + images.length) % images.length;
+            const newIndex = carouselState[carouselId];
+
             // Add active class to new image and dot
-            images[carouselState[carouselId]].classList.add('active');
-            dots[carouselState[carouselId]].classList.add('active');
+            images[newIndex].classList.add('active');
+            if (dots[newIndex]) dots[newIndex].classList.add('active');
         }
 
         function setImage(carouselId, index) {
             const images = document.querySelectorAll(`[data-carousel="${carouselId}"]`);
-            const dots = images[0].closest('.carousel-container').querySelectorAll('.carousel-dot');
-            
+            if (images.length === 0 || index < 0 || index >= images.length) return;
+
+            const container = images[0].closest('.carousel-container');
+            if (!container) return;
+
+            const dots = container.querySelectorAll('.carousel-dot');
+            const currentIndex = carouselState[carouselId];
+
             // Remove active class from current image and dot
-            images[carouselState[carouselId]].classList.remove('active');
-            dots[carouselState[carouselId]].classList.remove('active');
-            
+            images[currentIndex].classList.remove('active');
+            if (dots[currentIndex]) dots[currentIndex].classList.remove('active');
+
             // Set new index
             carouselState[carouselId] = index;
-            
+
             // Add active class to new image and dot
-            images[carouselState[carouselId]].classList.add('active');
-            dots[carouselState[carouselId]].classList.add('active');
+            images[index].classList.add('active');
+            if (dots[index]) dots[index].classList.add('active');
         }
 
-        // Auto-advance carousel every 5 seconds
+        // Auto-advance all carousels every 5 seconds
         setInterval(() => {
-            changeImage('apostle', 1);
-            changeImage('francis', 1);
-            changeImage('assistant', 1);
+            Object.keys(carouselState).forEach(carouselId => {
+                changeImage(carouselId, 1);
+            });
         }, 5000);
     </script>
 </body>

@@ -2,14 +2,10 @@
 <html lang="en">
 
 <head>
-    <!-- =========================================
-         SEO & Metadata
-    ========================================== -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <!-- Primary Meta Tags -->
     <title>Connect | Higher Praise Christian Fellowship</title>
     <meta name="title" content="Connect | Higher Praise Christian Fellowship">
     <meta name="description"
@@ -18,11 +14,10 @@
         content="Connect HPCF, Church Contact, Prayer Request, Visit Church, La Mesa Church Directions">
     <meta name="author" content="Higher Praise Christian Fellowship">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://higherpraisecf.org/connect.html">
+    <link rel="canonical" href="https://higherpraisecf.org/connect">
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://higherpraisecf.org/connect.html">
+    <meta property="og:url" content="https://higherpraisecf.org/connect">
     <meta property="og:title" content="Connect | Higher Praise Christian Fellowship">
     <meta property="og:description"
         content="We'd love to hear from you. Find service times, location, and send us a message.">
@@ -30,16 +25,14 @@
         content="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1763924716/HPCF_logo_gold_dkwnzi.png">
     <meta property="og:site_name" content="Higher Praise Christian Fellowship">
 
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://higherpraisecf.org/connect.html">
+    <meta property="twitter:url" content="https://higherpraisecf.org/connect">
     <meta property="twitter:title" content="Connect | Higher Praise Christian Fellowship">
     <meta property="twitter:description"
         content="We'd love to hear from you. Find service times, location, and send us a message.">
     <meta property="twitter:image"
         content="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1763924716/HPCF_logo_gold_dkwnzi.png">
 
-    <!-- JSON-LD Schema (ContactPage) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -56,7 +49,7 @@
           "addressCountry": "US"
         },
         "telephone": "+16195551200",
-        "email": "info@higherpraisecf.org",
+        "email": "hpcfmedia@gmail.com",
         "openingHoursSpecification": [
           {
             "@type": "OpeningHoursSpecification",
@@ -103,13 +96,51 @@
         #mobile-menu.open {
             max-height: 400px;
         }
+
+        /* Form input focus styles */
+        .form-input:focus {
+            outline: none;
+            border-color: #7C2639;
+            box-shadow: 0 0 0 3px rgba(124, 38, 57, 0.15);
+        }
+
+        /* Form validation states */
+        .form-input.error {
+            border-color: #dc2626;
+        }
+
+        .form-error {
+            color: #dc2626;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+
+        /* Success message animation */
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .success-animate {
+            animation: fadeInScale 0.3s ease-out forwards;
+        }
     </style>
 </head>
 
 <body class="bg-white text-[#561722] min-h-screen flex flex-col font-sans">
 
     <div id="root" class="flex-grow flex flex-col">
-        <!-- Navbar -->
+
+        <!-- =========================================
+             HEADER - Consistent across all pages
+        ========================================== -->
         <header class="sticky top-0 z-50 bg-[#7C2639] border-b border-white/10 shadow-md">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex items-center justify-between h-20">
@@ -122,46 +153,48 @@
                     </a>
 
                     <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium text-white">
-                        <a href="/about" class="hover:text-[#E9D8A6] transition relative">About</a>
-                        <a href="/ministries" class="hover:text-[#E9D8A6] transition relative">Ministries</a>
+                        <a href="/about" class="hover:text-[#E9D8A6] transition">About</a>
+                        <a href="/ministries" class="hover:text-[#E9D8A6] transition">Ministries</a>
                         <a href="/connect" class="text-[#E9D8A6] font-bold border-b-2 border-[#E9D8A6]">Connect</a>
-                        <a href="/events" class="hover:text-[#E9D8A6] transition relative">Events</a>
-                        <a href="/give" class="hover:text-[#E9D8A6] transition relative">Give</a>
+                        <a href="/events" class="hover:text-[#E9D8A6] transition">Events</a>
+                        <a href="/give" class="hover:text-[#E9D8A6] transition">Give</a>
                         <a href="/connect"
-                            class="bg-[#E9D8A6] text-[#561722] hover:bg-[#EED9B7] rounded-full px-5 py-2 text-sm font-bold shadow-lg transition-transform hover:-translate-y-0.5 ml-4">Join
+                            class="bg-[#E9D8A6] text-[#561722] hover:bg-[#EED9B7] rounded-full px-5 py-2 text-sm font-bold shadow-lg transition-all hover:-translate-y-0.5 ml-2">Join
                             Us</a>
                     </nav>
 
-                    <button id="mobile-menu-btn" class="md:hidden text-[#E9D8A6] focus:outline-none"
-                        aria-label="Toggle Menu">
+                    <button id="mobile-menu-btn" class="md:hidden text-[#E9D8A6] focus:outline-none p-2"
+                        aria-label="Toggle Menu" aria-expanded="false">
                         <i class="fa-solid fa-bars text-2xl"></i>
                     </button>
                 </div>
             </div>
 
-            <!-- Mobile Menu -->
             <div id="mobile-menu" class="md:hidden bg-[#561722] border-t border-white/10">
-                <nav class="flex flex-col p-4 space-y-4 text-center">
+                <nav class="flex flex-col p-4 space-y-3 text-center">
                     <a href="/about" class="text-white hover:text-[#E9D8A6] font-medium py-2">About</a>
                     <a href="/ministries" class="text-white hover:text-[#E9D8A6] font-medium py-2">Ministries</a>
                     <a href="/connect" class="text-[#E9D8A6] font-bold py-2">Connect</a>
                     <a href="/events" class="text-white hover:text-[#E9D8A6] font-medium py-2">Events</a>
                     <a href="/give" class="text-white hover:text-[#E9D8A6] font-medium py-2">Give</a>
                     <a href="/connect"
-                        class="bg-[#E9D8A6] text-[#561722] rounded-full px-5 py-2 font-bold inline-block mx-auto w-32">Join
+                        class="bg-[#E9D8A6] text-[#561722] rounded-full px-5 py-2 font-bold inline-block mx-auto mt-2">Join
                         Us</a>
                 </nav>
             </div>
         </header>
+        <!-- END HEADER -->
 
         <!-- Page Header -->
         <section class="text-center py-20 px-4 bg-gradient-to-r from-[#561722] via-[#7C2639] to-[#A63F4E] text-white">
-            <h1 class="text-4xl md:text-6xl font-playfair italic mb-4 animate-fade-in">Get Connected</h1>
+            <h1 class="text-4xl md:text-6xl font-playfair italic mb-4">Get Connected</h1>
             <p class="max-w-2xl mx-auto text-[#EED9B7] text-lg md:text-xl">We'd love to hear from you and help you get
                 plugged in.</p>
         </section>
 
-        <!-- Connect Content -->
+        <!-- =========================================
+             CONNECT CONTENT
+        ========================================== -->
         <section id="connect-content" class="bg-white py-20 md:py-24 px-6">
             <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 items-start">
 
@@ -174,143 +207,221 @@
                         <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0"
                             marginwidth="0"
                             src="https://maps.google.com/maps?q=7309+El+Cajon+Blvd,+La+Mesa,+CA+91942&t=&z=14&ie=UTF8&iwloc=B&output=embed"
-                            title="Map Location">
-                        </iframe>
+                            title="Map Location" loading="lazy"></iframe>
                     </div>
 
                     <div class="space-y-8">
                         <div>
-                            <h3 class="text-2xl font-bold font-playfair mb-3 flex items-center gap-2"><i
-                                    class="fa-regular fa-clock text-[#7C2639]"></i> Service Times</h3>
-                            <ul class="text-lg text-gray-700 space-y-2 pl-2 border-l-2 border-[#E9D8A6]">
-                                <li><strong class="text-[#7C2639]">Sunday Worship:</strong> 10:30 AM</li>
-                                <li><strong class="text-[#7C2639]">Midweek Bible Study:</strong> Wednesdays at 7:00 PM
+                            <h3 class="text-2xl font-bold font-playfair mb-3 flex items-center gap-2">
+                                <i class="fa-regular fa-clock text-[#7C2639]"></i> Service Times
+                            </h3>
+                            <ul class="text-lg text-gray-700 space-y-2 pl-2 border-l-4 border-[#E9D8A6]">
+                                <li class="pl-4"><strong class="text-[#7C2639]">Sunday Worship:</strong> 10:30 AM</li>
+                                <li class="pl-4"><strong class="text-[#7C2639]">Midweek Bible Study:</strong> Wednesdays
+                                    at 7:00 PM</li>
+                                <li class="pl-4"><strong class="text-[#7C2639]">Youth Night:</strong> Fridays at 6:30 PM
                                 </li>
-                                <li><strong class="text-[#7C2639]">Youth Night:</strong> Fridays at 6:30 PM</li>
                             </ul>
                         </div>
 
                         <div>
-                            <h3 class="text-2xl font-bold font-playfair mb-3 flex items-center gap-2"><i
-                                    class="fa-solid fa-location-dot text-[#7C2639]"></i> Our Location</h3>
-                            <p class="text-lg text-gray-700 mb-4 pl-2 border-l-2 border-[#E9D8A6]">
+                            <h3 class="text-2xl font-bold font-playfair mb-3 flex items-center gap-2">
+                                <i class="fa-solid fa-location-dot text-[#7C2639]"></i> Our Location
+                            </h3>
+                            <p class="text-lg text-gray-700 mb-4 pl-2 border-l-4 border-[#E9D8A6] pl-6">
                                 7309 El Cajon Blvd, <br>
                                 La Mesa, CA 91942
                             </p>
                             <a href="https://maps.google.com/?q=7309+El+Cajon+Blvd,+La+Mesa,+CA+91942" target="_blank"
+                                rel="noopener noreferrer"
                                 class="inline-block bg-[#E9D8A6] text-[#561722] hover:bg-[#EED9B7] rounded-full font-bold px-8 py-3 transition shadow-md hover:-translate-y-0.5">
                                 Get Directions <i class="fa-solid fa-arrow-right ml-2"></i>
                             </a>
                         </div>
+
+                        <!-- Direct Contact -->
+                        <div>
+                            <h3 class="text-2xl font-bold font-playfair mb-3 flex items-center gap-2">
+                                <i class="fa-solid fa-phone text-[#7C2639]"></i> Contact Us Directly
+                            </h3>
+                            <div class="pl-2 border-l-4 border-[#E9D8A6] pl-6 space-y-2">
+                                <p class="text-lg text-gray-700">
+                                    <strong class="text-[#7C2639]">Email:</strong>
+                                    <a href="mailto:hpcfmedia@gmail.com"
+                                        class="hover:text-[#7C2639] transition underline">hpcfmedia@gmail.com</a>
+                                </p>
+                                <p class="text-lg text-gray-700">
+                                    <strong class="text-[#7C2639]">Phone:</strong>
+                                    <a href="tel:+16195551200" class="hover:text-[#7C2639] transition">(619)
+                                        555-1200</a>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Column 2: Contact Form -->
+                <!-- Column 2: Contact Form - FUNCTIONAL -->
                 <div class="bg-[#E9D8A6]/20 p-8 md:p-10 rounded-3xl shadow-xl border border-[#E9D8A6]/50">
-                    <h2 class="text-3xl font-playfair mb-6 text-[#561722] font-bold">Send Us a Message</h2>
-                    <form action="#" method="POST" class="space-y-6">
+                    <h2 class="text-3xl font-playfair mb-2 text-[#561722] font-bold">Send Us a Message</h2>
+                    <p class="text-gray-600 mb-6">Questions, prayer requests, or just want to say hello? We'd love to
+                        hear from you.</p>
+
+                    <!-- Success Message (hidden by default) -->
+                    <div id="form-success" class="hidden success-animate text-center py-10">
+                        <i class="fa-solid fa-check-circle text-5xl text-green-500 mb-4"></i>
+                        <h3 class="text-2xl font-bold text-[#561722] mb-2">Message Sent!</h3>
+                        <p class="text-gray-600 mb-6">Thank you for reaching out. We'll get back to you soon.</p>
+                        <button onclick="resetForm()"
+                            class="text-[#7C2639] underline font-medium hover:text-[#561722] transition">
+                            Send another message
+                        </button>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <!-- 
+                        ============================================
+                        FORM CONFIGURATION:
+                        This form uses a mailto: fallback by default.
+                        
+                        For better reliability, consider these options:
+                        
+                        OPTION 1: Formspree (Free tier available)
+                        1. Sign up at formspree.io
+                        2. Create a new form
+                        3. Replace action="#" with action="https://formspree.io/f/YOUR_FORM_ID"
+                        
+                        OPTION 2: Web3Forms (Free, no signup)
+                        1. Get key at web3forms.com
+                        2. Replace action="#" with action="https://api.web3forms.com/submit"
+                        3. Add: <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
+                        
+                        OPTION 3: Current (mailto: fallback)
+                        Works without any setup, opens user's email client
+                        ============================================
+                    -->
+                    <form id="contact-form" class="space-y-5" action="#" method="POST">
+                        <!-- Hidden field for form identification -->
+                        <input type="hidden" name="form_source" value="HPCF Website Contact Form">
+
                         <div>
                             <label for="name"
-                                class="block text-sm font-bold text-[#7C2639] mb-1 uppercase tracking-wide">Full
-                                Name</label>
+                                class="block text-sm font-bold text-[#7C2639] mb-2 uppercase tracking-wide">
+                                Full Name <span class="text-red-500">*</span>
+                            </label>
                             <input type="text" id="name" name="name"
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#7C2639] focus:border-transparent transition-all"
+                                class="form-input w-full px-4 py-3 border-2 border-gray-200 rounded-lg shadow-sm transition-all"
                                 required placeholder="Your Name">
                         </div>
+
                         <div>
                             <label for="email"
-                                class="block text-sm font-bold text-[#7C2639] mb-1 uppercase tracking-wide">Email
-                                Address</label>
+                                class="block text-sm font-bold text-[#7C2639] mb-2 uppercase tracking-wide">
+                                Email Address <span class="text-red-500">*</span>
+                            </label>
                             <input type="email" id="email" name="email"
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#7C2639] focus:border-transparent transition-all"
+                                class="form-input w-full px-4 py-3 border-2 border-gray-200 rounded-lg shadow-sm transition-all"
                                 required placeholder="you@example.com">
                         </div>
+
                         <div>
                             <label for="subject"
-                                class="block text-sm font-bold text-[#7C2639] mb-1 uppercase tracking-wide">Subject</label>
-                            <input type="text" id="subject" name="subject"
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#7C2639] focus:border-transparent transition-all"
-                                placeholder="How can we help?">
+                                class="block text-sm font-bold text-[#7C2639] mb-2 uppercase tracking-wide">
+                                Subject
+                            </label>
+                            <select id="subject" name="subject"
+                                class="form-input w-full px-4 py-3 border-2 border-gray-200 rounded-lg shadow-sm transition-all bg-white">
+                                <option value="General Inquiry">General Inquiry</option>
+                                <option value="Prayer Request">Prayer Request</option>
+                                <option value="First Time Visitor">First Time Visitor</option>
+                                <option value="Volunteer Interest">Volunteer Interest</option>
+                                <option value="Other">Other</option>
+                            </select>
                         </div>
+
                         <div>
                             <label for="message"
-                                class="block text-sm font-bold text-[#7C2639] mb-1 uppercase tracking-wide">Message</label>
+                                class="block text-sm font-bold text-[#7C2639] mb-2 uppercase tracking-wide">
+                                Message <span class="text-red-500">*</span>
+                            </label>
                             <textarea id="message" name="message" rows="5"
-                                class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#7C2639] focus:border-transparent transition-all resize-none"
+                                class="form-input w-full px-4 py-3 border-2 border-gray-200 rounded-lg shadow-sm transition-all resize-none"
                                 required placeholder="Write your message here..."></textarea>
                         </div>
+
                         <div>
-                            <button type="submit"
-                                class="w-full bg-[#7C2639] text-white hover:bg-[#561722] rounded-full font-bold px-6 py-4 transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-lg">
-                                Send Message <i class="fa-solid fa-paper-plane ml-2"></i>
+                            <button type="submit" id="submit-btn"
+                                class="w-full bg-[#7C2639] text-white hover:bg-[#561722] rounded-full font-bold px-6 py-4 transition shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 text-lg flex items-center justify-center gap-2">
+                                <span>Send Message</span>
+                                <i class="fa-solid fa-paper-plane"></i>
                             </button>
                         </div>
+
+                        <p class="text-xs text-gray-500 text-center mt-4">
+                            By submitting this form, your message will be sent to our church email.
+                        </p>
                     </form>
                 </div>
 
             </div>
         </section>
 
-        <!-- Footer -->
+        <!-- =========================================
+             FOOTER - Consistent across all pages
+        ========================================== -->
         <footer class="bg-[#561722] border-t border-[#E9D8A6]/20 text-[#E9D8A6]">
-            <div class="max-w-7xl mx-auto px-8 py-16 grid md:grid-cols-3 gap-12 text-center md:text-left">
-                <!-- About -->
+            <div
+                class="max-w-7xl mx-auto px-6 md:px-8 py-12 md:py-16 grid md:grid-cols-3 gap-10 md:gap-12 text-center md:text-left">
                 <div class="flex flex-col items-center md:items-start">
                     <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1763924716/HPCF_logo_gold_dkwnzi.png"
-                        alt="HPCF Logo" class="h-24 w-auto mb-6">
-                    <h3 class="text-2xl font-playfair font-bold mb-4">Higher Praise Christian Fellowship</h3>
+                        alt="HPCF Logo" class="h-20 md:h-24 w-auto mb-6">
+                    <h3 class="text-xl md:text-2xl font-playfair font-bold mb-4">Higher Praise Christian Fellowship</h3>
                     <p class="text-sm text-[#EED9B7]/90 leading-relaxed max-w-sm">
-                        “You will never walk alone at Higher Praise Christian Fellowship.” No one gets left behind. Our
+                        "You will never walk alone at Higher Praise Christian Fellowship." No one gets left behind. Our
                         mission is to reconcile the lost to Christ.
                     </p>
                 </div>
 
-                <!-- Quick Links -->
                 <div class="flex flex-col items-center md:items-start">
                     <h3 class="text-lg font-bold mb-4 uppercase tracking-wider">Quick Links</h3>
                     <ul class="space-y-3 text-sm text-[#EED9B7]/80">
-                        <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="ministries.html" class="hover:text-white transition-colors">Ministries</a></li>
-                        <li><a href="events.html" class="hover:text-white transition-colors">Events</a></li>
-                        <li><a href="give.html" class="hover:text-white transition-colors">Give</a></li>
-                        <li><a href="connect.html" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="/about" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="/ministries" class="hover:text-white transition-colors">Ministries</a></li>
+                        <li><a href="/events" class="hover:text-white transition-colors">Events</a></li>
+                        <li><a href="/give" class="hover:text-white transition-colors">Give</a></li>
+                        <li><a href="/connect" class="hover:text-white transition-colors">Contact</a></li>
                     </ul>
                 </div>
 
-                <!-- Connect -->
-                <div>
-                    <h3 class="text-lg font-semibold mb-3 text-[#E9D8A6]">Connect</h3>
-                    <p class="text-sm text-[#EED9B7]/80">7309 El Cajon Blvd, La Mesa, CA 91942</p>
-                    <p class="text-sm text-[#EED9B7]/80">Email: info@higherpraisecf.org</p>
-                    <p class="text-sm text-[#EED9B7]/80 mb-4">Phone: (619) 555-1200</p>
-                    <div class="flex space-x-5 text-xl text-[#EED9B7]/80 mb-6">
-                        <a href="mailto:info@higherpraisecf.org" class="hover:text-[#E9D8A6] transition">
-                            <i class="fa-solid fa-envelope"></i>
-                        </a>
+                <div class="flex flex-col items-center md:items-start">
+                    <h3 class="text-lg font-bold mb-4 uppercase tracking-wider">Connect</h3>
+                    <address class="not-italic text-sm text-[#EED9B7]/80 space-y-1 mb-4">
+                        <p>7309 El Cajon Blvd, La Mesa, CA 91942</p>
+                        <p>Email: <a href="mailto:hpcfmedia@gmail.com"
+                                class="hover:text-white transition">hpcfmedia@gmail.com</a></p>
+                        <p>Phone: <a href="tel:+16195551200" class="hover:text-white transition">(619) 555-1200</a></p>
+                    </address>
+                    <div class="flex gap-4 text-2xl text-[#EED9B7] mb-6">
+                        <a href="mailto:hpcfmedia@gmail.com" aria-label="Email"
+                            class="hover:text-white transition hover:-translate-y-1"><i
+                                class="fa-solid fa-envelope"></i></a>
                         <a href="https://www.facebook.com/profile.php?id=100071166876525" target="_blank"
-                            class="hover:text-[#E9D8A6] transition">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="https://www.youtube.com/@higherpraise_hpcf" target="_blank"
-                            class="hover:text-[#E9D8A6] transition">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                        <a href="https://www.instagram.com/higherpraise_cf?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                            target="_blank" class="hover:text-[#E9D8A6] transition">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://www.tiktok.com/@higherpraise_cf" target="_blank"
-                            class="hover:text-[#E9D8A6] transition">
-                            <i class="fab fa-tiktok"></i>
-                        </a>
+                            rel="noopener noreferrer" aria-label="Facebook"
+                            class="hover:text-white transition hover:-translate-y-1"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.youtube.com/@higherpraise_hpcf" target="_blank" rel="noopener noreferrer"
+                            aria-label="YouTube" class="hover:text-white transition hover:-translate-y-1"><i
+                                class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/higherpraise_cf" target="_blank" rel="noopener noreferrer"
+                            aria-label="Instagram" class="hover:text-white transition hover:-translate-y-1"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@higherpraise_cf" target="_blank" rel="noopener noreferrer"
+                            aria-label="TikTok" class="hover:text-white transition hover:-translate-y-1"><i
+                                class="fab fa-tiktok"></i></a>
                     </div>
-
-                    <!-- Map -->
-                    <div class="w-full rounded-lg overflow-hidden border border-[#E9D8A6]/20 shadow-lg h-40">
+                    <div class="w-full rounded-lg overflow-hidden border border-[#E9D8A6]/20 shadow-lg h-36">
                         <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0"
                             marginwidth="0"
                             src="https://maps.google.com/maps?q=7309+El+Cajon+Blvd,+La+Mesa,+CA+91942&t=&z=14&ie=UTF8&iwloc=B&output=embed"
-                            title="Church Location"></iframe>
+                            title="Church Location" loading="lazy"></iframe>
                     </div>
                 </div>
             </div>
@@ -319,6 +430,7 @@
                 © <span id="footer-year"></span> Higher Praise Christian Fellowship. All Rights Reserved.
             </div>
         </footer>
+        <!-- END FOOTER -->
     </div>
 
     <script>
@@ -328,8 +440,108 @@
         const menuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('open');
-            mobileMenu.style.maxHeight = mobileMenu.classList.contains('open') ? mobileMenu.scrollHeight + "px" : "0";
+            const isOpen = mobileMenu.classList.toggle('open');
+            mobileMenu.style.maxHeight = isOpen ? mobileMenu.scrollHeight + 'px' : '0';
+            menuBtn.setAttribute('aria-expanded', isOpen);
+            const icon = menuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars', !isOpen);
+            icon.classList.toggle('fa-xmark', isOpen);
+        });
+
+        // =========================================
+        // CONTACT FORM - Functional Implementation
+        // Sends email to hpcfmedia@gmail.com
+        // =========================================
+        const contactForm = document.getElementById('contact-form');
+        const formSuccess = document.getElementById('form-success');
+        const submitBtn = document.getElementById('submit-btn');
+
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            // Clear previous errors
+            document.querySelectorAll('.form-error').forEach(el => el.remove());
+            document.querySelectorAll('.form-input.error').forEach(el => el.classList.remove('error'));
+
+            // Validate form
+            let isValid = true;
+            const name = document.getElementById('name');
+            const email = document.getElementById('email');
+            const message = document.getElementById('message');
+            const subject = document.getElementById('subject');
+
+            if (!name.value.trim()) {
+                showError(name, 'Please enter your name');
+                isValid = false;
+            }
+
+            if (!email.value.trim()) {
+                showError(email, 'Please enter your email');
+                isValid = false;
+            } else if (!isValidEmail(email.value)) {
+                showError(email, 'Please enter a valid email address');
+                isValid = false;
+            }
+
+            if (!message.value.trim()) {
+                showError(message, 'Please enter a message');
+                isValid = false;
+            }
+
+            if (!isValid) return;
+
+            // Show loading state
+            const originalBtnText = submitBtn.innerHTML;
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Sending...';
+
+            // Construct mailto link
+            const mailtoSubject = encodeURIComponent(`[HPCF Website] ${subject.value}`);
+            const mailtoBody = encodeURIComponent(
+                `Name: ${name.value}\n` +
+                `Email: ${email.value}\n` +
+                `Subject: ${subject.value}\n\n` +
+                `Message:\n${message.value}\n\n` +
+                `---\nSent from HPCF Website Contact Form`
+            );
+
+            // Open email client
+            window.location.href = `mailto:hpcfmedia@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+
+            // Show success (after a brief delay to allow email client to open)
+            setTimeout(() => {
+                contactForm.classList.add('hidden');
+                formSuccess.classList.remove('hidden');
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = originalBtnText;
+            }, 500);
+        });
+
+        function showError(input, message) {
+            input.classList.add('error');
+            const errorEl = document.createElement('p');
+            errorEl.className = 'form-error';
+            errorEl.textContent = message;
+            input.parentNode.appendChild(errorEl);
+        }
+
+        function isValidEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        function resetForm() {
+            contactForm.reset();
+            contactForm.classList.remove('hidden');
+            formSuccess.classList.add('hidden');
+        }
+
+        // Remove error styling on input
+        document.querySelectorAll('.form-input').forEach(input => {
+            input.addEventListener('input', function () {
+                this.classList.remove('error');
+                const error = this.parentNode.querySelector('.form-error');
+                if (error) error.remove();
+            });
         });
     </script>
 </body>
