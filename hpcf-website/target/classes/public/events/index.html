@@ -13,16 +13,16 @@
     <title>Events | Higher Praise Christian Fellowship</title>
     <meta name="title" content="Events | Higher Praise Christian Fellowship">
     <meta name="description"
-        content="Stay up to date with upcoming events at HPCF. Sunday Worship, Bible Studies, Youth Nights, and Community Outreach opportunities.">
+        content="Stay up to date with upcoming events at HPCF. Sunday Worship at 10:00 AM, Bible Studies, Prayer Nights, and Community Outreach opportunities.">
     <meta name="keywords"
-        content="Church Events La Mesa, Christian Events San Diego, Worship Service, Youth Events, Bible Study Schedule">
+        content="Church Events La Mesa, Christian Events San Diego, Worship Service, Prayer Night, Bible Study Schedule">
     <meta name="author" content="Higher Praise Christian Fellowship">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://higherpraisecf.org/events.html">
+    <link rel="canonical" href="https://higherpraisecf.org/events">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://higherpraisecf.org/events.html">
+    <meta property="og:url" content="https://higherpraisecf.org/events">
     <meta property="og:title" content="Events | Higher Praise Christian Fellowship">
     <meta property="og:description"
         content="Join us for fellowship, worship, and community service. See what's happening at Higher Praise.">
@@ -32,51 +32,12 @@
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://higherpraisecf.org/events.html">
+    <meta property="twitter:url" content="https://higherpraisecf.org/events">
     <meta property="twitter:title" content="Events | Higher Praise Christian Fellowship">
     <meta property="twitter:description"
         content="Join us for fellowship, worship, and community service. See what's happening at Higher Praise.">
     <meta property="twitter:image"
         content="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1763924716/HPCF_logo_gold_dkwnzi.png">
-
-    <!-- JSON-LD Schema (Event) -->
-    <script type="application/ld+json">
-    [
-      {
-        "@context": "https://schema.org",
-        "@type": "Event",
-        "name": "Sunday Worship Service",
-        "startDate": "2023-11-12T10:30",
-        "endDate": "2023-11-12T12:00",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "eventStatus": "https://schema.org/EventScheduled",
-        "location": {
-          "@type": "Place",
-          "name": "Higher Praise Christian Fellowship",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "7309 El Cajon Blvd",
-            "addressLocality": "La Mesa",
-            "postalCode": "91942",
-            "addressRegion": "CA",
-            "addressCountry": "US"
-          }
-        },
-        "description": "Join us for a powerful time of worship, prayer, and an inspiring message."
-      },
-      {
-        "@context": "https://schema.org",
-        "@type": "Event",
-        "name": "Midweek Bible Study",
-        "startDate": "2023-11-15T19:00",
-        "location": {
-          "@type": "Place",
-          "name": "Higher Praise Christian Fellowship"
-        },
-        "description": "Deepen your understanding of the scriptures."
-      }
-    ]
-    </script>
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -112,7 +73,9 @@
 <body class="bg-white text-[#561722] min-h-screen flex flex-col font-sans">
 
     <div id="root" class="flex-grow flex flex-col">
-        <!-- Navbar -->
+        <!-- =========================================
+             HEADER - Consistent across all pages
+        ========================================== -->
         <header class="sticky top-0 z-50 bg-[#7C2639] border-b border-white/10 shadow-md">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex items-center justify-between h-20">
@@ -125,18 +88,18 @@
                     </a>
 
                     <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium text-white">
-                        <a href="/about" class="hover:text-[#E9D8A6] transition relative">About</a>
-                        <a href="/ministries" class="hover:text-[#E9D8A6] transition relative">Ministries</a>
-                        <a href="/connect" class="hover:text-[#E9D8A6] transition relative">Connect</a>
-                        <a href="/events" class="text-[#E9D8A6] font-bold border-b-2 border-[#E9D8A6]">Events</a>
-                        <a href="/give" class="hover:text-[#E9D8A6] transition relative">Give</a>
-                        <a href="/connect"
-                            class="bg-[#E9D8A6] text-[#561722] hover:bg-[#EED9B7] rounded-full px-5 py-2 text-sm font-bold shadow-lg transition-transform hover:-translate-y-0.5 ml-4">Join
+                        <a href="/about/" class="hover:text-[#E9D8A6] transition">About</a>
+                        <a href="/ministries/" class="hover:text-[#E9D8A6] transition">Ministries</a>
+                        <a href="/connect/" class="hover:text-[#E9D8A6] transition">Connect</a>
+                        <a href="/events/" class="text-[#E9D8A6] font-bold border-b-2 border-[#E9D8A6]">Events</a>
+                        <a href="/give/" class="hover:text-[#E9D8A6] transition">Give</a>
+                        <a href="/connect/"
+                            class="bg-[#E9D8A6] text-[#561722] hover:bg-[#EED9B7] rounded-full px-5 py-2 text-sm font-bold shadow-lg transition-all hover:-translate-y-0.5 ml-2">Join
                             Us</a>
                     </nav>
 
-                    <button id="mobile-menu-btn" class="md:hidden text-[#E9D8A6] focus:outline-none"
-                        aria-label="Toggle Menu">
+                    <button id="mobile-menu-btn" class="md:hidden text-[#E9D8A6] focus:outline-none p-2"
+                        aria-label="Toggle Menu" aria-expanded="false">
                         <i class="fa-solid fa-bars text-2xl"></i>
                     </button>
                 </div>
@@ -144,124 +107,102 @@
 
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="md:hidden bg-[#561722] border-t border-white/10">
-                <nav class="flex flex-col p-4 space-y-4 text-center">
+                <nav class="flex flex-col p-4 space-y-3 text-center">
                     <a href="/about" class="text-white hover:text-[#E9D8A6] font-medium py-2">About</a>
                     <a href="/ministries" class="text-white hover:text-[#E9D8A6] font-medium py-2">Ministries</a>
                     <a href="/connect" class="text-white hover:text-[#E9D8A6] font-medium py-2">Connect</a>
                     <a href="/events" class="text-[#E9D8A6] font-bold py-2">Events</a>
                     <a href="/give" class="text-white hover:text-[#E9D8A6] font-medium py-2">Give</a>
                     <a href="/connect"
-                        class="bg-[#E9D8A6] text-[#561722] rounded-full px-5 py-2 font-bold inline-block mx-auto w-32">Join
+                        class="bg-[#E9D8A6] text-[#561722] rounded-full px-5 py-2 font-bold inline-block mx-auto mt-2">Join
                         Us</a>
                 </nav>
             </div>
         </header>
+        <!-- END HEADER -->
 
         <!-- Page Header -->
         <section class="text-center py-20 px-4 bg-gradient-to-r from-[#561722] via-[#7C2639] to-[#A63F4E] text-white">
-            <h1 class="text-4xl md:text-6xl font-playfair italic mb-4 animate-fade-in">Upcoming Events</h1>
+            <h1 class="text-4xl md:text-6xl font-playfair italic mb-4">Upcoming Events</h1>
             <p class="max-w-2xl mx-auto text-[#EED9B7] text-lg md:text-xl">See what's happening at Higher Praise and
                 join us for fellowship.</p>
         </section>
 
-        <!-- Events List -->
-        <section id="events-list" class="bg-white py-20 md:py-24 px-6">
-            <div class="max-w-4xl mx-auto space-y-10">
-
-                <!-- Event Item 1 -->
-                <div
-                    class="flex flex-col md:flex-row gap-6 bg-[#E9D8A6]/20 p-6 md:p-8 rounded-2xl shadow-lg items-center border border-[#E9D8A6] hover:shadow-2xl transition-all duration-300">
-                    <div
-                        class="flex-shrink-0 text-center bg-[#561722] text-white rounded-xl p-4 w-full md:w-32 shadow-md">
-                        <span class="block text-4xl font-bold text-[#E9D8A6]">12</span>
-                        <span class="block text-lg font-bold uppercase tracking-wider">Nov</span>
-                        <span class="block text-xs text-[#EED9B7] uppercase mt-1">Sunday</span>
+        <!-- =========================================
+             WEEKLY GATHERINGS - Always visible
+        ========================================== -->
+        <section class="bg-[#E9D8A6]/10 py-16 px-6 border-b border-[#E9D8A6]/30">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-2xl md:text-3xl font-playfair font-bold text-[#561722] text-center mb-8">Weekly Gatherings</h2>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Sunday Worship -->
+                    <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 text-center">
+                        <div class="bg-[#561722] text-[#E9D8A6] w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fa-solid fa-church text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#7C2639] mb-1 font-playfair">Sunday Worship</h3>
+                        <p class="text-gray-600 font-semibold">Sundays at 10:00 AM</p>
+                        <p class="text-sm text-gray-500 mt-2">Worship, prayer, and an inspiring message.</p>
                     </div>
-                    <div class="flex-grow text-center md:text-left">
-                        <h3 class="text-2xl font-playfair font-bold mb-2 text-[#7C2639]">Sunday Worship Service</h3>
-                        <p
-                            class="text-gray-600 mb-3 font-medium flex items-center justify-center md:justify-start gap-2">
-                            <i class="fa-regular fa-clock text-[#7C2639]"></i> 10:30 AM - 12:00 PM
-                        </p>
-                        <p class="text-gray-700 leading-relaxed">Join us for a powerful time of worship, prayer, and an
-                            inspiring message from Apostle Jones. All are welcome!</p>
+                    <!-- Bible Study -->
+                    <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 text-center">
+                        <div class="bg-[#561722] text-[#E9D8A6] w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fa-solid fa-book-open text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#7C2639] mb-1 font-playfair">Bible Study</h3>
+                        <p class="text-gray-600 font-semibold">Wednesdays at 7:00 PM</p>
+                        <p class="text-sm text-gray-500 mt-2">Deepen your understanding of Scripture.</p>
                     </div>
-                </div>
-
-                <!-- Event Item 2 -->
-                <div
-                    class="flex flex-col md:flex-row gap-6 bg-white p-6 md:p-8 rounded-2xl shadow-lg items-center border border-gray-100 hover:shadow-2xl transition-all duration-300 group">
-                    <div
-                        class="flex-shrink-0 text-center bg-gray-100 text-[#561722] rounded-xl p-4 w-full md:w-32 group-hover:bg-[#561722] group-hover:text-white transition-colors duration-300">
-                        <span class="block text-4xl font-bold group-hover:text-[#E9D8A6] transition-colors">15</span>
-                        <span class="block text-lg font-bold uppercase tracking-wider">Nov</span>
-                        <span class="block text-xs uppercase mt-1 opacity-75">Wednesday</span>
-                    </div>
-                    <div class="flex-grow text-center md:text-left">
-                        <h3 class="text-2xl font-playfair font-bold mb-2 text-[#7C2639]">Midweek Bible Study</h3>
-                        <p
-                            class="text-gray-600 mb-3 font-medium flex items-center justify-center md:justify-start gap-2">
-                            <i class="fa-regular fa-clock text-[#7C2639]"></i> 7:00 PM - 8:30 PM
-                        </p>
-                        <p class="text-gray-700 leading-relaxed">Deepen your understanding of the scriptures. We are
-                            currently studying the Book of Romans. Childcare provided.</p>
+                    <!-- Prayer Night -->
+                    <div class="bg-white p-6 rounded-xl shadow-md border border-gray-100 text-center">
+                        <div class="bg-[#561722] text-[#E9D8A6] w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fa-solid fa-hands-praying text-2xl"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#7C2639] mb-1 font-playfair">Prayer Night</h3>
+                        <p class="text-gray-600 font-semibold">Wednesdays at 7:00 PM</p>
+                        <p class="text-sm text-gray-500 mt-2">Join us for intercession and spiritual warfare.</p>
                     </div>
                 </div>
-
-                <!-- Event Item 3 -->
-                <div
-                    class="flex flex-col md:flex-row gap-6 bg-[#E9D8A6]/20 p-6 md:p-8 rounded-2xl shadow-lg items-center border border-[#E9D8A6] hover:shadow-2xl transition-all duration-300">
-                    <div
-                        class="flex-shrink-0 text-center bg-[#561722] text-white rounded-xl p-4 w-full md:w-32 shadow-md">
-                        <span class="block text-4xl font-bold text-[#E9D8A6]">17</span>
-                        <span class="block text-lg font-bold uppercase tracking-wider">Nov</span>
-                        <span class="block text-xs text-[#EED9B7] uppercase mt-1">Friday</span>
-                    </div>
-                    <div class="flex-grow text-center md:text-left">
-                        <h3 class="text-2xl font-playfair font-bold mb-2 text-[#7C2639]">Youth Night (HYPE)</h3>
-                        <p
-                            class="text-gray-600 mb-3 font-medium flex items-center justify-center md:justify-start gap-2">
-                            <i class="fa-regular fa-clock text-[#7C2639]"></i> 6:30 PM - 9:00 PM
-                        </p>
-                        <p class="text-gray-700 leading-relaxed">A fun, safe, and engaging night for teens (ages 13-18).
-                            Games, worship, and a relevant message.</p>
-                    </div>
-                </div>
-
-                <!-- Event Item 4 -->
-                <div
-                    class="flex flex-col md:flex-row gap-6 bg-white p-6 md:p-8 rounded-2xl shadow-lg items-center border border-gray-100 hover:shadow-2xl transition-all duration-300 group">
-                    <div
-                        class="flex-shrink-0 text-center bg-gray-100 text-[#561722] rounded-xl p-4 w-full md:w-32 group-hover:bg-[#561722] group-hover:text-white transition-colors duration-300">
-                        <span class="block text-4xl font-bold group-hover:text-[#E9D8A6] transition-colors">25</span>
-                        <span class="block text-lg font-bold uppercase tracking-wider">Nov</span>
-                        <span class="block text-xs uppercase mt-1 opacity-75">Saturday</span>
-                    </div>
-                    <div class="flex-grow text-center md:text-left">
-                        <h3 class="text-2xl font-playfair font-bold mb-2 text-[#7C2639]">Community Food Drive</h3>
-                        <p
-                            class="text-gray-600 mb-3 font-medium flex items-center justify-center md:justify-start gap-2">
-                            <i class="fa-regular fa-clock text-[#7C2639]"></i> 9:00 AM - 12:00 PM
-                        </p>
-                        <p class="text-gray-700 leading-relaxed">Join us as we partner with the La Mesa Food Bank to
-                            serve our community. Volunteers and donations are welcome.</p>
-                    </div>
-                </div>
-
             </div>
         </section>
 
+        <!-- =========================================
+             SPECIAL EVENTS - Dynamically rendered
+        ========================================== -->
+        <section id="events-list" class="bg-white py-20 md:py-24 px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-2xl md:text-3xl font-playfair font-bold text-[#561722] text-center mb-8">Special Events</h2>
+                
+                <!-- Events will be dynamically rendered here -->
+                <div id="events-container" class="space-y-8">
+                    <!-- Loading state -->
+                    <div class="text-center py-10 text-gray-500">
+                        <i class="fa-solid fa-spinner fa-spin text-3xl mb-4"></i>
+                        <p>Loading events...</p>
+                    </div>
+                </div>
 
-        <!-- Footer -->
+                <!-- No events message (hidden by default) -->
+                <div id="no-events" class="hidden text-center py-10">
+                    <i class="fa-regular fa-calendar-xmark text-5xl text-gray-300 mb-4"></i>
+                    <p class="text-gray-500 text-lg">No special events scheduled at this time.</p>
+                    <p class="text-gray-400 mt-2">Check back soon or join us for our weekly gatherings!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- =========================================
+             FOOTER - Consistent across all pages
+        ========================================== -->
         <footer class="bg-[#561722] border-t border-[#E9D8A6]/20 text-[#E9D8A6]">
-            <div class="max-w-7xl mx-auto px-8 py-16 grid md:grid-cols-3 gap-12 text-center md:text-left">
+            <div class="max-w-7xl mx-auto px-6 md:px-8 py-12 md:py-16 grid md:grid-cols-3 gap-10 md:gap-12 text-center md:text-left">
                 <!-- About -->
                 <div class="flex flex-col items-center md:items-start">
                     <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1763924716/HPCF_logo_gold_dkwnzi.png"
-                        alt="HPCF Logo" class="h-24 w-auto mb-6">
-                    <h3 class="text-2xl font-playfair font-bold mb-4">Higher Praise Christian Fellowship</h3>
+                        alt="HPCF Logo" class="h-20 md:h-24 w-auto mb-6">
+                    <h3 class="text-xl md:text-2xl font-playfair font-bold mb-4">Higher Praise Christian Fellowship</h3>
                     <p class="text-sm text-[#EED9B7]/90 leading-relaxed max-w-sm">
-                        “You will never walk alone at Higher Praise Christian Fellowship.” No one gets left behind. Our
+                        "You will never walk alone at Higher Praise Christian Fellowship." No one gets left behind. Our
                         mission is to reconcile the lost to Christ.
                     </p>
                 </div>
@@ -270,48 +211,44 @@
                 <div class="flex flex-col items-center md:items-start">
                     <h3 class="text-lg font-bold mb-4 uppercase tracking-wider">Quick Links</h3>
                     <ul class="space-y-3 text-sm text-[#EED9B7]/80">
-                        <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="ministries.html" class="hover:text-white transition-colors">Ministries</a></li>
-                        <li><a href="events.html" class="hover:text-white transition-colors">Events</a></li>
-                        <li><a href="give.html" class="hover:text-white transition-colors">Give</a></li>
-                        <li><a href="connect.html" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="/about/" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="/ministries/" class="hover:text-white transition-colors">Ministries</a></li>
+                        <li><a href="/events/" class="hover:text-white transition-colors">Events</a></li>
+                        <li><a href="/give/" class="hover:text-white transition-colors">Give</a></li>
+                        <li><a href="/connect/" class="hover:text-white transition-colors">Contact</a></li>
                     </ul>
                 </div>
 
                 <!-- Connect -->
-                <div>
-                    <h3 class="text-lg font-semibold mb-3 text-[#E9D8A6]">Connect</h3>
-                    <p class="text-sm text-[#EED9B7]/80">7309 El Cajon Blvd, La Mesa, CA 91942</p>
-                    <p class="text-sm text-[#EED9B7]/80">Email: info@higherpraisecf.org</p>
-                    <p class="text-sm text-[#EED9B7]/80 mb-4">Phone: (619) 555-1200</p>
-                    <div class="flex space-x-5 text-xl text-[#EED9B7]/80 mb-6">
-                        <a href="mailto:info@higherpraisecf.org" class="hover:text-[#E9D8A6] transition">
-                            <i class="fa-solid fa-envelope"></i>
-                        </a>
+                <div class="flex flex-col items-center md:items-start">
+                    <h3 class="text-lg font-bold mb-4 uppercase tracking-wider">Connect</h3>
+                    <address class="not-italic text-sm text-[#EED9B7]/80 space-y-1 mb-4">
+                        <p>7309 El Cajon Blvd, La Mesa, CA 91942</p>
+                        <p>Email: <a href="mailto:hpcfmedia@gmail.com" class="hover:text-white transition">contact@higherpraisecf.org</a></p>
+                        <p>Phone: <a href="tel:+16195551200" class="hover:text-white transition">(619) 555-1200</a></p>
+                    </address>
+                    <div class="flex gap-4 text-2xl text-[#EED9B7] mb-6">
+                        <a href="mailto:hpcfmedia@gmail.com" aria-label="Email"
+                            class="hover:text-white transition hover:-translate-y-1"><i
+                                class="fa-solid fa-envelope"></i></a>
                         <a href="https://www.facebook.com/profile.php?id=100071166876525" target="_blank"
-                            class="hover:text-[#E9D8A6] transition">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="https://www.youtube.com/@higherpraise_hpcf" target="_blank"
-                            class="hover:text-[#E9D8A6] transition">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                        <a href="https://www.instagram.com/higherpraise_cf?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                            target="_blank" class="hover:text-[#E9D8A6] transition">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://www.tiktok.com/@higherpraise_cf" target="_blank"
-                            class="hover:text-[#E9D8A6] transition">
-                            <i class="fab fa-tiktok"></i>
-                        </a>
+                            rel="noopener noreferrer" aria-label="Facebook"
+                            class="hover:text-white transition hover:-translate-y-1"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.youtube.com/@higherpraise_hpcf" target="_blank" rel="noopener noreferrer"
+                            aria-label="YouTube" class="hover:text-white transition hover:-translate-y-1"><i
+                                class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/higherpraise_cf" target="_blank" rel="noopener noreferrer"
+                            aria-label="Instagram" class="hover:text-white transition hover:-translate-y-1"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@higherpraise_cf" target="_blank" rel="noopener noreferrer"
+                            aria-label="TikTok" class="hover:text-white transition hover:-translate-y-1"><i
+                                class="fab fa-tiktok"></i></a>
                     </div>
-
-                    <!-- Map -->
-                    <div class="w-full rounded-lg overflow-hidden border border-[#E9D8A6]/20 shadow-lg h-40">
+                    <div class="w-full rounded-lg overflow-hidden border border-[#E9D8A6]/20 shadow-lg h-36">
                         <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0"
                             marginwidth="0"
                             src="https://maps.google.com/maps?q=7309+El+Cajon+Blvd,+La+Mesa,+CA+91942&t=&z=14&ie=UTF8&iwloc=B&output=embed"
-                            title="Church Location"></iframe>
+                            title="Church Location" loading="lazy"></iframe>
                     </div>
                 </div>
             </div>
@@ -320,6 +257,7 @@
                 © <span id="footer-year"></span> Higher Praise Christian Fellowship. All Rights Reserved.
             </div>
         </footer>
+        <!-- END FOOTER -->
     </div>
 
     <script>
@@ -329,9 +267,122 @@
         const menuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('open');
-            mobileMenu.style.maxHeight = mobileMenu.classList.contains('open') ? mobileMenu.scrollHeight + "px" : "0";
+            const isOpen = mobileMenu.classList.toggle('open');
+            mobileMenu.style.maxHeight = isOpen ? mobileMenu.scrollHeight + 'px' : '0';
+            menuBtn.setAttribute('aria-expanded', isOpen);
+            const icon = menuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars', !isOpen);
+            icon.classList.toggle('fa-xmark', isOpen);
         });
+
+        // =========================================
+        // EVENTS MANAGEMENT SYSTEM
+        // =========================================
+        // 
+        // HOW TO UPDATE EVENTS:
+        // 1. Edit the 'specialEvents' array below
+        // 2. Each event needs: title, date, time, description
+        // 3. Date format: "YYYY-MM-DD" (e.g., "2025-03-15")
+        // 4. Past events are automatically hidden
+        // 
+        // EXAMPLE EVENT FORMAT:
+        // {
+        //     title: "Event Name",
+        //     date: "2025-03-15",
+        //     time: "10:00 AM - 12:00 PM",
+        //     description: "Event description goes here.",
+        //     highlight: true // optional - makes event gold
+        // }
+        // =========================================
+
+        const specialEvents = [
+            // ======== ADD YOUR EVENTS BELOW ========
+            {
+                title: "Community Food Drive",
+                date: "2025-02-15",
+                time: "9:00 AM - 12:00 PM",
+                description: "Join us as we partner with the La Mesa Food Bank to serve our community. Volunteers and donations are welcome.",
+                highlight: false
+            },
+            {
+                title: "Women's Ministry Brunch",
+                date: "2025-02-22",
+                time: "10:00 AM - 1:00 PM",
+                description: "Ladies, join us for a special morning of fellowship, food, and encouragement. RSVP required.",
+                highlight: true
+            },
+            {
+                title: "Men's Prayer Breakfast",
+                date: "2025-03-01",
+                time: "8:00 AM - 10:00 AM",
+                description: "Men of all ages are invited for a time of prayer, breakfast, and brotherhood.",
+                highlight: false
+            },
+            {
+                title: "Youth Rally",
+                date: "2025-03-08",
+                time: "6:00 PM - 9:00 PM",
+                description: "A special night for our youth featuring worship, games, and a powerful message. Ages 13-18 welcome.",
+                highlight: true
+            }
+            // ======== ADD YOUR EVENTS ABOVE ========
+        ];
+
+        // Render events
+        function renderEvents() {
+            const container = document.getElementById('events-container');
+            const noEventsMsg = document.getElementById('no-events');
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+
+            // Filter future events and sort by date
+            const futureEvents = specialEvents
+                .filter(event => new Date(event.date) >= today)
+                .sort((a, b) => new Date(a.date) - new Date(b.date));
+
+            if (futureEvents.length === 0) {
+                container.innerHTML = '';
+                noEventsMsg.classList.remove('hidden');
+                return;
+            }
+
+            noEventsMsg.classList.add('hidden');
+
+            const eventsHTML = futureEvents.map(event => {
+                const eventDate = new Date(event.date + 'T00:00:00');
+                const day = eventDate.getDate();
+                const month = eventDate.toLocaleDateString('en-US', { month: 'short' }).toUpperCase();
+                const dayOfWeek = eventDate.toLocaleDateString('en-US', { weekday: 'long' });
+
+                const isHighlight = event.highlight;
+                const bgClass = isHighlight ? 'bg-[#E9D8A6]/20 border-[#E9D8A6]' : 'bg-white border-gray-100';
+                const dateBoxClass = isHighlight ? 'bg-[#561722] text-white' : 'bg-gray-100 text-[#561722] group-hover:bg-[#561722] group-hover:text-white';
+                const dayClass = isHighlight ? 'text-[#E9D8A6]' : 'group-hover:text-[#E9D8A6]';
+                const subTextClass = isHighlight ? 'text-[#EED9B7]' : 'opacity-75';
+
+                return `
+                    <div class="flex flex-col md:flex-row gap-6 ${bgClass} p-6 md:p-8 rounded-2xl shadow-lg items-center border hover:shadow-2xl transition-all duration-300 group">
+                        <div class="flex-shrink-0 text-center ${dateBoxClass} rounded-xl p-4 w-full md:w-32 shadow-md transition-colors duration-300">
+                            <span class="block text-4xl font-bold ${dayClass} transition-colors">${day}</span>
+                            <span class="block text-lg font-bold uppercase tracking-wider">${month}</span>
+                            <span class="block text-xs ${subTextClass} uppercase mt-1">${dayOfWeek}</span>
+                        </div>
+                        <div class="flex-grow text-center md:text-left">
+                            <h3 class="text-2xl font-playfair font-bold mb-2 text-[#7C2639]">${event.title}</h3>
+                            <p class="text-gray-600 mb-3 font-medium flex items-center justify-center md:justify-start gap-2">
+                                <i class="fa-regular fa-clock text-[#7C2639]"></i> ${event.time}
+                            </p>
+                            <p class="text-gray-700 leading-relaxed">${event.description}</p>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            container.innerHTML = eventsHTML;
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', renderEvents);
     </script>
 </body>
 

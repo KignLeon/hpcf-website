@@ -12,7 +12,7 @@
     <!-- Primary Meta Tags -->
     <title>Home | Higher Praise Christian Fellowship</title>
     <meta name="title" content="Home | Higher Praise Christian Fellowship">
-    <meta name="description" content="Welcome to Higher Praise Christian Fellowship in La Mesa, CA. Join us for Sunday worship, Bible studies, and community outreach. A place where no one walks alone.">
+    <meta name="description" content="Welcome to Higher Praise Christian Fellowship in La Mesa, CA. Join us for Sunday worship at 10:00 AM, Bible studies, and community outreach. A place where no one walks alone.">
     <meta name="keywords" content="Higher Praise Christian Fellowship, HPCF, Church La Mesa, Christian Church San Diego, Worship Service, Bible Study, Youth Ministry, La Mesa Church">
     <meta name="author" content="Higher Praise Christian Fellowship">
     <meta name="robots" content="index, follow">
@@ -61,10 +61,24 @@
         "@type": "Person",
         "name": "Apostle Donald Jones Jr."
       },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "10:00",
+          "closes": "12:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Wednesday",
+          "opens": "19:00",
+          "closes": "20:30"
+        }
+      ],
       "sameAs": [
-        "https://www.facebook.com/higherpraisecf",
-        "https://www.instagram.com/higherpraisecf",
-        "https://www.youtube.com/@higherpraisecf"
+        "https://www.facebook.com/profile.php?id=100071166876525",
+        "https://www.instagram.com/higherpraise_cf",
+        "https://www.youtube.com/@higherpraise_hpcf"
       ]
     }
     </script>
@@ -90,6 +104,44 @@
         body { font-family: 'Inter', sans-serif; }
         .font-playfair { font-family: 'Playfair Display', serif; }
         
+        /* Mobile Menu */
+        #mobile-menu {
+            transition: max-height 0.3s ease-in-out;
+            overflow: hidden;
+            max-height: 0;
+        }
+        #mobile-menu.open {
+            max-height: 400px;
+        }
+        
+        /* Hero Background with Image */
+        .hero-section {
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            /* TODO: Replace with church hero image URL */
+            background-image: url('https://res.cloudinary.com/ddnhp0hzd/image/upload/v1766343331/together2_i9jr4i.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15;
+            z-index: 0;
+        }
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(86, 23, 34, 0.95) 0%, rgba(124, 38, 57, 0.92) 50%, rgba(166, 63, 78, 0.90) 100%);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
         /* Widget Animation */
         .fade-in-up { animation: fadeInUp 0.3s ease-out forwards; }
         @keyframes fadeInUp {
@@ -98,7 +150,7 @@
         }
         
         /* Custom scrollbar for widget */
-        #widget-content::-webkit-scrollbar { width: 6px; }
+        #widget-content::-webkit-scrollbar { width: 4px; }
         #widget-content::-webkit-scrollbar-thumb { background-color: #E9D8A6; border-radius: 4px; }
     </style>
 </head>
@@ -106,7 +158,7 @@
 <body class="bg-gradient-to-br from-[#561722] via-[#7C2639] to-[#A63F4E] text-white min-h-screen flex flex-col">
 
     <div id="root" class="flex-grow">
-         <!-- =========================================
+        <!-- =========================================
              HEADER - Consistent across all pages
         ========================================== -->
         <header class="sticky top-0 z-50 bg-[#7C2639]/95 backdrop-blur-md border-b border-white/10 shadow-md">
@@ -123,19 +175,13 @@
 
                     <!-- Desktop Navigation -->
                     <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium">
-                        <a href="/about"
-                            class="text-white hover:text-[#E9D8A6] transition relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-[#E9D8A6] after:left-0 after:-bottom-1 after:transition-all hover:after:w-full">About</a>
-                        <a href="/ministries"
-                            class="text-white hover:text-[#E9D8A6] transition relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-[#E9D8A6] after:left-0 after:-bottom-1 after:transition-all hover:after:w-full">Ministries</a>
-                        <a href="/connect"
-                            class="text-white hover:text-[#E9D8A6] transition relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-[#E9D8A6] after:left-0 after:-bottom-1 after:transition-all hover:after:w-full">Connect</a>
-                        <a href="/events"
-                            class="text-white hover:text-[#E9D8A6] transition relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-[#E9D8A6] after:left-0 after:-bottom-1 after:transition-all hover:after:w-full">Events</a>
-                        <a href="/give"
-                            class="text-white hover:text-[#E9D8A6] transition relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-[#E9D8A6] after:left-0 after:-bottom-1 after:transition-all hover:after:w-full">Give</a>
-                        <a href="/connect"
-                            class="bg-[#E9D8A6] text-[#561722] hover:bg-[#EED9B7] rounded-full px-5 py-2 text-sm font-bold shadow-lg transition-all hover:-translate-y-0.5 ml-2">Join
-                            Us</a>
+                        <a href="/about/" class="text-white hover:text-[#E9D8A6] transition">About</a>
+                        <a href="/ministries/" class="text-white hover:text-[#E9D8A6] transition">Ministries</a>
+                        <a href="/connect/" class="text-white hover:text-[#E9D8A6] transition">Connect</a>
+                        <a href="/events/" class="text-white hover:text-[#E9D8A6] transition">Events</a>
+                        <a href="/give/" class="text-white hover:text-[#E9D8A6] transition">Give</a>
+                        <a href="/connect/"
+                            class="bg-[#E9D8A6] text-[#561722] hover:bg-[#EED9B7] rounded-full px-5 py-2 text-sm font-bold shadow-lg transition-all hover:-translate-y-0.5 ml-2">Join Us</a>
                     </nav>
 
                     <!-- Mobile Menu Button -->
@@ -149,31 +195,29 @@
             <!-- Mobile Menu Dropdown -->
             <div id="mobile-menu" class="md:hidden bg-[#561722] border-t border-white/10">
                 <nav class="flex flex-col p-4 space-y-3 text-center">
-                    <a href="/about" class="text-white hover:text-[#E9D8A6] font-medium py-2 transition">About</a>
-                    <a href="/ministries"
-                        class="text-white hover:text-[#E9D8A6] font-medium py-2 transition">Ministries</a>
-                    <a href="/connect" class="text-white hover:text-[#E9D8A6] font-medium py-2 transition">Connect</a>
-                    <a href="/events" class="text-white hover:text-[#E9D8A6] font-medium py-2 transition">Events</a>
-                    <a href="/give" class="text-white hover:text-[#E9D8A6] font-medium py-2 transition">Give</a>
-                    <a href="/connect"
-                        class="bg-[#E9D8A6] text-[#561722] rounded-full px-5 py-2 font-bold inline-block mx-auto mt-2 hover:bg-[#EED9B7] transition">Join
-                        Us</a>
+                    <a href="/about/" class="text-white hover:text-[#E9D8A6] font-medium py-2 transition">About</a>
+                    <a href="/ministries/" class="text-white hover:text-[#E9D8A6] font-medium py-2 transition">Ministries</a>
+                    <a href="/connect/" class="text-white hover:text-[#E9D8A6] font-medium py-2 transition">Connect</a>
+                    <a href="/events/" class="text-white hover:text-[#E9D8A6] font-medium py-2 transition">Events</a>
+                    <a href="/give/" class="text-white hover:text-[#E9D8A6] font-medium py-2 transition">Give</a>
+                    <a href="/connect/"
+                        class="bg-[#E9D8A6] text-[#561722] rounded-full px-5 py-2 font-bold inline-block mx-auto mt-2 hover:bg-[#EED9B7] transition">Join Us</a>
                 </nav>
             </div>
         </header>
         <!-- END HEADER -->
 
-        <!-- Hero Section -->
-        <section class="text-center py-20 md:py-32 px-4 bg-gradient-to-r from-[#561722] via-[#7C2639] to-[#A63F4E]">
-            <div class="max-w-4xl mx-auto">
-                <h1 class="text-4xl md:text-6xl lg:text-7xl font-playfair italic mb-6 animate-fade-in">
+        <!-- Hero Section with Background Image -->
+        <section class="hero-section text-center py-20 md:py-32 px-4">
+            <div class="hero-content max-w-4xl mx-auto">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-playfair italic mb-6">
                     A Season of <span class="text-[#E9D8A6] font-semibold not-italic">Fulfilment</span>
                 </h1>
                 <p class="max-w-2xl mx-auto text-[#EED9B7] text-lg md:text-xl mb-10 leading-relaxed">
                     "For everyone born of God overcomes the world. This is the victory that has overcome the world—our faith." – 1 John 5:4-5
                 </p>
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
-                    <a href="connect.html" class="bg-[#E9D8A6] text-[#561722] hover:bg-[#EED9B7] rounded-full font-bold px-8 py-3 shadow-md transition-all hover:shadow-xl">
+                    <a href="/connect/" class="bg-[#E9D8A6] text-[#561722] hover:bg-[#EED9B7] rounded-full font-bold px-8 py-3 shadow-md transition-all hover:shadow-xl">
                         Plan Your Visit
                     </a>
                     <a href="https://www.youtube.com/@higherpraise_hpcf" target="_blank" rel="noopener noreferrer" class="border-2 border-[#E9D8A6] text-[#E9D8A6] rounded-full hover:bg-[#E9D8A6] hover:text-[#561722] font-bold px-8 py-3 transition-colors">
@@ -183,7 +227,7 @@
             </div>
         </section>
 
-        <!-- About Section -->
+        <!-- Our Vision Section (Mantra slide removed) -->
         <section id="about" class="bg-white text-[#561722] py-20 px-6">
             <div class="max-w-6xl mx-auto text-center">
                 <h2 class="text-3xl md:text-5xl font-playfair mb-6 font-bold">Our Vision</h2>
@@ -191,23 +235,13 @@
                     To reconcile the lost with our Lord Jesus Christ and project an environment that is conducive to the wholeness of the person.
                 </p>
 
-                <!-- Responsive Slider Container -->
+                <!-- Responsive Slider Container - 2 Slides Only (Mantra removed) -->
                 <div id="slider-container" class="relative max-w-5xl mx-auto rounded-2xl shadow-2xl overflow-hidden text-left bg-gray-900 aspect-video md:aspect-[21/9]">
                     <!-- Slides Track -->
                     <div id="slides-track" class="flex transition-transform duration-700 ease-in-out h-full">
-                        <!-- Slide 1 -->
+                        <!-- Slide 1: Purpose -->
                         <div class="w-full flex-shrink-0 relative h-full">
-                            <img src="https://placehold.co/1200x600/561722/E9D8A6?text=Community+%26+Welcome" alt="Community" class="absolute inset-0 w-full h-full object-cover">
-                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
-                            <div class="absolute inset-0 p-8 md:p-16 flex flex-col justify-end text-white">
-                                <i class="fa-solid fa-heart text-[#E9D8A6] text-4xl mb-4"></i>
-                                <h3 class="text-2xl md:text-4xl font-playfair font-bold mb-2 text-[#E9D8A6]">Mantra</h3>
-                                <p class="text-base md:text-xl text-white/90 max-w-2xl">You will never walk alone at Higher Praise Christian Fellowship. No one gets left behind.</p>
-                            </div>
-                        </div>
-                        <!-- Slide 2 -->
-                        <div class="w-full flex-shrink-0 relative h-full">
-                            <img src="https://placehold.co/1200x600/7C2639/E9D8A6?text=Growth+%26+Maturation" alt="Growth" class="absolute inset-0 w-full h-full object-cover">
+                            <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1766343331/apostle4_pvwgfh.jpg" alt="Growth" class="absolute inset-0 w-full h-full object-cover">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
                             <div class="absolute inset-0 p-8 md:p-16 flex flex-col justify-end text-white">
                                 <i class="fa-solid fa-calendar-check text-[#E9D8A6] text-4xl mb-4"></i>
@@ -215,9 +249,9 @@
                                 <p class="text-base md:text-xl text-white/90 max-w-2xl">To experience growth and maturation individually and corporately — establishing a Kingdom culture.</p>
                             </div>
                         </div>
-                        <!-- Slide 3 -->
+                        <!-- Slide 2: Kingdom Endeavor -->
                         <div class="w-full flex-shrink-0 relative h-full">
-                            <img src="https://placehold.co/1200x600/A63F4E/E9D8A6?text=Worship+%26+Revelation" alt="Worship" class="absolute inset-0 w-full h-full object-cover">
+                            <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1768078384/women_qqxtu0.jpg" alt="Worship" class="absolute inset-0 w-full h-full object-cover">
                             <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
                             <div class="absolute inset-0 p-8 md:p-16 flex flex-col justify-end text-white">
                                 <i class="fa-solid fa-circle-play text-[#E9D8A6] text-4xl mb-4"></i>
@@ -235,41 +269,40 @@
                         <i class="fa-solid fa-chevron-right text-xl"></i>
                     </button>
 
-                    <!-- Navigation Dots -->
+                    <!-- Navigation Dots (2 dots now) -->
                     <div id="slider-dots" class="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-3 z-10">
                         <button class="slider-dot w-3 h-3 rounded-full bg-white transition-all duration-300 hover:scale-125" aria-label="Slide 1"></button>
                         <button class="slider-dot w-3 h-3 rounded-full bg-white/50 transition-all duration-300 hover:scale-125" aria-label="Slide 2"></button>
-                        <button class="slider-dot w-3 h-3 rounded-full bg-white/50 transition-all duration-300 hover:scale-125" aria-label="Slide 3"></button>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Events Section -->
+        <!-- Weekly Gatherings Section -->
         <section id="events" class="bg-[#7C2639] py-24 px-6">
             <div class="max-w-6xl mx-auto text-center">
-                <h2 class="text-3xl md:text-5xl font-playfair text-[#E9D8A6] mb-12 font-bold">Upcoming Events</h2>
+                <h2 class="text-3xl md:text-5xl font-playfair text-[#E9D8A6] mb-12 font-bold">Weekly Gatherings</h2>
                 <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Event 1 -->
+                    <!-- Sunday Worship -->
                     <div class="bg-[#561722] rounded-2xl p-8 text-left shadow-xl hover:transform hover:-translate-y-2 transition duration-300 border border-[#A63F4E]">
                         <div class="text-[#E9D8A6] text-3xl mb-4"><i class="fa-solid fa-church"></i></div>
                         <h3 class="text-xl font-bold text-[#E9D8A6] mb-2 font-playfair">Sunday Worship</h3>
-                        <p class="text-[#EED9B7] mb-6 text-sm leading-relaxed">Join us this Sunday at 10:30 AM for a powerful service of worship and word.</p>
-                        <a href="events.html" class="text-[#E9D8A6] font-bold text-sm uppercase tracking-wide hover:underline">Learn More &rarr;</a>
+                        <p class="text-[#EED9B7] mb-6 text-sm leading-relaxed">Join us this Sunday at 10:00 AM for a powerful service of worship and word.</p>
+                        <a href="/events/" class="text-[#E9D8A6] font-bold text-sm uppercase tracking-wide hover:underline">Learn More &rarr;</a>
                     </div>
-                    <!-- Event 2 -->
+                    <!-- Bible Study -->
                     <div class="bg-[#561722] rounded-2xl p-8 text-left shadow-xl hover:transform hover:-translate-y-2 transition duration-300 border border-[#A63F4E]">
                         <div class="text-[#E9D8A6] text-3xl mb-4"><i class="fa-solid fa-book-open"></i></div>
                         <h3 class="text-xl font-bold text-[#E9D8A6] mb-2 font-playfair">Bible Study</h3>
                         <p class="text-[#EED9B7] mb-6 text-sm leading-relaxed">Deepen your faith. Wednesdays at 7:00 PM. Interactive study for all ages.</p>
-                        <a href="events.html" class="text-[#E9D8A6] font-bold text-sm uppercase tracking-wide hover:underline">Learn More &rarr;</a>
+                        <a href="/events/" class="text-[#E9D8A6] font-bold text-sm uppercase tracking-wide hover:underline">Learn More &rarr;</a>
                     </div>
-                    <!-- Event 3 -->
+                    <!-- Prayer Night -->
                     <div class="bg-[#561722] rounded-2xl p-8 text-left shadow-xl hover:transform hover:-translate-y-2 transition duration-300 border border-[#A63F4E]">
-                        <div class="text-[#E9D8A6] text-3xl mb-4"><i class="fa-solid fa-fire"></i></div>
-                        <h3 class="text-xl font-bold text-[#E9D8A6] mb-2 font-playfair">Youth Night</h3>
-                        <p class="text-[#EED9B7] mb-6 text-sm leading-relaxed">Fun, fellowship, and faith for our youth. Fridays at 6:30 PM.</p>
-                        <a href="events.html" class="text-[#E9D8A6] font-bold text-sm uppercase tracking-wide hover:underline">Learn More &rarr;</a>
+                        <div class="text-[#E9D8A6] text-3xl mb-4"><i class="fa-solid fa-hands-praying"></i></div>
+                        <h3 class="text-xl font-bold text-[#E9D8A6] mb-2 font-playfair">Prayer Night</h3>
+                        <p class="text-[#EED9B7] mb-6 text-sm leading-relaxed">Corporate prayer and intercession. Wednesdays at 7:00 PM.</p>
+                        <a href="/events/" class="text-[#E9D8A6] font-bold text-sm uppercase tracking-wide hover:underline">Learn More &rarr;</a>
                     </div>
                 </div>
             </div>
@@ -280,123 +313,128 @@
             <div class="max-w-6xl mx-auto">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-5xl font-playfair mb-4 font-bold">Life at Higher Praise</h2>
-                    <a href="https://instagram.com/higherpraisecf" target="_blank" class="text-[#7C2639] hover:text-[#A63F4E] font-bold text-lg inline-flex items-center gap-2 transition">
-                        <i class="fa-brands fa-instagram text-2xl"></i> @higherpraisecf
+                    <a href="https://instagram.com/higherpraise_cf" target="_blank" class="text-[#7C2639] hover:text-[#A63F4E] font-bold text-lg inline-flex items-center gap-2 transition">
+                        <i class="fa-brands fa-instagram text-2xl"></i> @higherpraise_cf
                     </a>
                 </div>
 
                 <div class="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4">
-                    <!-- Gallery Items (9) -->
-                    <!-- Item 1 -->
+                    <!-- Gallery Items (9) with actual images -->
                     <div class="relative group aspect-square bg-gray-100 overflow-hidden rounded-lg">
-                        <img src="https://placehold.co/600x600/561722/E9D8A6?text=Worship" alt="Worship" class="object-cover w-full h-full transition duration-700 group-hover:scale-110">
+                        <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1765133396/outreach2_ugbx8m.jpg" alt="Outreach" class="object-cover w-full h-full transition duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center gap-4 text-white">
-                            <span><i class="fa-solid fa-heart"></i> 124</span><span><i class="fa-solid fa-comment"></i> 12</span>
+                            <span><i class="fa-solid fa-heart"></i></span>
                         </div>
                     </div>
-                    <!-- Item 2 -->
                     <div class="relative group aspect-square bg-gray-100 overflow-hidden rounded-lg">
-                        <img src="https://placehold.co/600x600/7C2639/E9D8A6?text=Fellowship" alt="Fellowship" class="object-cover w-full h-full transition duration-700 group-hover:scale-110">
+                        <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1768078389/outreach_nmiycv.jpg" alt="Community" class="object-cover w-full h-full transition duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center gap-4 text-white">
-                            <span><i class="fa-solid fa-heart"></i> 89</span><span><i class="fa-solid fa-comment"></i> 5</span>
+                            <span><i class="fa-solid fa-heart"></i></span>
                         </div>
                     </div>
-                    <!-- Item 3 -->
                     <div class="relative group aspect-square bg-gray-100 overflow-hidden rounded-lg">
-                        <img src="https://placehold.co/600x600/A63F4E/E9D8A6?text=Youth" alt="Youth" class="object-cover w-full h-full transition duration-700 group-hover:scale-110">
+                        <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1768078387/outreach3_wmig83.jpg" alt="Service" class="object-cover w-full h-full transition duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center gap-4 text-white">
-                            <span><i class="fa-solid fa-heart"></i> 204</span><span><i class="fa-solid fa-comment"></i> 32</span>
+                            <span><i class="fa-solid fa-heart"></i></span>
                         </div>
                     </div>
-                    <!-- Item 4 -->
                     <div class="relative group aspect-square bg-gray-100 overflow-hidden rounded-lg">
-                        <img src="https://placehold.co/600x600/561722/E9D8A6?text=Baptism" alt="Baptism" class="object-cover w-full h-full transition duration-700 group-hover:scale-110">
+                        <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1768078384/women_qqxtu0.jpg" alt="Women's Ministry" class="object-cover w-full h-full transition duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center gap-4 text-white">
-                            <span><i class="fa-solid fa-heart"></i> 340</span><span><i class="fa-solid fa-comment"></i> 45</span>
+                            <span><i class="fa-solid fa-heart"></i></span>
                         </div>
                     </div>
-                    <!-- Item 5 -->
                     <div class="relative group aspect-square bg-gray-100 overflow-hidden rounded-lg">
-                        <img src="https://placehold.co/600x600/7C2639/E9D8A6?text=Outreach" alt="Outreach" class="object-cover w-full h-full transition duration-700 group-hover:scale-110">
+                        <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1766343331/apostle4_pvwgfh.jpg" alt="Leadership" class="object-cover w-full h-full transition duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center gap-4 text-white">
-                            <span><i class="fa-solid fa-heart"></i> 156</span><span><i class="fa-solid fa-comment"></i> 8</span>
+                            <span><i class="fa-solid fa-heart"></i></span>
                         </div>
                     </div>
-                    <!-- Item 6 -->
                     <div class="relative group aspect-square bg-gray-100 overflow-hidden rounded-lg">
-                        <img src="https://placehold.co/600x600/A63F4E/E9D8A6?text=Prayer" alt="Prayer" class="object-cover w-full h-full transition duration-700 group-hover:scale-110">
+                        <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1766343331/together2_i9jr4i.jpg" alt="Fellowship" class="object-cover w-full h-full transition duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center gap-4 text-white">
-                            <span><i class="fa-solid fa-heart"></i> 92</span><span><i class="fa-solid fa-comment"></i> 11</span>
+                            <span><i class="fa-solid fa-heart"></i></span>
                         </div>
                     </div>
-                    <!-- Item 7 -->
                     <div class="relative group aspect-square bg-gray-100 overflow-hidden rounded-lg">
-                        <img src="https://placehold.co/600x600/561722/E9D8A6?text=Study" alt="Study" class="object-cover w-full h-full transition duration-700 group-hover:scale-110">
+                        <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1765133388/outreach4_i2g7a9.jpg" alt="Outreach" class="object-cover w-full h-full transition duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center gap-4 text-white">
-                            <span><i class="fa-solid fa-heart"></i> 113</span><span><i class="fa-solid fa-comment"></i> 4</span>
+                            <span><i class="fa-solid fa-heart"></i></span>
                         </div>
                     </div>
-                    <!-- Item 8 -->
                     <div class="relative group aspect-square bg-gray-100 overflow-hidden rounded-lg">
-                        <img src="https://placehold.co/600x600/7C2639/E9D8A6?text=Choir" alt="Choir" class="object-cover w-full h-full transition duration-700 group-hover:scale-110">
+                        <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1765133394/media_etv8hg.jpg" alt="Media Ministry" class="object-cover w-full h-full transition duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center gap-4 text-white">
-                            <span><i class="fa-solid fa-heart"></i> 275</span><span><i class="fa-solid fa-comment"></i> 29</span>
+                            <span><i class="fa-solid fa-heart"></i></span>
                         </div>
                     </div>
-                    <!-- Item 9 -->
                     <div class="relative group aspect-square bg-gray-100 overflow-hidden rounded-lg">
-                        <img src="https://placehold.co/600x600/A63F4E/E9D8A6?text=Volunteers" alt="Volunteers" class="object-cover w-full h-full transition duration-700 group-hover:scale-110">
+                        <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1765133393/sundayteachers_vlabif.jpg" alt="Teaching" class="object-cover w-full h-full transition duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center gap-4 text-white">
-                            <span><i class="fa-solid fa-heart"></i> 142</span><span><i class="fa-solid fa-comment"></i> 18</span>
+                            <span><i class="fa-solid fa-heart"></i></span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Footer -->
-        <footer class="bg-[#561722]/90 backdrop-blur-xl border-t border-[#E9D8A6]/20 text-[#E9D8A6]">
-            <div class="max-w-7xl mx-auto px-8 py-16 grid md:grid-cols-3 gap-12 text-center md:text-left">
-                <!-- About -->
+        <!-- =========================================
+             FOOTER - Consistent across all pages
+        ========================================== -->
+        <footer class="bg-[#561722] border-t border-[#E9D8A6]/20 text-[#E9D8A6]">
+            <div
+                class="max-w-7xl mx-auto px-6 md:px-8 py-12 md:py-16 grid md:grid-cols-3 gap-10 md:gap-12 text-center md:text-left">
                 <div class="flex flex-col items-center md:items-start">
-                    <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1763924716/HPCF_logo_gold_dkwnzi.png" alt="HPCF Logo" class="h-24 w-auto mb-6">
-                    <h3 class="text-2xl font-playfair font-bold mb-4 text-[#E9D8A6]">Higher Praise Christian Fellowship</h3>
+                    <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1763924716/HPCF_logo_gold_dkwnzi.png"
+                        alt="HPCF Logo" class="h-20 md:h-24 w-auto mb-6">
+                    <h3 class="text-xl md:text-2xl font-playfair font-bold mb-4">Higher Praise Christian Fellowship</h3>
                     <p class="text-sm text-[#EED9B7]/90 leading-relaxed max-w-sm">
-                        “You will never walk alone at Higher Praise Christian Fellowship.” No one gets left behind. Our mission is to reconcile the lost to Christ.
+                        "You will never walk alone at Higher Praise Christian Fellowship." No one gets left behind. Our
+                        mission is to reconcile the lost to Christ.
                     </p>
                 </div>
 
-                <!-- Quick Links -->
-                <div class="flex flex-col items-center md:items-start">
-                    <h3 class="text-lg font-bold mb-4 text-[#E9D8A6] uppercase tracking-wider">Quick Links</h3>
+               <div class="flex flex-col items-center md:items-start">
+                    <h3 class="text-lg font-bold mb-4 uppercase tracking-wider">Quick Links</h3>
                     <ul class="space-y-3 text-sm text-[#EED9B7]/80">
-                        <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="ministries.html" class="hover:text-white transition-colors">Ministries</a></li>
-                        <li><a href="events.html" class="hover:text-white transition-colors">Events</a></li>
-                        <li><a href="give.html" class="hover:text-white transition-colors">Give</a></li>
-                        <li><a href="connect.html" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="/about/" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="/ministries/" class="hover:text-white transition-colors">Ministries</a></li>
+                        <li><a href="/events/" class="hover:text-white transition-colors">Events</a></li>
+                        <li><a href="/give/" class="hover:text-white transition-colors">Give</a></li>
+                        <li><a href="/connect/" class="hover:text-white transition-colors">Contact</a></li>
                     </ul>
                 </div>
 
-                <!-- Connect -->
                 <div class="flex flex-col items-center md:items-start">
-                    <h3 class="text-lg font-bold mb-4 text-[#E9D8A6] uppercase tracking-wider">Connect</h3>
-                    <p class="text-sm text-[#EED9B7]/80">7309 El Cajon Blvd, La Mesa, CA 91942</p>
-                    <p class="text-sm text-[#EED9B7]/80">Email: info@higherpraisecf.org</p>
-                    <p class="text-sm text-[#EED9B7]/80 mb-6">Phone: (619) 555-1200</p>
-                    
-                    <!-- Social Icons -->
+                    <h3 class="text-lg font-bold mb-4 uppercase tracking-wider">Connect</h3>
+                    <address class="not-italic text-sm text-[#EED9B7]/80 space-y-1 mb-4">
+                        <p>7309 El Cajon Blvd, La Mesa, CA 91942</p>
+                        <p>Email: <a href="mailto:hpcfmedia@gmail.com"
+                                class="hover:text-white transition">contact@higherpraisecf.org</a></p>
+                        <p>Phone: <a href="tel:+16195551200" class="hover:text-white transition">(619) 555-1200</a></p>
+                    </address>
                     <div class="flex gap-4 text-2xl text-[#EED9B7] mb-6">
-                        <a href="mailto:info@higherpraisecf.org" aria-label="Email" class="hover:text-white transition hover:-translate-y-1"><i class="fa-solid fa-envelope"></i></a>
-                        <a href="https://www.facebook.com/higherpraisecf" target="_blank" aria-label="Facebook" class="hover:text-white transition hover:-translate-y-1"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="https://www.youtube.com/@higherpraisecf" target="_blank" aria-label="YouTube" class="hover:text-white transition hover:-translate-y-1"><i class="fa-brands fa-youtube"></i></a>
-                        <a href="https://www.instagram.com/higherpraisecf" target="_blank" aria-label="Instagram" class="hover:text-white transition hover:-translate-y-1"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="https://www.tiktok.com/@higherpraise_cf" target="_blank" aria-label="TikTok" class="hover:text-white transition hover:-translate-y-1"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="mailto:hpcfmedia@gmail.com" aria-label="Email"
+                            class="hover:text-white transition hover:-translate-y-1"><i
+                                class="fa-solid fa-envelope"></i></a>
+                        <a href="https://www.facebook.com/profile.php?id=100071166876525" target="_blank"
+                            rel="noopener noreferrer" aria-label="Facebook"
+                            class="hover:text-white transition hover:-translate-y-1"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.youtube.com/@higherpraise_hpcf" target="_blank" rel="noopener noreferrer"
+                            aria-label="YouTube" class="hover:text-white transition hover:-translate-y-1"><i
+                                class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/higherpraise_cf" target="_blank" rel="noopener noreferrer"
+                            aria-label="Instagram" class="hover:text-white transition hover:-translate-y-1"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@higherpraise_cf" target="_blank" rel="noopener noreferrer"
+                            aria-label="TikTok" class="hover:text-white transition hover:-translate-y-1"><i
+                                class="fab fa-tiktok"></i></a>
                     </div>
-                    
-                    <!-- Map -->
-                    <div class="w-full rounded-lg overflow-hidden border border-[#E9D8A6]/20 shadow-lg h-40">
-                        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=7309+El+Cajon+Blvd,+La+Mesa,+CA+91942&t=&z=14&ie=UTF8&iwloc=B&output=embed" title="Church Location"></iframe>
+                    <div class="w-full rounded-lg overflow-hidden border border-[#E9D8A6]/20 shadow-lg h-36">
+                        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0"
+                            marginwidth="0"
+                            src="https://maps.google.com/maps?q=7309+El+Cajon+Blvd,+La+Mesa,+CA+91942&t=&z=14&ie=UTF8&iwloc=B&output=embed"
+                            title="Church Location" loading="lazy"></iframe>
                     </div>
                 </div>
             </div>
@@ -405,25 +443,26 @@
                 © <span id="footer-year"></span> Higher Praise Christian Fellowship. All Rights Reserved.
             </div>
         </footer>
+        <!-- END FOOTER -->
     </div>
 
-    <!-- Faith Tools Widget -->
-    <div id="widget-container" class="fixed bottom-6 right-6 z-50 flex flex-col items-end pointer-events-none">
+    <!-- Faith Tools Widget (Cleaner, Smaller) -->
+    <div id="widget-container" class="fixed bottom-5 right-5 z-50 flex flex-col items-end pointer-events-none">
         <!-- Window -->
-        <div id="widget-window" class="hidden mb-4 w-80 bg-white rounded-2xl shadow-2xl overflow-hidden border-2 border-[#E9D8A6] text-[#561722] fade-in-up h-[34rem] flex flex-col pointer-events-auto">
+        <div id="widget-window" class="hidden mb-3 w-72 bg-white rounded-xl shadow-2xl overflow-hidden border border-[#E9D8A6] text-[#561722] fade-in-up h-[28rem] flex flex-col pointer-events-auto">
             <!-- Header -->
-            <div class="bg-[#561722] text-[#E9D8A6] p-4 flex justify-between items-center shadow-md z-10">
-                <h3 id="widget-title" class="font-playfair font-bold text-lg">Faith Tools</h3>
-                <button onclick="toggleWidget()" class="hover:text-white transition"><i class="fa-solid fa-xmark text-xl"></i></button>
+            <div class="bg-[#561722] text-[#E9D8A6] px-4 py-3 flex justify-between items-center shadow-md z-10">
+                <h3 id="widget-title" class="font-playfair font-bold text-base">Faith Tools</h3>
+                <button onclick="toggleWidget()" class="hover:text-white transition"><i class="fa-solid fa-xmark text-lg"></i></button>
             </div>
             <!-- Content -->
-            <div id="widget-content" class="p-4 overflow-y-auto flex-grow flex flex-col bg-gray-50">
+            <div id="widget-content" class="p-3 overflow-y-auto flex-grow flex flex-col bg-gray-50">
                 <!-- Injected via JS -->
             </div>
         </div>
 
-        <!-- Toggle Button -->
-        <button onclick="toggleWidget()" class="pointer-events-auto bg-[#E9D8A6] text-[#561722] hover:bg-white hover:text-[#7C2639] w-14 h-14 rounded-full shadow-2xl flex items-center justify-center text-2xl transition-all transform hover:scale-110 border-4 border-[#561722] focus:outline-none focus:ring-4 focus:ring-[#E9D8A6]/50">
+        <!-- Toggle Button (Smaller, Cleaner) -->
+        <button onclick="toggleWidget()" class="pointer-events-auto bg-[#E9D8A6] text-[#561722] hover:bg-white hover:text-[#7C2639] w-12 h-12 rounded-full shadow-xl flex items-center justify-center text-xl transition-all transform hover:scale-105 border-2 border-[#561722] focus:outline-none focus:ring-2 focus:ring-[#E9D8A6]/50">
             <i class="fa-solid fa-cross"></i>
         </button>
     </div>
@@ -432,7 +471,19 @@
     <script>
         document.getElementById('footer-year').textContent = new Date().getFullYear();
 
-        // --- Slideshow Logic ---
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.toggle('open');
+            mobileMenu.style.maxHeight = isOpen ? mobileMenu.scrollHeight + 'px' : '0';
+            menuBtn.setAttribute('aria-expanded', isOpen);
+            const icon = menuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars', !isOpen);
+            icon.classList.toggle('fa-xmark', isOpen);
+        });
+
+        // --- Slideshow Logic (2 slides now) ---
         const slidesTrack = document.getElementById('slides-track');
         if (slidesTrack) {
             const slides = Array.from(slidesTrack.children);
@@ -463,7 +514,7 @@
         const widgetContent = document.getElementById('widget-content');
         const widgetTitle = document.getElementById('widget-title');
         
-        // Data & State
+        // Encouragement Data
         const encouragementData = [
             { text: "You are a chosen people, a royal priesthood, a holy nation.", ref: "1 Peter 2:9" },
             { text: "The Lord will fight for you; you need only to be still.", ref: "Exodus 14:14" },
@@ -483,7 +534,7 @@
             { text: "Come to me, all you who are weary and burdened, and I will give you rest.", ref: "Matthew 11:28" }
         ];
 
-        // Trivia Data
+        // Trivia Data (RESTORED)
         const triviaData = [
             { q: "The Bible is the most popular book ever written.", a: "True", type: "tf", diff: "easy" },
             { q: "Because Jesus was God, he didn't obey his parents' rules.", a: "False", type: "tf", diff: "easy" },
@@ -548,19 +599,13 @@
             { q: "Strong judge who killed 1000 Philistines?", a: "Samson", w: ["Gideon", "David", "Saul"], type: "mc", diff: "medium" },
             { q: "Who was swallowed by a great fish?", a: "Jonah", w: ["Noah", "Moses", "Peter"], type: "mc", diff: "medium" },
             { q: "Who requested Jesus' body for burial?", a: "Joseph of Arimathea", w: ["Peter", "John", "Nicodemus"], type: "mc", diff: "medium" },
-            { q: "Who helped pay the bills for Jesus' ministry?", a: "Several women", w: ["The Romans", "The Pharisees", "Tax Collectors"], type: "mc", diff: "medium" },
             { q: "How many days was Lazarus dead?", a: "4", w: ["3", "2", "1"], type: "mc", diff: "medium" },
-            { q: "Who was the first martyr?", a: "Stephen", w: ["James", "Peter", "Paul"], type: "mc", diff: "medium" },
-            { q: "Who escorted the letter to Philemon?", a: "Tychicus", w: ["Timothy", "Titus", "Silas"], type: "mc", diff: "medium" },
             { q: "Who was the King of Salem?", a: "Melchizedek", w: ["Abimelech", "Og", "Sihon"], type: "mc", diff: "hard" },
             { q: "Father of John the Baptist?", a: "Zacharias", w: ["Zebedee", "Joseph", "Simeon"], type: "mc", diff: "hard" },
-            { q: "Who fell asleep during Paul's sermon?", a: "Eutychus", w: ["Timothy", "Silas", "Barnabas"], type: "mc", diff: "hard" },
             { q: "Which tribe had no land inheritance?", a: "Levites", w: ["Judah", "Benjamin", "Dan"], type: "mc", diff: "hard" },
             { q: "King who ate grass like an ox?", a: "Nebuchadnezzar", w: ["Darius", "Cyrus", "Belshazzar"], type: "mc", diff: "hard" },
-            { q: "Who was King of the Southern Kingdom when Israel fell?", a: "Hezekiah", w: ["Josiah", "Manasseh", "Ahaz"], type: "mc", diff: "hard" },
             { q: "Who was the father-in-law of Caiaphas?", a: "Annas", w: ["Pilate", "Herod", "Gamaliel"], type: "mc", diff: "hard" },
-            { q: "Who gave Abram bread and wine?", a: "Melchizedek", w: ["Pharaoh", "Lot", "Abimelech"], type: "mc", diff: "hard" },
-            { q: "Which two tribes were not named after sons of Jacob?", a: "Ephraim and Manasseh", w: ["Dan and Gad", "Levi and Joseph", "Judah and Benjamin"], type: "mc", diff: "hard" }
+            { q: "Who gave Abram bread and wine?", a: "Melchizedek", w: ["Pharaoh", "Lot", "Abimelech"], type: "mc", diff: "hard" }
         ];
 
         let state = {
@@ -577,22 +622,22 @@
             state.currentView = 'home';
             widgetTitle.textContent = "Faith Tools";
             widgetContent.innerHTML = `
-                <div class="grid grid-cols-2 gap-3 h-full content-center">
-                    <button onclick="renderTriviaMenu()" class="bg-[#561722] text-white p-4 rounded-xl hover:bg-[#7C2639] transition flex flex-col items-center justify-center text-center shadow-md group h-32">
-                        <i class="fa-solid fa-gamepad text-3xl mb-2 text-[#E9D8A6] group-hover:scale-110 transition-transform"></i>
-                        <span class="font-bold text-sm">Bible Trivia</span>
+                <div class="grid grid-cols-2 gap-2 h-full content-center">
+                    <button onclick="renderTriviaMenu()" class="bg-[#561722] text-white p-3 rounded-lg hover:bg-[#7C2639] transition flex flex-col items-center justify-center text-center shadow group h-24">
+                        <i class="fa-solid fa-gamepad text-2xl mb-1 text-[#E9D8A6] group-hover:scale-110 transition-transform"></i>
+                        <span class="font-bold text-xs">Bible Trivia</span>
                     </button>
-                    <button onclick="renderBibleApp()" class="bg-[#7C2639] text-white p-4 rounded-xl hover:bg-[#A63F4E] transition flex flex-col items-center justify-center text-center shadow-md group h-32">
-                        <i class="fa-solid fa-book-bible text-3xl mb-2 text-[#E9D8A6] group-hover:scale-110 transition-transform"></i>
-                        <span class="font-bold text-sm">Mini Bible</span>
+                    <button onclick="renderBibleApp()" class="bg-[#7C2639] text-white p-3 rounded-lg hover:bg-[#A63F4E] transition flex flex-col items-center justify-center text-center shadow group h-24">
+                        <i class="fa-solid fa-book-bible text-2xl mb-1 text-[#E9D8A6] group-hover:scale-110 transition-transform"></i>
+                        <span class="font-bold text-xs">Mini Bible</span>
                     </button>
-                    <button onclick="renderEncouragement()" class="bg-[#A63F4E] text-white p-4 rounded-xl hover:bg-[#7C2639] transition flex flex-col items-center justify-center text-center shadow-md group h-32">
-                        <i class="fa-solid fa-heart text-3xl mb-2 text-[#E9D8A6] group-hover:scale-110 transition-transform"></i>
-                        <span class="font-bold text-sm">Encourage Me</span>
+                    <button onclick="renderEncouragement()" class="bg-[#A63F4E] text-white p-3 rounded-lg hover:bg-[#7C2639] transition flex flex-col items-center justify-center text-center shadow group h-24">
+                        <i class="fa-solid fa-heart text-2xl mb-1 text-[#E9D8A6] group-hover:scale-110 transition-transform"></i>
+                        <span class="font-bold text-xs">Encourage Me</span>
                     </button>
-                    <button onclick="renderPrayerRequest()" class="bg-gray-800 text-white p-4 rounded-xl hover:bg-black transition flex flex-col items-center justify-center text-center shadow-md group h-32 border border-[#E9D8A6]">
-                        <i class="fa-solid fa-hands-praying text-3xl mb-2 text-[#E9D8A6] group-hover:scale-110 transition-transform"></i>
-                        <span class="font-bold text-sm">Prayer Request</span>
+                    <button onclick="renderPrayerRequest()" class="bg-gray-700 text-white p-3 rounded-lg hover:bg-gray-800 transition flex flex-col items-center justify-center text-center shadow group h-24 border border-[#E9D8A6]/30">
+                        <i class="fa-solid fa-hands-praying text-2xl mb-1 text-[#E9D8A6] group-hover:scale-110 transition-transform"></i>
+                        <span class="font-bold text-xs">Prayer Request</span>
                     </button>
                 </div>
             `;
@@ -608,13 +653,13 @@
             const hard = localStorage.getItem('trivia_hs_hard') || 0;
 
             widgetContent.innerHTML = `
-                <div class="flex flex-col h-full space-y-3">
-                    <button onclick="renderWidgetHome()" class="text-sm text-gray-500 hover:text-[#561722] mb-2 self-start flex items-center gap-1 font-bold"><i class="fa-solid fa-arrow-left"></i> Back</button>
-                    <p class="text-center font-bold text-[#561722] mb-2">Select Game Mode</p>
-                    <button onclick="initTrivia('quick')" class="bg-[#561722] text-white p-3 rounded-xl hover:bg-[#7C2639] transition flex justify-between items-center shadow-md"><span class="font-semibold">Quick Game (5)</span><span class="text-xs bg-black/20 px-2 py-1 rounded text-[#E9D8A6]">Best: ${quick}</span></button>
-                    <button onclick="initTrivia('infinite')" class="bg-[#A63F4E] text-white p-3 rounded-xl hover:bg-[#7C2639] transition flex justify-between items-center shadow-md"><span class="font-semibold">Survival (∞)</span><span class="text-xs bg-black/20 px-2 py-1 rounded text-[#E9D8A6]">Best: ${infinite}</span></button>
-                    <button onclick="initTrivia('tf')" class="bg-[#561722] text-white p-3 rounded-xl hover:bg-[#7C2639] transition flex justify-between items-center shadow-md"><span class="font-semibold">True or False (5)</span><span class="text-xs bg-black/20 px-2 py-1 rounded text-[#E9D8A6]">Best: ${tf}</span></button>
-                    <button onclick="initTrivia('hard')" class="bg-gray-800 text-white p-3 rounded-xl hover:bg-black transition flex justify-between items-center shadow-md border border-[#E9D8A6]"><span class="font-semibold">Hard Mode (5)</span><span class="text-xs bg-white/20 px-2 py-1 rounded text-[#E9D8A6]">Best: ${hard}</span></button>
+                <div class="flex flex-col h-full space-y-2">
+                    <button onclick="renderWidgetHome()" class="text-xs text-gray-500 hover:text-[#561722] mb-1 self-start flex items-center gap-1 font-bold"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                    <p class="text-center font-bold text-[#561722] text-sm mb-1">Select Game Mode</p>
+                    <button onclick="initTrivia('quick')" class="bg-[#561722] text-white p-2.5 rounded-lg hover:bg-[#7C2639] transition flex justify-between items-center shadow text-sm"><span class="font-semibold">Quick Game (5)</span><span class="text-xs bg-black/20 px-2 py-0.5 rounded text-[#E9D8A6]">Best: ${quick}</span></button>
+                    <button onclick="initTrivia('infinite')" class="bg-[#A63F4E] text-white p-2.5 rounded-lg hover:bg-[#7C2639] transition flex justify-between items-center shadow text-sm"><span class="font-semibold">Survival (∞)</span><span class="text-xs bg-black/20 px-2 py-0.5 rounded text-[#E9D8A6]">Best: ${infinite}</span></button>
+                    <button onclick="initTrivia('tf')" class="bg-[#561722] text-white p-2.5 rounded-lg hover:bg-[#7C2639] transition flex justify-between items-center shadow text-sm"><span class="font-semibold">True or False (5)</span><span class="text-xs bg-black/20 px-2 py-0.5 rounded text-[#E9D8A6]">Best: ${tf}</span></button>
+                    <button onclick="initTrivia('hard')" class="bg-gray-700 text-white p-2.5 rounded-lg hover:bg-gray-800 transition flex justify-between items-center shadow text-sm border border-[#E9D8A6]/30"><span class="font-semibold">Hard Mode (5)</span><span class="text-xs bg-white/20 px-2 py-0.5 rounded text-[#E9D8A6]">Best: ${hard}</span></button>
                 </div>
             `;
         }
@@ -657,16 +702,16 @@
             widgetContent.innerHTML = `
                 <div class="flex flex-col h-full">
                     <button onclick="renderTriviaMenu()" class="text-xs text-gray-400 hover:text-gray-600 mb-2 self-start font-bold">Quit</button>
-                    <div class="flex justify-between items-center text-sm text-gray-600 mb-4 bg-white p-2 rounded-lg shadow-sm border border-gray-100">
+                    <div class="flex justify-between items-center text-xs text-gray-600 mb-3 bg-white p-2 rounded-lg shadow-sm border border-gray-100">
                         <span class="font-bold text-[#7C2639]">${progress}</span>
                         <span class="font-bold">Score: ${state.trivia.score}</span>
                     </div>
-                    <div class="flex-grow flex items-center justify-center mb-6">
-                        <h4 class="font-playfair font-bold text-xl text-center leading-tight text-[#561722]">${q.q}</h4>
+                    <div class="flex-grow flex items-center justify-center mb-4">
+                        <h4 class="font-playfair font-bold text-base text-center leading-tight text-[#561722]">${q.q}</h4>
                     </div>
-                    <div class="space-y-3">
+                    <div class="space-y-2">
                         ${answers.map(ans => `
-                            <button onclick="handleTriviaAnswer('${ans.replace(/'/g, "\\'")}')" class="w-full py-3 px-4 bg-white hover:bg-[#E9D8A6] hover:text-[#561722] rounded-lg text-left transition font-medium border-2 border-gray-200 shadow-sm active:scale-95">
+                            <button onclick="handleTriviaAnswer('${ans.replace(/'/g, "\\'")}')" class="w-full py-2.5 px-3 bg-white hover:bg-[#E9D8A6] hover:text-[#561722] rounded-lg text-left transition font-medium border border-gray-200 shadow-sm active:scale-95 text-sm">
                                 ${ans}
                             </button>
                         `).join('')}
@@ -689,14 +734,14 @@
         function showFeedback(correct, gameOver) {
             const q = state.trivia.questions[state.trivia.currentIndex];
             const color = correct ? 'text-green-600' : 'text-red-600';
-            const icon = correct ? '<i class="fa-solid fa-check-circle text-5xl mb-3"></i>' : '<i class="fa-solid fa-circle-xmark text-5xl mb-3"></i>';
+            const icon = correct ? '<i class="fa-solid fa-check-circle text-4xl mb-2"></i>' : '<i class="fa-solid fa-circle-xmark text-4xl mb-2"></i>';
             const text = correct ? 'Correct!' : 'Wrong!';
-            const sub = correct ? '' : `<p class="text-gray-600 mt-2 bg-white p-2 rounded border border-gray-200">Answer: <span class="font-bold text-[#561722]">${q.a}</span></p>`;
+            const sub = correct ? '' : `<p class="text-gray-600 mt-2 bg-white p-2 rounded border border-gray-200 text-sm">Answer: <span class="font-bold text-[#561722]">${q.a}</span></p>`;
 
             widgetContent.innerHTML = `
-                <div class="flex flex-col h-full justify-center items-center text-center animate-pulse">
+                <div class="flex flex-col h-full justify-center items-center text-center">
                     <div class="${color} flex flex-col items-center">
-                        ${icon}<h3 class="text-3xl font-bold font-playfair">${text}</h3>
+                        ${icon}<h3 class="text-2xl font-bold font-playfair">${text}</h3>
                     </div>
                     ${sub}
                 </div>
@@ -730,16 +775,16 @@
             }
 
             widgetContent.innerHTML = `
-                <div class="flex flex-col h-full justify-center items-center text-center space-y-6">
+                <div class="flex flex-col h-full justify-center items-center text-center space-y-4">
                     <div>
-                        <h3 class="font-playfair text-3xl font-bold text-[#561722] mb-2">Game Over</h3>
-                        <p class="text-gray-500 font-medium">You scored</p>
-                        <div class="text-6xl font-bold text-[#7C2639] my-3">${state.trivia.score}</div>
-                        ${isNew ? '<div class="text-green-600 font-bold text-sm animate-bounce bg-green-100 px-3 py-1 rounded-full">New High Score! 🏆</div>' : ''}
+                        <h3 class="font-playfair text-2xl font-bold text-[#561722] mb-1">Game Over</h3>
+                        <p class="text-gray-500 font-medium text-sm">You scored</p>
+                        <div class="text-5xl font-bold text-[#7C2639] my-2">${state.trivia.score}</div>
+                        ${isNew ? '<div class="text-green-600 font-bold text-xs bg-green-100 px-3 py-1 rounded-full">New High Score! 🏆</div>' : ''}
                     </div>
-                    <div class="w-full space-y-3">
-                        <button onclick="initTrivia('${state.trivia.mode}')" class="w-full bg-[#561722] text-white py-3 rounded-xl hover:bg-[#7C2639] transition font-semibold shadow-md">Play Again</button>
-                        <button onclick="renderTriviaMenu()" class="w-full bg-gray-200 text-gray-700 py-3 rounded-xl hover:bg-gray-300 transition font-semibold">Menu</button>
+                    <div class="w-full space-y-2">
+                        <button onclick="initTrivia('${state.trivia.mode}')" class="w-full bg-[#561722] text-white py-2.5 rounded-lg hover:bg-[#7C2639] transition font-semibold shadow text-sm">Play Again</button>
+                        <button onclick="renderTriviaMenu()" class="w-full bg-gray-200 text-gray-700 py-2.5 rounded-lg hover:bg-gray-300 transition font-semibold text-sm">Menu</button>
                     </div>
                 </div>
             `;
@@ -751,16 +796,16 @@
             widgetTitle.textContent = "Mini Bible";
             widgetContent.innerHTML = `
                 <div class="flex flex-col h-full">
-                    <button onclick="renderWidgetHome()" class="text-sm text-gray-500 hover:text-[#561722] mb-3 self-start flex items-center gap-1 font-bold"><i class="fa-solid fa-arrow-left"></i> Back</button>
-                    <div class="flex gap-2 mb-4">
-                        <input type="text" id="bible-input" placeholder="e.g. John 3:16" class="flex-grow border-2 border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-[#7C2639] transition-colors">
-                        <button onclick="fetchVerse()" class="bg-[#561722] text-white px-4 py-2 rounded-lg hover:bg-[#7C2639] transition"><i class="fa-solid fa-search"></i></button>
+                    <button onclick="renderWidgetHome()" class="text-xs text-gray-500 hover:text-[#561722] mb-2 self-start flex items-center gap-1 font-bold"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                    <div class="flex gap-2 mb-3">
+                        <input type="text" id="bible-input" placeholder="e.g. John 3:16" class="flex-grow border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-[#7C2639] transition-colors">
+                        <button onclick="fetchVerse()" class="bg-[#561722] text-white px-3 py-2 rounded-lg hover:bg-[#7C2639] transition"><i class="fa-solid fa-search"></i></button>
                     </div>
-                    <div id="bible-display" class="bg-white flex-grow rounded-xl p-6 border-2 border-gray-100 overflow-y-auto text-sm leading-relaxed text-gray-700 shadow-inner">
+                    <div id="bible-display" class="bg-white flex-grow rounded-lg p-4 border border-gray-100 overflow-y-auto text-sm leading-relaxed text-gray-700 shadow-inner">
                         <div class="flex flex-col h-full justify-center items-center text-center opacity-50">
-                            <i class="fa-solid fa-book-open text-4xl mb-3 text-[#E9D8A6]"></i>
-                            <p>Enter a reference or...</p>
-                            <button onclick="fetchRandomVerse()" class="text-[#7C2639] font-bold mt-2 hover:underline">Get Random Verse</button>
+                            <i class="fa-solid fa-book-open text-3xl mb-2 text-[#E9D8A6]"></i>
+                            <p class="text-sm">Enter a reference or...</p>
+                            <button onclick="fetchRandomVerse()" class="text-[#7C2639] font-bold mt-1 hover:underline text-sm">Get Random Verse</button>
                         </div>
                     </div>
                 </div>
@@ -771,20 +816,20 @@
             const input = document.getElementById('bible-input').value.trim();
             const display = document.getElementById('bible-display');
             if(!input) return;
-            display.innerHTML = '<div class="flex justify-center h-full items-center"><i class="fa-solid fa-spinner fa-spin text-3xl text-[#561722]"></i></div>';
+            display.innerHTML = '<div class="flex justify-center h-full items-center"><i class="fa-solid fa-spinner fa-spin text-2xl text-[#561722]"></i></div>';
             try {
                 const res = await fetch(`https://bible-api.com/${encodeURIComponent(input)}`);
                 const data = await res.json();
                 if (data.error) {
-                    display.innerHTML = `<div class="flex flex-col h-full justify-center items-center text-center"><i class="fa-solid fa-triangle-exclamation text-3xl text-red-400 mb-2"></i><p class="text-red-500 font-bold">Verse not found.</p><p class="text-xs text-gray-400">Try "John 3:16"</p></div>`;
+                    display.innerHTML = `<div class="flex flex-col h-full justify-center items-center text-center"><i class="fa-solid fa-triangle-exclamation text-2xl text-red-400 mb-2"></i><p class="text-red-500 font-bold text-sm">Verse not found.</p><p class="text-xs text-gray-400">Try "John 3:16"</p></div>`;
                 } else {
                     display.innerHTML = `
-                        <h4 class="font-playfair font-bold text-xl text-[#561722] mb-3 border-b-2 border-[#E9D8A6]/30 pb-2">${data.reference}</h4>
-                        <p class="text-base italic text-gray-800 leading-7">"${data.text.trim()}"</p>
+                        <h4 class="font-playfair font-bold text-lg text-[#561722] mb-2 border-b border-[#E9D8A6]/30 pb-2">${data.reference}</h4>
+                        <p class="text-sm italic text-gray-800 leading-6">"${data.text.trim()}"</p>
                     `;
                 }
             } catch (e) {
-                display.innerHTML = `<p class="text-red-500 text-center mt-4 font-bold">Connection Error</p>`;
+                display.innerHTML = `<p class="text-red-500 text-center mt-4 font-bold text-sm">Connection Error</p>`;
             }
         }
 
@@ -802,14 +847,14 @@
             const rand = encouragementData[Math.floor(Math.random() * encouragementData.length)];
             widgetContent.innerHTML = `
                 <div class="flex flex-col h-full">
-                    <button onclick="renderWidgetHome()" class="text-sm text-gray-500 hover:text-[#561722] mb-3 self-start flex items-center gap-1 font-bold"><i class="fa-solid fa-arrow-left"></i> Back</button>
-                    <div id="encouragement-display" class="flex-grow flex flex-col justify-center items-center text-center p-6 bg-white rounded-xl mb-4 border-2 border-[#E9D8A6]/50 shadow-sm relative overflow-hidden group">
-                        <div class="absolute top-0 right-0 p-2 text-[#E9D8A6]/20 group-hover:text-[#E9D8A6]/40 transition duration-500"><i class="fa-solid fa-quote-right text-6xl"></i></div>
-                        <p class="text-xl font-playfair font-bold text-[#561722] mb-6 relative z-10 leading-snug">"${rand.text}"</p>
-                        <span class="text-xs font-bold text-white bg-[#7C2639] px-4 py-1.5 rounded-full shadow-md uppercase tracking-wider">${rand.ref}</span>
+                    <button onclick="renderWidgetHome()" class="text-xs text-gray-500 hover:text-[#561722] mb-2 self-start flex items-center gap-1 font-bold"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                    <div id="encouragement-display" class="flex-grow flex flex-col justify-center items-center text-center p-4 bg-white rounded-lg mb-3 border border-[#E9D8A6]/50 shadow-sm relative overflow-hidden group">
+                        <div class="absolute top-0 right-0 p-2 text-[#E9D8A6]/20 group-hover:text-[#E9D8A6]/40 transition duration-500"><i class="fa-solid fa-quote-right text-4xl"></i></div>
+                        <p class="text-base font-playfair font-bold text-[#561722] mb-4 relative z-10 leading-snug">"${rand.text}"</p>
+                        <span class="text-xs font-bold text-white bg-[#7C2639] px-3 py-1 rounded-full shadow uppercase tracking-wider">${rand.ref}</span>
                     </div>
-                    <button onclick="newEncouragement()" class="w-full bg-[#561722] text-white py-3 rounded-xl hover:bg-[#7C2639] transition font-semibold shadow-md active:scale-95">
-                        New Word <i class="fa-solid fa-rotate ml-2"></i>
+                    <button onclick="newEncouragement()" class="w-full bg-[#561722] text-white py-2.5 rounded-lg hover:bg-[#7C2639] transition font-semibold shadow text-sm active:scale-95">
+                        New Word <i class="fa-solid fa-rotate ml-1"></i>
                     </button>
                 </div>
             `;
@@ -822,9 +867,9 @@
             setTimeout(() => {
                 const rand = encouragementData[Math.floor(Math.random() * encouragementData.length)];
                 display.innerHTML = `
-                    <div class="absolute top-0 right-0 p-2 text-[#E9D8A6]/20 group-hover:text-[#E9D8A6]/40 transition duration-500"><i class="fa-solid fa-quote-right text-6xl"></i></div>
-                    <p class="text-xl font-playfair font-bold text-[#561722] mb-6 relative z-10 leading-snug">"${rand.text}"</p>
-                    <span class="text-xs font-bold text-white bg-[#7C2639] px-4 py-1.5 rounded-full shadow-md uppercase tracking-wider">${rand.ref}</span>
+                    <div class="absolute top-0 right-0 p-2 text-[#E9D8A6]/20 group-hover:text-[#E9D8A6]/40 transition duration-500"><i class="fa-solid fa-quote-right text-4xl"></i></div>
+                    <p class="text-base font-playfair font-bold text-[#561722] mb-4 relative z-10 leading-snug">"${rand.text}"</p>
+                    <span class="text-xs font-bold text-white bg-[#7C2639] px-3 py-1 rounded-full shadow uppercase tracking-wider">${rand.ref}</span>
                 `;
                 display.style.transition = 'all 0.4s ease-out';
                 display.style.opacity = '1';
@@ -838,17 +883,17 @@
             widgetTitle.textContent = "Prayer Request";
             widgetContent.innerHTML = `
                 <div class="flex flex-col h-full">
-                    <button onclick="renderWidgetHome()" class="text-sm text-gray-500 hover:text-[#561722] mb-3 self-start flex items-center gap-1 font-bold"><i class="fa-solid fa-arrow-left"></i> Back</button>
-                    <form id="prayer-form" onsubmit="handlePrayerSubmit(event)" class="flex-grow flex flex-col space-y-4 bg-white p-4 rounded-xl shadow-sm border border-gray-100">
+                    <button onclick="renderWidgetHome()" class="text-xs text-gray-500 hover:text-[#561722] mb-2 self-start flex items-center gap-1 font-bold"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                    <form id="prayer-form" onsubmit="handlePrayerSubmit(event)" class="flex-grow flex flex-col space-y-3 bg-white p-3 rounded-lg shadow-sm border border-gray-100">
                         <div>
-                            <label class="block text-xs font-bold text-[#7C2639] uppercase mb-1 ml-1">Name (Optional)</label>
-                            <input type="text" id="prayer-name" class="w-full border-2 border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-[#7C2639] transition-colors" placeholder="Your name...">
+                            <label class="block text-xs font-bold text-[#7C2639] uppercase mb-1">Name (Optional)</label>
+                            <input type="text" id="prayer-name" class="w-full border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-[#7C2639] transition-colors" placeholder="Your name...">
                         </div>
                         <div class="flex-grow flex flex-col">
-                            <label class="block text-xs font-bold text-[#7C2639] uppercase mb-1 ml-1">How can we pray for you?</label>
-                            <textarea id="prayer-text" class="w-full flex-grow border-2 border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-[#7C2639] resize-none transition-colors" placeholder="Share your request here..." required></textarea>
+                            <label class="block text-xs font-bold text-[#7C2639] uppercase mb-1">How can we pray for you?</label>
+                            <textarea id="prayer-text" class="w-full flex-grow border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:border-[#7C2639] resize-none transition-colors" placeholder="Share your request here..." required></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-[#561722] text-white py-3 rounded-xl hover:bg-[#7C2639] transition font-semibold shadow-md active:scale-95 flex justify-center items-center gap-2">
+                        <button type="submit" class="w-full bg-[#561722] text-white py-2.5 rounded-lg hover:bg-[#7C2639] transition font-semibold shadow text-sm active:scale-95 flex justify-center items-center gap-2">
                             <span>Send Request</span> <i class="fa-solid fa-paper-plane"></i>
                         </button>
                     </form>
@@ -873,14 +918,14 @@
 
                 widgetContent.innerHTML = `
                     <div class="flex flex-col h-full">
-                        <button onclick="renderWidgetHome()" class="text-sm text-gray-500 hover:text-[#561722] mb-3 self-start flex items-center gap-1 font-bold"><i class="fa-solid fa-arrow-left"></i> Back</button>
-                        <div class="flex-grow flex flex-col justify-center items-center text-center animate-bounce-in">
-                            <div class="bg-green-100 p-5 rounded-full mb-6 shadow-sm">
-                                <i class="fa-solid fa-check text-5xl text-green-600"></i>
+                        <button onclick="renderWidgetHome()" class="text-xs text-gray-500 hover:text-[#561722] mb-2 self-start flex items-center gap-1 font-bold"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                        <div class="flex-grow flex flex-col justify-center items-center text-center">
+                            <div class="bg-green-100 p-4 rounded-full mb-4 shadow-sm">
+                                <i class="fa-solid fa-check text-4xl text-green-600"></i>
                             </div>
-                            <h4 class="font-playfair font-bold text-3xl text-[#561722] mb-3">Received!</h4>
-                            <p class="text-gray-600 mb-8 max-w-[80%] mx-auto">Your prayer request has been sent. Our team will be praying for you.</p>
-                            <button onclick="renderPrayerRequest()" class="text-sm font-bold text-[#7C2639] hover:underline bg-[#7C2639]/10 px-4 py-2 rounded-full transition-colors">Send another request</button>
+                            <h4 class="font-playfair font-bold text-2xl text-[#561722] mb-2">Received!</h4>
+                            <p class="text-gray-600 mb-6 max-w-[80%] mx-auto text-sm">Your prayer request has been sent. Our team will be praying for you.</p>
+                            <button onclick="renderPrayerRequest()" class="text-xs font-bold text-[#7C2639] hover:underline bg-[#7C2639]/10 px-3 py-1.5 rounded-full transition-colors">Send another request</button>
                         </div>
                     </div>
                 `;

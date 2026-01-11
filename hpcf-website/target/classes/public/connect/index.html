@@ -54,8 +54,8 @@
           {
             "@type": "OpeningHoursSpecification",
             "dayOfWeek": "Sunday",
-            "opens": "10:30",
-            "closes": "12:30"
+            "opens": "10:00",
+            "closes": "12:00"
           },
           {
             "@type": "OpeningHoursSpecification",
@@ -153,12 +153,12 @@
                     </a>
 
                     <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium text-white">
-                        <a href="/about" class="hover:text-[#E9D8A6] transition">About</a>
-                        <a href="/ministries" class="hover:text-[#E9D8A6] transition">Ministries</a>
-                        <a href="/connect" class="text-[#E9D8A6] font-bold border-b-2 border-[#E9D8A6]">Connect</a>
-                        <a href="/events" class="hover:text-[#E9D8A6] transition">Events</a>
-                        <a href="/give" class="hover:text-[#E9D8A6] transition">Give</a>
-                        <a href="/connect"
+                        <a href="/about/" class="hover:text-[#E9D8A6] transition">About</a>
+                        <a href="/ministries/" class="hover:text-[#E9D8A6] transition">Ministries</a>
+                        <a href="/connect/" class="text-[#E9D8A6] font-bold border-b-2 border-[#E9D8A6]">Connect</a>
+                        <a href="/events/" class="hover:text-[#E9D8A6] transition">Events</a>
+                        <a href="/give/" class="hover:text-[#E9D8A6] transition">Give</a>
+                        <a href="/connect/"
                             class="bg-[#E9D8A6] text-[#561722] hover:bg-[#EED9B7] rounded-full px-5 py-2 text-sm font-bold shadow-lg transition-all hover:-translate-y-0.5 ml-2">Join
                             Us</a>
                     </nav>
@@ -172,12 +172,12 @@
 
             <div id="mobile-menu" class="md:hidden bg-[#561722] border-t border-white/10">
                 <nav class="flex flex-col p-4 space-y-3 text-center">
-                    <a href="/about" class="text-white hover:text-[#E9D8A6] font-medium py-2">About</a>
-                    <a href="/ministries" class="text-white hover:text-[#E9D8A6] font-medium py-2">Ministries</a>
-                    <a href="/connect" class="text-[#E9D8A6] font-bold py-2">Connect</a>
-                    <a href="/events" class="text-white hover:text-[#E9D8A6] font-medium py-2">Events</a>
-                    <a href="/give" class="text-white hover:text-[#E9D8A6] font-medium py-2">Give</a>
-                    <a href="/connect"
+                    <a href="/about/" class="text-white hover:text-[#E9D8A6] font-medium py-2">About</a>
+                    <a href="/ministries/" class="text-white hover:text-[#E9D8A6] font-medium py-2">Ministries</a>
+                    <a href="/connect/" class="text-[#E9D8A6] font-bold py-2">Connect</a>
+                    <a href="/events/" class="text-white hover:text-[#E9D8A6] font-medium py-2">Events</a>
+                    <a href="/give/" class="text-white hover:text-[#E9D8A6] font-medium py-2">Give</a>
+                    <a href="/connect/"
                         class="bg-[#E9D8A6] text-[#561722] rounded-full px-5 py-2 font-bold inline-block mx-auto mt-2">Join
                         Us</a>
                 </nav>
@@ -216,11 +216,9 @@
                                 <i class="fa-regular fa-clock text-[#7C2639]"></i> Service Times
                             </h3>
                             <ul class="text-lg text-gray-700 space-y-2 pl-2 border-l-4 border-[#E9D8A6]">
-                                <li class="pl-4"><strong class="text-[#7C2639]">Sunday Worship:</strong> 10:30 AM</li>
-                                <li class="pl-4"><strong class="text-[#7C2639]">Midweek Bible Study:</strong> Wednesdays
-                                    at 7:00 PM</li>
-                                <li class="pl-4"><strong class="text-[#7C2639]">Youth Night:</strong> Fridays at 6:30 PM
-                                </li>
+                                <li class="pl-4"><strong class="text-[#7C2639]">Sunday Worship:</strong> Sundays at 10:00 AM</li>
+                                <li class="pl-4"><strong class="text-[#7C2639]">Bible Study:</strong> Wednesdays at 7:00 PM</li>
+                                <li class="pl-4"><strong class="text-[#7C2639]">Prayer Night:</strong> Wednesdays at 7:00 PM</li>
                             </ul>
                         </div>
 
@@ -248,7 +246,7 @@
                                 <p class="text-lg text-gray-700">
                                     <strong class="text-[#7C2639]">Email:</strong>
                                     <a href="mailto:hpcfmedia@gmail.com"
-                                        class="hover:text-[#7C2639] transition underline">hpcfmedia@gmail.com</a>
+                                        class="hover:text-[#7C2639] transition underline">contact@higherpraisecf.org</a>
                                 </p>
                                 <p class="text-lg text-gray-700">
                                     <strong class="text-[#7C2639]">Phone:</strong>
@@ -260,7 +258,7 @@
                     </div>
                 </div>
 
-                <!-- Column 2: Contact Form - FUNCTIONAL -->
+                <!-- Column 2: Contact Form -->
                 <div class="bg-[#E9D8A6]/20 p-8 md:p-10 rounded-3xl shadow-xl border border-[#E9D8A6]/50">
                     <h2 class="text-3xl font-playfair mb-2 text-[#561722] font-bold">Send Us a Message</h2>
                     <p class="text-gray-600 mb-6">Questions, prayer requests, or just want to say hello? We'd love to
@@ -278,27 +276,6 @@
                     </div>
 
                     <!-- Contact Form -->
-                    <!-- 
-                        ============================================
-                        FORM CONFIGURATION:
-                        This form uses a mailto: fallback by default.
-                        
-                        For better reliability, consider these options:
-                        
-                        OPTION 1: Formspree (Free tier available)
-                        1. Sign up at formspree.io
-                        2. Create a new form
-                        3. Replace action="#" with action="https://formspree.io/f/YOUR_FORM_ID"
-                        
-                        OPTION 2: Web3Forms (Free, no signup)
-                        1. Get key at web3forms.com
-                        2. Replace action="#" with action="https://api.web3forms.com/submit"
-                        3. Add: <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
-                        
-                        OPTION 3: Current (mailto: fallback)
-                        Works without any setup, opens user's email client
-                        ============================================
-                    -->
                     <form id="contact-form" class="space-y-5" action="#" method="POST">
                         <!-- Hidden field for form identification -->
                         <input type="hidden" name="form_source" value="HPCF Website Contact Form">
@@ -384,11 +361,11 @@
                 <div class="flex flex-col items-center md:items-start">
                     <h3 class="text-lg font-bold mb-4 uppercase tracking-wider">Quick Links</h3>
                     <ul class="space-y-3 text-sm text-[#EED9B7]/80">
-                        <li><a href="/about" class="hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="/ministries" class="hover:text-white transition-colors">Ministries</a></li>
-                        <li><a href="/events" class="hover:text-white transition-colors">Events</a></li>
-                        <li><a href="/give" class="hover:text-white transition-colors">Give</a></li>
-                        <li><a href="/connect" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="/about/" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="/ministries/" class="hover:text-white transition-colors">Ministries</a></li>
+                        <li><a href="/events/" class="hover:text-white transition-colors">Events</a></li>
+                        <li><a href="/give/" class="hover:text-white transition-colors">Give</a></li>
+                        <li><a href="/connect/" class="hover:text-white transition-colors">Contact</a></li>
                     </ul>
                 </div>
 
@@ -397,7 +374,7 @@
                     <address class="not-italic text-sm text-[#EED9B7]/80 space-y-1 mb-4">
                         <p>7309 El Cajon Blvd, La Mesa, CA 91942</p>
                         <p>Email: <a href="mailto:hpcfmedia@gmail.com"
-                                class="hover:text-white transition">hpcfmedia@gmail.com</a></p>
+                                class="hover:text-white transition">contact@higherpraisecf.org</a></p>
                         <p>Phone: <a href="tel:+16195551200" class="hover:text-white transition">(619) 555-1200</a></p>
                     </address>
                     <div class="flex gap-4 text-2xl text-[#EED9B7] mb-6">

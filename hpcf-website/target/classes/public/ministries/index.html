@@ -14,10 +14,10 @@
         content="Church Ministries, Men's Ministry, Women's Ministry, Youth Group La Mesa, Worship Team, Church Outreach San Diego, Children's Ministry">
     <meta name="author" content="Higher Praise Christian Fellowship">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://higherpraisecf.org/ministries.html">
+    <link rel="canonical" href="https://higherpraisecf.org/ministries">
 
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://higherpraisecf.org/ministries.html">
+    <meta property="og:url" content="https://higherpraisecf.org/ministries">
     <meta property="og:title" content="Ministries | Higher Praise Christian Fellowship">
     <meta property="og:description"
         content="Find your place to serve, grow, and connect with others through our various ministries.">
@@ -26,7 +26,7 @@
     <meta property="og:site_name" content="Higher Praise Christian Fellowship">
 
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://higherpraisecf.org/ministries.html">
+    <meta property="twitter:url" content="https://higherpraisecf.org/ministries">
     <meta property="twitter:title" content="Ministries | Higher Praise Christian Fellowship">
     <meta property="twitter:description"
         content="Find your place to serve, grow, and connect with others through our various ministries.">
@@ -49,9 +49,8 @@
           { "@type": "ListItem", "position": 5, "name": "Media Ministry" },
           { "@type": "ListItem", "position": 6, "name": "Worship & Arts" },
           { "@type": "ListItem", "position": 7, "name": "Outreach & Missions" },
-          { "@type": "ListItem", "position": 8, "name": "Assistant Pastors" },
-          { "@type": "ListItem", "position": 9, "name": "Ushers & Greeters" },
-          { "@type": "ListItem", "position": 10, "name": "Intercessory Prayer" }
+          { "@type": "ListItem", "position": 8, "name": "Ushers & Greeters" },
+          { "@type": "ListItem", "position": 9, "name": "Intercessory Prayer" }
         ]
       }
     }
@@ -85,12 +84,21 @@
         #mobile-menu.open {
             max-height: 400px;
         }
+
+        /* Consistent image styling */
+        .ministry-slider img {
+            object-fit: cover;
+            object-position: center;
+        }
     </style>
 </head>
 
 <body class="bg-white text-[#561722] min-h-screen flex flex-col font-sans">
 
     <div id="root" class="flex-grow flex flex-col">
+        <!-- =========================================
+             HEADER - Consistent across all pages
+        ========================================== -->
         <header class="sticky top-0 z-50 bg-[#7C2639] border-b border-white/10 shadow-md">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="flex items-center justify-between h-20">
@@ -103,56 +111,60 @@
                     </a>
 
                     <nav class="hidden md:flex items-center gap-6 lg:gap-8 text-sm font-medium text-white">
-                        <a href="/about" class="hover:text-[#E9D8A6] transition relative">About</a>
-                        <a href="/ministries"
+                        <a href="/about/" class="hover:text-[#E9D8A6] transition">About</a>
+                        <a href="/ministries/"
                             class="text-[#E9D8A6] font-bold border-b-2 border-[#E9D8A6]">Ministries</a>
-                        <a href="/connect" class="hover:text-[#E9D8A6] transition relative">Connect</a>
-                        <a href="/events" class="hover:text-[#E9D8A6] transition relative">Events</a>
-                        <a href="/give" class="hover:text-[#E9D8A6] transition relative">Give</a>
-                        <a href="/connect"
-                            class="bg-[#E9D8A6] text-[#561722] hover:bg-[#EED9B7] rounded-full px-5 py-2 text-sm font-bold shadow-lg transition-transform hover:-translate-y-0.5 ml-4">Join
+                        <a href="/connect/" class="hover:text-[#E9D8A6] transition">Connect</a>
+                        <a href="/events/" class="hover:text-[#E9D8A6] transition">Events</a>
+                        <a href="/give/" class="hover:text-[#E9D8A6] transition">Give</a>
+                        <a href="/connect/"
+                            class="bg-[#E9D8A6] text-[#561722] hover:bg-[#EED9B7] rounded-full px-5 py-2 text-sm font-bold shadow-lg transition-all hover:-translate-y-0.5 ml-2">Join
                             Us</a>
                     </nav>
 
-                    <button id="mobile-menu-btn" class="md:hidden text-[#E9D8A6] focus:outline-none"
-                        aria-label="Toggle Menu">
+                    <button id="mobile-menu-btn" class="md:hidden text-[#E9D8A6] focus:outline-none p-2"
+                        aria-label="Toggle Menu" aria-expanded="false">
                         <i class="fa-solid fa-bars text-2xl"></i>
                     </button>
                 </div>
             </div>
 
             <div id="mobile-menu" class="md:hidden bg-[#561722] border-t border-white/10">
-                <nav class="flex flex-col p-4 space-y-4 text-center">
-                    <a href="/about" class="text-white hover:text-[#E9D8A6] font-medium py-2">About</a>
-                    <a href="/ministries" class="text-[#E9D8A6] font-bold py-2">Ministries</a>
-                    <a href="/connect" class="text-white hover:text-[#E9D8A6] font-medium py-2">Connect</a>
-                    <a href="/events" class="text-white hover:text-[#E9D8A6] font-medium py-2">Events</a>
-                    <a href="/give" class="text-white hover:text-[#E9D8A6] font-medium py-2">Give</a>
-                    <a href="/connect"
-                        class="bg-[#E9D8A6] text-[#561722] rounded-full px-5 py-2 font-bold inline-block mx-auto w-32">Join
+                <nav class="flex flex-col p-4 space-y-3 text-center">
+                    <a href="/about/" class="text-white hover:text-[#E9D8A6] font-medium py-2">About</a>
+                    <a href="/ministries/" class="text-[#E9D8A6] font-bold py-2">Ministries</a>
+                    <a href="/connect/" class="text-white hover:text-[#E9D8A6] font-medium py-2">Connect</a>
+                    <a href="/events/" class="text-white hover:text-[#E9D8A6] font-medium py-2">Events</a>
+                    <a href="/give/" class="text-white hover:text-[#E9D8A6] font-medium py-2">Give</a>
+                    <a href="/connect/"
+                        class="bg-[#E9D8A6] text-[#561722] rounded-full px-5 py-2 font-bold inline-block mx-auto mt-2">Join
                         Us</a>
                 </nav>
             </div>
         </header>
+        <!-- END HEADER -->
 
+        <!-- Page Header -->
         <section class="text-center py-20 px-4 bg-gradient-to-r from-[#561722] via-[#7C2639] to-[#A63F4E] text-white">
-            <h1 class="text-4xl md:text-6xl font-playfair italic mb-4 animate-fade-in">Our Ministries</h1>
+            <h1 class="text-4xl md:text-6xl font-playfair italic mb-4">Our Ministries</h1>
             <p class="max-w-2xl mx-auto text-[#EED9B7] text-lg md:text-xl">Find your place to serve, grow, and connect
                 with others.</p>
         </section>
 
+        <!-- =========================================
+             MINISTRIES SECTIONS
+        ========================================== -->
         <div class="space-y-24 md:space-y-32 py-20 md:py-24 px-6 max-w-7xl mx-auto">
 
+            <!-- Men's Ministry -->
             <section class="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
                 <div class="ministry-slider relative rounded-2xl shadow-xl overflow-hidden aspect-[4/3] bg-gray-100"
                     id="slider-men">
                     <div class="slides-track flex transition-transform duration-500 ease-in-out h-full">
-                        <img src="https://placehold.co/800x600/561722/E9D8A6?text=Men+Gathering"
-                            class="w-full h-full object-cover flex-shrink-0" alt="Men's Ministry 1">
-                        <img src="https://placehold.co/800x600/7C2639/E9D8A6?text=Bible+Study"
-                            class="w-full h-full object-cover flex-shrink-0" alt="Men's Ministry 2">
-                        <img src="https://placehold.co/800x600/A63F4E/E9D8A6?text=Prayer+Breakfast"
-                            class="w-full h-full object-cover flex-shrink-0" alt="Men's Ministry 3">
+                        <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1768078386/outreach_ji1op9.jpg"
+                            class="w-full h-full object-cover flex-shrink-0" alt="Men's Ministry">
+                        <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1768087810/IMG_2058_vvkpnb.jpg"
+                            class="w-full h-full object-cover flex-shrink-0" alt="Men's Ministry Fellowship">
                     </div>
                     <button
                         class="prev-btn absolute top-1/2 left-4 -translate-y-1/2 bg-black/30 hover:bg-[#E9D8A6] hover:text-[#561722] text-white p-3 rounded-full transition"><i
@@ -164,7 +176,7 @@
                 <div class="flex flex-col justify-center h-full">
                     <h2 class="text-3xl md:text-4xl font-playfair font-bold text-[#561722] mb-6">Men's Ministry</h2>
                     <p class="text-lg text-gray-700 leading-relaxed mb-8">
-                        The Men’s Ministry at Higher Praise is dedicated to building strong men of God who lead their
+                        The Men's Ministry at Higher Praise is dedicated to building strong men of God who lead their
                         families and communities with integrity. We provide a space for men to be transparent,
                         accountable, and encouraged.
                     </p>
@@ -186,16 +198,21 @@
                 </div>
             </section>
 
+            <!-- Women's Ministry -->
             <section class="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
                 <div class="ministry-slider relative rounded-2xl shadow-xl overflow-hidden aspect-[4/3] bg-gray-100 lg:order-2"
                     id="slider-women">
                     <div class="slides-track flex transition-transform duration-500 ease-in-out h-full">
-                        <img src="https://placehold.co/800x600/7C2639/E9D8A6?text=Women+Fellowship"
-                            class="w-full h-full object-cover flex-shrink-0" alt="Women's Ministry 1">
-                        <img src="https://placehold.co/800x600/A63F4E/E9D8A6?text=Conference"
-                            class="w-full h-full object-cover flex-shrink-0" alt="Women's Ministry 2">
-                        <img src="https://placehold.co/800x600/561722/E9D8A6?text=Worship"
-                            class="w-full h-full object-cover flex-shrink-0" alt="Women's Ministry 3">
+                        <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1768078385/women1_b6wtun.jpg"
+                            class="w-full h-full object-cover object-[50%_100%] flex-shrink-0" alt="Women's Ministry">
+                        <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1768078382/womeen4_uoqvf7.jpg"
+                            class="w-full h-full object-cover flex-shrink-0" alt="Women's Ministry Fellowship">
+                        <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1768078379/womens22_telyug.jpg"
+                            class="w-full h-full object-cover object-top flex-shrink-0"
+                            alt="Women's Ministry Gathering">
+                        <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1768078384/women_qqxtu0.jpg"
+                            class="w-full h-full object-cover object-[50%_-10%] flex-shrink-0"
+                            alt="Women's Ministry Conference">
                     </div>
                     <button
                         class="prev-btn absolute top-1/2 left-4 -translate-y-1/2 bg-black/30 hover:bg-[#E9D8A6] hover:text-[#561722] text-white p-3 rounded-full transition"><i
@@ -207,7 +224,7 @@
                 <div class="flex flex-col justify-center h-full lg:order-1">
                     <h2 class="text-3xl md:text-4xl font-playfair font-bold text-[#561722] mb-6">Women's Ministry</h2>
                     <p class="text-lg text-gray-700 leading-relaxed mb-8">
-                        Our Women’s Ministry creates a supportive environment where women can grow in their faith, find
+                        Our Women's Ministry creates a supportive environment where women can grow in their faith, find
                         healing, and build lasting friendships. We believe in empowering women to walk in their
                         God-given purpose.
                     </p>
@@ -224,16 +241,18 @@
                 </div>
             </section>
 
+            <!-- Youth Ministry -->
             <section class="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
                 <div class="ministry-slider relative rounded-2xl shadow-xl overflow-hidden aspect-[4/3] bg-gray-100"
                     id="slider-youth">
                     <div class="slides-track flex transition-transform duration-500 ease-in-out h-full">
-                        <img src="https://placehold.co/800x600/A63F4E/E9D8A6?text=HYPE+Youth"
-                            class="w-full h-full object-cover flex-shrink-0" alt="Youth Ministry 1">
-                        <img src="https://placehold.co/800x600/561722/E9D8A6?text=Game+Night"
-                            class="w-full h-full object-cover flex-shrink-0" alt="Youth Ministry 2">
-                        <img src="https://placehold.co/800x600/7C2639/E9D8A6?text=Youth+Service"
-                            class="w-full h-full object-cover flex-shrink-0" alt="Youth Ministry 3">
+                        <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1768078381/youtuh_d2mtuk.jpg"
+                            class="w-full h-full object-cover object-[50%_-10%] flex-shrink-0" alt="Youth Ministry">
+                        <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1768078380/youth2_l2bekl.jpg"
+                            class="w-full h-full object-cover object-[50%_-15%] flex-shrink-0"
+                            alt="Youth Ministry Fellowship">
+                        <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1768078381/youth33_q8exw7.jpg"
+                            class="w-full h-full object-cover flex-shrink-0" alt="Youth Ministry Fellowship">
                     </div>
                     <button
                         class="prev-btn absolute top-1/2 left-4 -translate-y-1/2 bg-black/30 hover:bg-[#E9D8A6] hover:text-[#561722] text-white p-3 rounded-full transition"><i
@@ -263,16 +282,22 @@
                 </div>
             </section>
 
+            <!-- Children's Ministry -->
             <section class="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
                 <div class="ministry-slider relative rounded-2xl shadow-xl overflow-hidden aspect-[4/3] bg-gray-100 lg:order-2"
                     id="slider-children">
                     <div class="slides-track flex transition-transform duration-500 ease-in-out h-full">
+                        <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1765133397/childrens2_mpflfq.jpg"
+                            class="w-full h-full object-cover object-[50%_-10%] flex-shrink-0"
+                            alt="Children's Ministry">
+
+                        <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1765133398/childrens_2_nn3oml.jpg"
+                            class="w-full h-full object-cover flex-shrink-0" alt="Children's Ministry Activities">
                         <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1765133402/childrens_el9arf.jpg"
-                            class="w-full h-full object-cover flex-shrink-0" alt="Children's Ministry">
-                        <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1765133399/childrensministryteam_enoqem.jpg"
-                            class="w-full h-full object-cover flex-shrink-0" alt="Children's Ministry Team">
+                            class="w-full h-full object-cover object-[50%_-12%] flex-shrink-0"
+                            alt="Children's Ministry Class">
                         <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1765133394/childrensgroup_ulf5lm.jpg"
-                            class="w-full h-full object-cover flex-shrink-0" alt="Children's Group">
+                            class="w-full h-full object-cover flex-shrink-0" alt="Children's Ministry Group">
                     </div>
                     <button
                         class="prev-btn absolute top-1/2 left-4 -translate-y-1/2 bg-black/30 hover:bg-[#E9D8A6] hover:text-[#561722] text-white p-3 rounded-full transition"><i
@@ -302,22 +327,19 @@
                 </div>
             </section>
 
+            <!-- Media Ministry -->
             <section class="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
                 <div class="ministry-slider relative rounded-2xl shadow-xl overflow-hidden aspect-[4/3] bg-gray-100"
                     id="slider-media">
                     <div class="slides-track flex transition-transform duration-500 ease-in-out h-full">
                         <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1765133394/media_etv8hg.jpg"
                             class="w-full h-full object-cover flex-shrink-0" alt="Media Ministry">
-                        <img src="https://placehold.co/800x600/7C2639/E9D8A6?text=Camera+Crew"
-                            class="w-full h-full object-cover flex-shrink-0" alt="Media Ministry 2">
-                        <img src="https://placehold.co/800x600/A63F4E/E9D8A6?text=Audio+Engineering"
-                            class="w-full h-full object-cover flex-shrink-0" alt="Media Ministry 3">
                     </div>
                     <button
-                        class="prev-btn absolute top-1/2 left-4 -translate-y-1/2 bg-black/30 hover:bg-[#E9D8A6] hover:text-[#561722] text-white p-3 rounded-full transition"><i
+                        class="prev-btn absolute top-1/2 left-4 -translate-y-1/2 bg-black/30 hover:bg-[#E9D8A6] hover:text-[#561722] text-white p-3 rounded-full transition hidden"><i
                             class="fa-solid fa-chevron-left"></i></button>
                     <button
-                        class="next-btn absolute top-1/2 right-4 -translate-y-1/2 bg-black/30 hover:bg-[#E9D8A6] hover:text-[#561722] text-white p-3 rounded-full transition"><i
+                        class="next-btn absolute top-1/2 right-4 -translate-y-1/2 bg-black/30 hover:bg-[#E9D8A6] hover:text-[#561722] text-white p-3 rounded-full transition hidden"><i
                             class="fa-solid fa-chevron-right"></i></button>
                 </div>
                 <div class="flex flex-col justify-center h-full">
@@ -340,16 +362,15 @@
                 </div>
             </section>
 
+            <!-- Worship & Arts -->
             <section class="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
                 <div class="ministry-slider relative rounded-2xl shadow-xl overflow-hidden aspect-[4/3] bg-gray-100 lg:order-2"
                     id="slider-worship">
                     <div class="slides-track flex transition-transform duration-500 ease-in-out h-full">
-                        <img src="https://placehold.co/800x600/7C2639/E9D8A6?text=Worship+Team"
-                            class="w-full h-full object-cover flex-shrink-0" alt="Worship Ministry 1">
-                        <img src="https://placehold.co/800x600/A63F4E/E9D8A6?text=Live+Music"
-                            class="w-full h-full object-cover flex-shrink-0" alt="Worship Ministry 2">
-                        <img src="https://placehold.co/800x600/561722/E9D8A6?text=Choir"
-                            class="w-full h-full object-cover flex-shrink-0" alt="Worship Ministry 3">
+                        <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1765133390/intercessory_r26shd.jpg"
+                            class="w-full h-full object-cover flex-shrink-0" alt="Worship & Arts">
+                        <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1765133393/sundayteachers_vlabif.jpg"
+                            class="w-full h-full object-cover flex-shrink-0" alt="Worship Team">
                     </div>
                     <button
                         class="prev-btn absolute top-1/2 left-4 -translate-y-1/2 bg-black/30 hover:bg-[#E9D8A6] hover:text-[#561722] text-white p-3 rounded-full transition"><i
@@ -377,16 +398,23 @@
                 </div>
             </section>
 
+            <!-- Outreach & Missions -->
             <section class="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
                 <div class="ministry-slider relative rounded-2xl shadow-xl overflow-hidden aspect-[4/3] bg-gray-100"
                     id="slider-outreach">
                     <div class="slides-track flex transition-transform duration-500 ease-in-out h-full">
                         <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1765133386/outreach_bdnddn.jpg"
-                            class="w-full h-full object-cover flex-shrink-0" alt="Outreach 1">
+                            class="w-full h-full object-cover flex-shrink-0" alt="Outreach Ministry">
                         <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1765133393/outreach2_vve4rq.jpg"
-                            class="w-full h-full object-cover flex-shrink-0" alt="Outreach 2">
+                            class="w-full h-full object-cover object-[50%_-15%] flex-shrink-0" alt="Community Outreach">
                         <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1765133388/outreach3_bdba6b.jpg"
-                            class="w-full h-full object-cover flex-shrink-0" alt="Outreach 3">
+                            class="w-full h-full object-cover flex-shrink-0" alt="Outreach Event">
+                        <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1768078385/outreach4_wyr6mi.jpg"
+                            class="w-full h-full object-cover flex-shrink-0" alt="Service Project">
+                        <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1768078382/outreach3_wmig83.jpg"
+                            class="w-full h-full object-cover flex-shrink-0" alt="Community Service">
+                        <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1768078383/outreach_nmiycv.jpg"
+                            class="w-full h-full object-cover flex-shrink-0" alt="Missions">
                     </div>
                     <button
                         class="prev-btn absolute top-1/2 left-4 -translate-y-1/2 bg-black/30 hover:bg-[#E9D8A6] hover:text-[#561722] text-white p-3 rounded-full transition"><i
@@ -416,14 +444,15 @@
                 </div>
             </section>
 
+            <!-- Ushers & Greeters -->
             <section class="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
-                <div class="ministry-slider relative rounded-2xl shadow-xl overflow-hidden aspect-[4/3] bg-gray-100"
+                <div class="ministry-slider relative rounded-2xl shadow-xl overflow-hidden aspect-[4/3] bg-gray-100 lg:order-2"
                     id="slider-ushers">
                     <div class="slides-track flex transition-transform duration-500 ease-in-out h-full">
                         <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1765133385/usherteam_v96cgw.jpg"
                             class="w-full h-full object-cover flex-shrink-0" alt="Usher Team">
                         <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1765133386/usherlead_lnlvuc.jpg"
-                            class="w-full h-full object-cover flex-shrink-0" alt="Usher Lead">
+                            class="w-full h-full object-cover object-[50%_-10%] flex-shrink-0" alt="Usher Lead">
                     </div>
                     <button
                         class="prev-btn absolute top-1/2 left-4 -translate-y-1/2 bg-black/30 hover:bg-[#E9D8A6] hover:text-[#561722] text-white p-3 rounded-full transition"><i
@@ -432,7 +461,7 @@
                         class="next-btn absolute top-1/2 right-4 -translate-y-1/2 bg-black/30 hover:bg-[#E9D8A6] hover:text-[#561722] text-white p-3 rounded-full transition"><i
                             class="fa-solid fa-chevron-right"></i></button>
                 </div>
-                <div class="flex flex-col justify-center h-full">
+                <div class="flex flex-col justify-center h-full lg:order-1">
                     <h2 class="text-3xl md:text-4xl font-playfair font-bold text-[#561722] mb-6">Ushers & Greeters</h2>
                     <p class="text-lg text-gray-700 leading-relaxed mb-8">
                         The Ushers and Greeters are the first faces you see at Higher Praise. Dedicated to maintaining
@@ -451,21 +480,22 @@
                 </div>
             </section>
 
+            <!-- Intercessory Prayer -->
             <section class="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
-                <div class="ministry-slider relative rounded-2xl shadow-xl overflow-hidden aspect-[4/3] bg-gray-100 lg:order-2"
+                <div class="ministry-slider relative rounded-2xl shadow-xl overflow-hidden aspect-[4/3] bg-gray-100"
                     id="slider-prayer">
                     <div class="slides-track flex transition-transform duration-500 ease-in-out h-full">
                         <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1765133390/intercessory_r26shd.jpg"
                             class="w-full h-full object-cover flex-shrink-0" alt="Intercessory Prayer">
                     </div>
                     <button
-                        class="prev-btn absolute top-1/2 left-4 -translate-y-1/2 bg-black/30 hover:bg-[#E9D8A6] hover:text-[#561722] text-white p-3 rounded-full transition"><i
+                        class="prev-btn absolute top-1/2 left-4 -translate-y-1/2 bg-black/30 hover:bg-[#E9D8A6] hover:text-[#561722] text-white p-3 rounded-full transition hidden"><i
                             class="fa-solid fa-chevron-left"></i></button>
                     <button
-                        class="next-btn absolute top-1/2 right-4 -translate-y-1/2 bg-black/30 hover:bg-[#E9D8A6] hover:text-[#561722] text-white p-3 rounded-full transition"><i
+                        class="next-btn absolute top-1/2 right-4 -translate-y-1/2 bg-black/30 hover:bg-[#E9D8A6] hover:text-[#561722] text-white p-3 rounded-full transition hidden"><i
                             class="fa-solid fa-chevron-right"></i></button>
                 </div>
-                <div class="flex flex-col justify-center h-full lg:order-1">
+                <div class="flex flex-col justify-center h-full">
                     <h2 class="text-3xl md:text-4xl font-playfair font-bold text-[#561722] mb-6">Intercessory Prayer
                     </h2>
                     <p class="text-lg text-gray-700 leading-relaxed mb-8">
@@ -488,14 +518,18 @@
 
         </div>
 
+        <!-- =========================================
+             FOOTER - Consistent across all pages
+        ========================================== -->
         <footer class="bg-[#561722] border-t border-[#E9D8A6]/20 text-[#E9D8A6]">
-            <div class="max-w-7xl mx-auto px-8 py-16 grid md:grid-cols-3 gap-12 text-center md:text-left">
+            <div
+                class="max-w-7xl mx-auto px-6 md:px-8 py-12 md:py-16 grid md:grid-cols-3 gap-10 md:gap-12 text-center md:text-left">
                 <div class="flex flex-col items-center md:items-start">
                     <img src="https://res.cloudinary.com/ddnhp0hzd/image/upload/v1763924716/HPCF_logo_gold_dkwnzi.png"
-                        alt="HPCF Logo" class="h-24 w-auto mb-6">
-                    <h3 class="text-2xl font-playfair font-bold mb-4">Higher Praise Christian Fellowship</h3>
+                        alt="HPCF Logo" class="h-20 md:h-24 w-auto mb-6">
+                    <h3 class="text-xl md:text-2xl font-playfair font-bold mb-4">Higher Praise Christian Fellowship</h3>
                     <p class="text-sm text-[#EED9B7]/90 leading-relaxed max-w-sm">
-                        “You will never walk alone at Higher Praise Christian Fellowship.” No one gets left behind. Our
+                        "You will never walk alone at Higher Praise Christian Fellowship." No one gets left behind. Our
                         mission is to reconcile the lost to Christ.
                     </p>
                 </div>
@@ -503,46 +537,44 @@
                 <div class="flex flex-col items-center md:items-start">
                     <h3 class="text-lg font-bold mb-4 uppercase tracking-wider">Quick Links</h3>
                     <ul class="space-y-3 text-sm text-[#EED9B7]/80">
-                        <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
-                        <li><a href="ministries.html" class="hover:text-white transition-colors">Ministries</a></li>
-                        <li><a href="events.html" class="hover:text-white transition-colors">Events</a></li>
-                        <li><a href="give.html" class="hover:text-white transition-colors">Give</a></li>
-                        <li><a href="connect.html" class="hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="/about/" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="/ministries/" class="hover:text-white transition-colors">Ministries</a></li>
+                        <li><a href="/events/" class="hover:text-white transition-colors">Events</a></li>
+                        <li><a href="/give/" class="hover:text-white transition-colors">Give</a></li>
+                        <li><a href="/connect/" class="hover:text-white transition-colors">Contact</a></li>
                     </ul>
                 </div>
 
-                <div>
-                    <h3 class="text-lg font-semibold mb-3 text-[#E9D8A6]">Connect</h3>
-                    <p class="text-sm text-[#EED9B7]/80">7309 El Cajon Blvd, La Mesa, CA 91942</p>
-                    <p class="text-sm text-[#EED9B7]/80">Email: info@higherpraisecf.org</p>
-                    <p class="text-sm text-[#EED9B7]/80 mb-4">Phone: (619) 555-1200</p>
-                    <div class="flex space-x-5 text-xl text-[#EED9B7]/80 mb-6">
-                        <a href="mailto:info@higherpraisecf.org" class="hover:text-[#E9D8A6] transition">
-                            <i class="fa-solid fa-envelope"></i>
-                        </a>
+                <div class="flex flex-col items-center md:items-start">
+                    <h3 class="text-lg font-bold mb-4 uppercase tracking-wider">Connect</h3>
+                    <address class="not-italic text-sm text-[#EED9B7]/80 space-y-1 mb-4">
+                        <p>7309 El Cajon Blvd, La Mesa, CA 91942</p>
+                        <p>Email: <a href="mailto:hpcfmedia@gmail.com"
+                                class="hover:text-white transition">contact@higherpraisecf.org</a></p>
+                        <p>Phone: <a href="tel:+16195551200" class="hover:text-white transition">(619) 555-1200</a></p>
+                    </address>
+                    <div class="flex gap-4 text-2xl text-[#EED9B7] mb-6">
+                        <a href="mailto:hpcfmedia@gmail.com" aria-label="Email"
+                            class="hover:text-white transition hover:-translate-y-1"><i
+                                class="fa-solid fa-envelope"></i></a>
                         <a href="https://www.facebook.com/profile.php?id=100071166876525" target="_blank"
-                            class="hover:text-[#E9D8A6] transition">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a href="https://www.youtube.com/@higherpraise_hpcf" target="_blank"
-                            class="hover:text-[#E9D8A6] transition">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                        <a href="https://www.instagram.com/higherpraise_cf?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
-                            target="_blank" class="hover:text-[#E9D8A6] transition">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="https://www.tiktok.com/@higherpraise_cf" target="_blank"
-                            class="hover:text-[#E9D8A6] transition">
-                            <i class="fab fa-tiktok"></i>
-                        </a>
+                            rel="noopener noreferrer" aria-label="Facebook"
+                            class="hover:text-white transition hover:-translate-y-1"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.youtube.com/@higherpraise_hpcf" target="_blank" rel="noopener noreferrer"
+                            aria-label="YouTube" class="hover:text-white transition hover:-translate-y-1"><i
+                                class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/higherpraise_cf" target="_blank" rel="noopener noreferrer"
+                            aria-label="Instagram" class="hover:text-white transition hover:-translate-y-1"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.tiktok.com/@higherpraise_cf" target="_blank" rel="noopener noreferrer"
+                            aria-label="TikTok" class="hover:text-white transition hover:-translate-y-1"><i
+                                class="fab fa-tiktok"></i></a>
                     </div>
-
-                    <div class="w-full rounded-lg overflow-hidden border border-[#E9D8A6]/20 shadow-lg h-40">
+                    <div class="w-full rounded-lg overflow-hidden border border-[#E9D8A6]/20 shadow-lg h-36">
                         <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0"
                             marginwidth="0"
                             src="https://maps.google.com/maps?q=7309+El+Cajon+Blvd,+La+Mesa,+CA+91942&t=&z=14&ie=UTF8&iwloc=B&output=embed"
-                            title="Church Location"></iframe>
+                            title="Church Location" loading="lazy"></iframe>
                     </div>
                 </div>
             </div>
@@ -551,6 +583,7 @@
                 © <span id="footer-year"></span> Higher Praise Christian Fellowship. All Rights Reserved.
             </div>
         </footer>
+        <!-- END FOOTER -->
     </div>
 
     <script>
@@ -560,8 +593,12 @@
         const menuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('open');
-            mobileMenu.style.maxHeight = mobileMenu.classList.contains('open') ? mobileMenu.scrollHeight + "px" : "0";
+            const isOpen = mobileMenu.classList.toggle('open');
+            mobileMenu.style.maxHeight = isOpen ? mobileMenu.scrollHeight + 'px' : '0';
+            menuBtn.setAttribute('aria-expanded', isOpen);
+            const icon = menuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars', !isOpen);
+            icon.classList.toggle('fa-xmark', isOpen);
         });
 
         // Function to initialize a slider
@@ -576,23 +613,34 @@
             const slideCount = track.children.length;
             let currentIndex = 0;
 
+            // Hide buttons if only one slide
+            if (slideCount <= 1) {
+                if (prevBtn) prevBtn.classList.add('hidden');
+                if (nextBtn) nextBtn.classList.add('hidden');
+                return;
+            }
+
             function updateSliderPosition() {
                 track.style.transform = `translateX(-${currentIndex * 100}%)`;
             }
 
-            nextBtn.addEventListener('click', () => {
-                currentIndex = (currentIndex + 1) % slideCount;
-                updateSliderPosition();
-            });
+            if (nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    currentIndex = (currentIndex + 1) % slideCount;
+                    updateSliderPosition();
+                });
+            }
 
-            prevBtn.addEventListener('click', () => {
-                currentIndex = (currentIndex - 1 + slideCount) % slideCount;
-                updateSliderPosition();
-            });
+            if (prevBtn) {
+                prevBtn.addEventListener('click', () => {
+                    currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+                    updateSliderPosition();
+                });
+            }
         }
 
         document.addEventListener('DOMContentLoaded', () => {
-            ['slider-men', 'slider-women', 'slider-youth', 'slider-children', 'slider-media', 'slider-worship', 'slider-outreach', 'slider-assistants', 'slider-ushers', 'slider-prayer'].forEach(setupSlider);
+            ['slider-men', 'slider-women', 'slider-youth', 'slider-children', 'slider-media', 'slider-worship', 'slider-outreach', 'slider-ushers', 'slider-prayer'].forEach(setupSlider);
         });
     </script>
 </body>
